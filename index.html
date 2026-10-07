@@ -273,6 +273,38 @@ tr.chosen td{background:var(--surface)}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
+
+/* new case-study pieces */
+.insights{max-width:680px;color:var(--muted);padding-left:22px;margin:0}
+.insights li{margin:10px 0}
+.insights b{color:var(--ink)}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin:20px 0}
+.pair figure{margin:0}
+.pair .wide-fig{padding:clamp(10px,2vw,18px)}
+.scroller{max-height:560px;overflow:auto;border-radius:12px;background:#fff}
+.scroller img{width:100%;height:auto;border-radius:0!important}
+.hscroll{display:flex;gap:18px;overflow-x:auto;padding:8px 2px 18px;margin-top:20px;scroll-snap-type:x proximity}
+.hscroll figure{flex:none;margin:0;scroll-snap-align:start}
+.hscroll img{height:440px;width:auto;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.phones{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.phones figure{margin:0;flex:0 1 240px}
+.cutlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.col h3{font-size:24px;margin-bottom:8px}
+.col p{color:var(--muted)}
+.col ul{list-style:none;padding:0;margin:0;max-width:none}
+.col li{display:grid;grid-template-columns:26px 1fr;gap:10px;margin:16px 0}
+.col li b{display:block;color:var(--ink)}
+.col li span:not(.ic){color:var(--muted);font-size:17px}
+.col .ic{font-weight:700;font-size:18px}
+.col.keep .ic{color:var(--glaze)}
+.col.cut .ic{color:var(--fired)}
+.credit{font-size:15px;color:var(--muted);margin-top:6px!important}
+.stage .spot{max-width:680px}
+.cs-body > div{min-width:0}
+.hscroll.tall img{height:520px}
+@media (max-width:900px){.cs-body{grid-template-columns:minmax(0,1fr)}.hscroll img{height:360px}.hscroll.tall img{height:440px}.pair{grid-template-columns:minmax(0,1fr)}}
+
 </style>
 </head>
 <body>
@@ -330,7 +362,7 @@ tr.chosen td{background:var(--surface)}
   </section>
 
   <section class="wrap section" id="work" aria-labelledby="workh">
-    <div class="head"><h2 id="workh">Work</h2><p>Hover a piece to see it come together. Pieces still in the kiln are being written up.</p></div>
+    <div class="head"><h2 id="workh">Work</h2><p>Hover a piece to see it come together.</p></div>
     <div class="shelf" id="shelf"></div>
   </section>
 
@@ -342,7 +374,7 @@ tr.chosen td{background:var(--surface)}
       </div>
       <div>
         <h2 id="abouth">About</h2>
-        <p>I'm a B.E. Computer Science graduate (St. Joseph's College of Engineering, 2026) who chose design. Four internships across SaaS, e-commerce, telemedicine, food-trade and health-tech taught me to start from the user's real problem, and to keep the developer in mind from the first sketch.</p>
+        <p>I'm a B.E. Computer Science graduate (St. Joseph's College of Engineering, 2026) who chose design. Four internships across SaaS, e-commerce, telemedicine, food import and export, and health-tech taught me to start from the user's real problem, and to keep the developer in mind from the first sketch.</p>
         <p>Off screen, I'm at the potter's wheel. Clay is honest: it shows every extra gram you left on. [Add a line about your pottery.]</p>
         <div class="facts-list">
           <div><b>Now</b><span>Product Design Intern, Zuper</span></div>
@@ -546,14 +578,340 @@ tr.chosen td{background:var(--surface)}
         <div class="stage-head"><span class="pot">The form</span><h2>Drag to compare</h2></div>
         <div class="ba" data-ba><div class="ba-stage wide"><img data-img="jc-problem" alt="Before: a mention that reaches nobody"><div class="ba-top"><img data-img="jc-final" alt="After: the note only the sender sees"></div><input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after"><div class="ba-handle"></div></div><div class="ba-labels"><span>Before</span><span>After</span></div></div>
         <p style="margin-top:32px"><b style="color:var(--ink)">What I learned:</b> the same rule can need different patterns per platform. [Add what you'd do differently.]</p>
-        <div class="next-up"><div><h2>Back to all work</h2><p>Telemed, Omni Fashion and FOOZ are still in the kiln.</p></div><a class="btn btn-line" href="#work">All work</a></div>
+        <div class="next-up"><div><h2>Next: less to remember, more to act on</h2><p>Kern, a placement tracker.</p></div><a class="btn btn-line" href="#kern">Read Kern</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- ================= KERN ================= -->
+<main class="view" id="v-kern" hidden>
+  <section class="wrap cs-hero">
+    <a class="back" href="#work">← All work</a>
+    <p class="kicker">Kern, a placement tracker, Zuper hiring assessment, 2026</p>
+    <h1>Less to remember, more to act on</h1>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Researcher, UX and product designer</dd></div>
+      <div><dt>Team</dt><dd>Just me</dd></div>
+      <div><dt>Time</dt><dd>1 day, including 2 interviews</dd></div>
+      <div><dt>Status</dt><dd>Prototype, shown in a demo</dd></div>
+    </dl>
+    <div class="minute">
+      <div><h2>What I started with</h2><p>Placement news scattered across WhatsApp, Excel and Gmail, so milestones got missed.</p></div>
+      <div><h2>What I trimmed</h2><p>A calendar view, success charts and a resume builder.</p></div>
+      <div class="form-cell"><h2>What remained</h2><p>One list of what needs you in the next 24 hours.</p></div>
+    </div>
+  </section>
+  <div class="wrap cs-body" data-cs>
+    <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
+    <div>
+      <section class="stage" id="k-wedge" data-stage="Wedge">
+        <div class="stage-head"><span class="pot">Wedge · research</span><h2>Two interviews, three problems</h2></div>
+        <p>To ground the design, I interviewed two active placement candidates, a final-year student and a recent graduate. The same three things came up both times.</p>
+        <ol class="insights">
+          <li><b>The status black hole.</b> Candidates wait indefinitely for results, with no timeline and no word from recruiters.</li>
+          <li><b>Pipeline volatility.</b> Hiring flows are unpredictable, and follow-up rounds get added with little warning.</li>
+          <li><b>The visibility gap.</b> Notifications are inconsistent, so students miss deadlines unless they check several systems every day.</li>
+        </ol>
+        <p style="margin-top:22px">Each pain point became one decision:</p>
+        <div class="table-wrap" role="region" aria-label="Pain points and what I built" tabindex="0"><table>
+          <thead><tr><th>What they said</th><th>What I built</th></tr></thead>
+          <tbody>
+            <tr><td><em style="font-weight:400">“Rejected candidates often won’t even receive an official email. You just wait indefinitely.”</em></td><td>A “Days Spent in Stage” count, with an estimated “Safe-Zone” response window.</td></tr>
+            <tr><td><em style="font-weight:400">“Unexpected and unscheduled rounds or tests after an interview cause massive annoyance.”</em></td><td>A “Flex-Pipeline Builder” with a tap to insert an unscheduled round.</td></tr>
+            <tr><td><em style="font-weight:400">“Inconsistent notifications mean we miss things unless we manually log into portals daily.”</em></td><td>A “Today’s Focus” first screen: a strict, chronological urgency stack for the next 24 hours.</td></tr>
+          </tbody></table></div>
+      </section>
+      <section class="stage" id="k-center" data-stage="Center">
+        <div class="stage-head"><span class="pot">Center · the real problem</span><h2>Not short of data, short of one place to look</h2></div>
+        <p>Placement tracking doesn’t fail because people lack information. It fails because the information is spread across channels that don’t talk to each other. That fragmentation overloads people, and milestones slip.</p>
+        <div class="spot"><b>The idea behind Kern</b><p>Move from managing data to a chronological urgency stack, one that favours recognition over recall.</p></div>
+      </section>
+      <section class="stage" id="k-throw" data-stage="Throw">
+        <div class="stage-head"><span class="pot">Throw · the shape</span><h2>Four screens, one path</h2></div>
+        <p>The whole product is one straight line: a first screen of what’s urgent, a list of every application, the detail of one, and an editor for when the process changes.</p>
+        <figure style="margin:8px 0 36px;max-width:520px"><div class="wide-fig"><img data-img="k-flow" loading="lazy" alt="Flow: Root Dashboard with Today's Focus, Application Board with filter chips, Track Details with a milestones timeline and Safe-Zone status, and the Flex-Pipeline Editor"></div><figcaption>The system and the user flow.</figcaption></figure>
+        <div class="story" data-story>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="beats">
+            <div class="beat" data-img="k-s1" data-alt="Today's Focus: urgent items due today, then recent applications" data-cut="Calendar view"><span class="tag">Screen 1</span><h3>Open the app, see what’s due</h3><p>Anything closing within 24 hours sits at the top, with a count of applications in a waiting phase.</p><span class="cut">Cut: the calendar. A short list ends decisions faster than a dense grid.</span></div>
+            <div class="beat" data-img="k-s2" data-alt="Applications list with stage and days in stage" data-cut="Success charts"><span class="tag">Screen 2</span><h3>Every application, one filter away</h3><p>Each job shows its stage and how long it has been there. Filter chips: All, In-Flight, Offers, Archived.</p><span class="cut">Cut: success charts. Showing rejection rates mid-season only adds stress.</span></div>
+            <div class="beat" data-img="k-s3" data-alt="Application details: Safe-Zone status and a vertical milestone timeline" data-cut="Resume builder"><span class="tag">Screen 3</span><h3>Say how long the wait usually is</h3><p>“Typically responds within 7 days. You are on Day 3.” Contextual data turns open-ended waiting into something to plan around.</p><span class="cut">Cut: a resume builder. Students already keep their files in Drive.</span></div>
+            <div class="beat" data-img="k-s4" data-alt="Update Stage with an Insert Unscheduled Round action"><span class="tag chosen">Screen 4</span><h3>Add the round nobody warned you about</h3><p>Tap “Insert Unscheduled Round” to place a stage like “Round 2.5” between the standard milestones.</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="stage" id="k-trim" data-stage="Trim">
+        <div class="stage-head"><span class="pot">Trim · scope</span><h2>What I cut, and why</h2></div>
+        <div class="cutlist">
+          <div class="col keep"><h3>Kept</h3><ul>
+            <li><span class="ic" aria-hidden="true">✓</span><div><b>Today’s Focus (urgency stack)</b><span>Immediate view of items closing within 24 hours.</span></div></li>
+            <li><span class="ic" aria-hidden="true">✓</span><div><b>Stage progression tracker</b><span>Granular visibility of the time spent in each stage.</span></div></li>
+            <li><span class="ic" aria-hidden="true">✓</span><div><b>Flex-Pipeline Builder</b><span>Dynamic editing to adapt to real-time changes.</span></div></li>
+          </ul></div>
+          <div class="col cut"><h3>Cut on purpose</h3><ul>
+            <li><span class="ic" aria-hidden="true">✕</span><div><b>Calendar view integration</b><span>A chronological urgency list reduces decision fatigue much faster than a dense calendar grid.</span></div></li>
+            <li><span class="ic" aria-hidden="true">✕</span><div><b>Historical analytics and success charts</b><span>Showing rejection metrics or success rates during an active placement season creates counterproductive stress.</span></div></li>
+            <li><span class="ic" aria-hidden="true">✕</span><div><b>Resume builder and document management</b><span>Avoided feature creep: students already have file storage they trust, like Drive.</span></div></li>
+          </ul></div>
+        </div>
+      </section>
+      <section class="stage" id="k-fire" data-stage="Fire">
+        <div class="stage-head"><span class="pot">Fire · review</span><h2>Where it’s weakest</h2></div>
+        <div class="cutlist">
+          <div class="col"><h3>Manual upkeep</h3><p style="margin:0">Kern relies on people updating their own stages. Parsing email automatically would cut the friction, but for version one I kept users in control of data that changes without warning.</p></div>
+          <div class="col"><h3>It needs to be opened</h3><p style="margin:0">The design only works if someone opens the app. Making Today’s Focus the first screen puts the priorities in front of them the moment they do.</p></div>
+        </div>
+        <div class="spot" style="margin-top:20px;max-width:none"><b>How I used AI</b><p>To stress-test edge cases in the workflow and to tidy the structure of this write-up. The mechanics, the micro-copy and the features came from the interviews.</p></div>
+      </section>
+      <section class="stage" id="k-form" data-stage="Form">
+        <div class="stage-head"><span class="pot">The form</span><h2>The four screens</h2></div>
+        <div class="phones">
+          <figure><div class="frame"><img data-img="k-s1" loading="lazy" alt="Today's Focus"></div><figcaption>Today’s Focus</figcaption></figure>
+          <figure><div class="frame"><img data-img="k-s2" loading="lazy" alt="Applications"></div><figcaption>Applications</figcaption></figure>
+          <figure><div class="frame"><img data-img="k-s3" loading="lazy" alt="Application details"></div><figcaption>Safe-Zone and timeline</figcaption></figure>
+          <figure><div class="frame"><img data-img="k-s4" loading="lazy" alt="Flex-Pipeline Editor"></div><figcaption>Flex-Pipeline Editor</figcaption></figure>
+        </div>
+        <div class="next-up"><div><h2>Next: five clicks to the doctor</h2><p>Telemed Connect.</p></div><a class="btn btn-line" href="#telemed">Read Telemed</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- ================= TELEMED ================= -->
+<main class="view" id="v-telemed" hidden>
+  <section class="wrap cs-hero">
+    <a class="back" href="#work">← All work</a>
+    <p class="kicker">Telemed Connect, web, Infotact Solutions, 2026</p>
+    <h1>Five clicks to the doctor</h1>
+    <dl class="facts">
+      <div><dt>My role</dt><dd>UX and visual design: screens, UI kit, components</dd></div>
+      <div><dt>Team</dt><dd>With Prasanthi and Sujeevana</dd></div>
+      <div><dt>Timeline</dt><dd>My screens were built and presented on 18 May 2026</dd></div>
+      <div><dt>Status</dt><dd>Presented, not shipped</dd></div>
+    </dl>
+    <div class="minute">
+      <div><h2>What I started with</h2><p>Booking averaged 7.2 clicks in the research, plus a forced detour through the doctor’s profile.</p></div>
+      <div><h2>What I trimmed</h2><p>The detour, the overloaded screens and the extra steps.</p></div>
+      <div class="form-cell"><h2>What remained</h2><p>Search, Book Now, date, time, confirm: five clicks from the dashboard, four from the doctor list.</p></div>
+    </div>
+  </section>
+  <div class="wrap cs-body" data-cs>
+    <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
+    <div>
+      <section class="stage" id="t-wedge" data-stage="Wedge">
+        <div class="stage-head"><span class="pot">Wedge · research</span><h2>Looking at what already exists</h2></div>
+        <p>The project opens with a competitor review of telemedicine patient dashboards: Practo, Apollo 24|7, Tata 1mg and PharmEasy. It found cluttered home screens, heavy cross-selling, steep booking friction, and small type that older patients struggle with.</p><p>It also put a number on the problem: an average of 7.2 clicks to book, against a team target of under five. The primary goal it set was to make booking and joining obvious, fast and accessible for all ages.</p>
+        <figure style="margin:20px 0 0"><div class="wide-fig"><div class="scroller" role="region" aria-label="Competitor research, scrollable" tabindex="0"><img data-img="t-comp" loading="lazy" alt="Competitor research on telemedicine patient dashboards: categories, feature matrix, UI patterns, opportunities, SWOT and UX gaps"></div></div><figcaption>Competitor research. Scroll inside the frame.</figcaption></figure>
+      </section>
+      <section class="stage" id="t-center" data-stage="Center">
+        <div class="stage-head"><span class="pot">Center · the real problem</span><h2>Two patients, one shared frustration</h2></div>
+        <p><b style="color:var(--ink)">Lakshmi Devi</b> is 67, a retired teacher with low tech literacy. She wants large text and simple, guided steps. <b style="color:var(--ink)">Rahul Sharma</b> is 29, a software engineer who wants to book in as few steps as possible.</p>
+        <div class="pair">
+          <figure><div class="wide-fig"><img data-img="t-p1" loading="lazy" alt="Persona: Lakshmi Devi, 67, retired teacher, low tech literacy"></div><figcaption>Lakshmi Devi</figcaption></figure>
+          <figure><div class="wide-fig"><img data-img="t-p2" loading="lazy" alt="Persona: Rahul Sharma, 29, software engineer, high tech literacy"></div><figcaption>Rahul Sharma</figcaption></figure>
+        </div>
+        <p>Their journeys feel different, but they end in the same place: too many steps in the booking, and a forced extra step to open the doctor’s profile. For Lakshmi, unclear camera and microphone permissions made it worse.</p>
+        <div class="pair">
+          <figure><div class="wide-fig"><img data-img="t-j1" loading="lazy" alt="Journey map for the elderly patient, from opening the app to confirmation, with feelings and pain points"></div><figcaption>Journey map: elderly patient</figcaption></figure>
+          <figure><div class="wide-fig"><img data-img="t-j2" loading="lazy" alt="Journey map for the busy professional, from search to completion"></div><figcaption>Journey map: busy professional</figcaption></figure>
+        </div>
+        <p class="credit">Personas and journey maps: Sujeevana.</p>
+      </section>
+      <section class="stage" id="t-throw" data-stage="Throw">
+        <div class="stage-head"><span class="pot">Throw · the shortest route</span><h2>Mapping the way to a booking</h2></div>
+        <p>The information architecture keeps four places at the top: Dashboard, Search, Appointments and Records. The booking flow runs Home, Search, Doctor list, Book Now, Date and time, Confirm, Booked. The cart stays optional.</p>
+        <div class="pair">
+          <figure><div class="wide-fig"><img data-img="t-ia" loading="lazy" alt="Information architecture: Home with Dashboard, Search, Appointments and Records, and the pages beneath them"></div><figcaption>Information architecture</figcaption></figure>
+          <figure><div class="wide-fig"><img data-img="t-flow" loading="lazy" alt="User flow from Home to Search, Doctor List, Book Now, Date and Time, Confirm and Booked"></div><figcaption>User flow</figcaption></figure>
+        </div>
+        <figure style="margin:20px auto 0;max-width:760px"><div class="wide-fig"><img data-img="t-prob" loading="lazy" alt="Problems on the left, improvements on the right"></div><figcaption>Problems found, and the improvements they led to.</figcaption></figure>
+        <p class="credit">Information architecture and user flow: Prasanthi.</p>
+      </section>
+      <section class="stage" id="t-trim" data-stage="Trim">
+        <div class="stage-head"><span class="pot">Trim · remove what doesn’t belong</span><h2>What I cut</h2></div>
+        <div class="table-wrap" role="region" aria-label="Problems and what changed" tabindex="0"><table>
+          <thead><tr><th>Problem found</th><th>What changed</th><th>Where it shows</th></tr></thead>
+          <tbody>
+            <tr class="chosen"><td>Forced trip to the doctor’s profile</td><td>Book Now sits on every doctor in the list</td><td>Doctor search</td></tr>
+            <tr><td>Too many steps to book</td><td>Date, time and confirm on one screen: four clicks from the list, five from the dashboard</td><td>Booking</td></tr>
+            <tr><td>Confusing navigation</td><td>Four places at the top: Dashboard, Search Doctors, Appointments, Records</td><td>Every screen</td></tr>
+            <tr><td>Overloaded screens</td><td>Cards carry only what someone needs to choose a doctor</td><td>Home, search</td></tr>
+            <tr><td>Hard to find an available doctor</td><td>Search first, with filters for specialisation, location and fee</td><td>Doctor search</td></tr>
+            <tr><td>No clear call to action</td><td>One high-contrast primary button per screen</td><td>All screens</td></tr>
+          </tbody></table></div>
+        <p style="margin:32px 0 20px">The screens, one cut at a time:</p>
+        <div class="story wide" data-story>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="beats">
+            <div class="beat" data-img="t-home" data-alt="Home dashboard with the next appointment, prescriptions, quick actions and health summary" data-cut="Confusing navigation"><span class="tag">Home</span><h3>Start with today</h3><p>The next appointment and a Join Video Call button come first, then prescriptions, quick actions and a health summary.</p><span class="cut">Cut: a confusing navigation structure.</span></div>
+            <div class="beat" data-img="t-search" data-alt="Find your specialist: search, filters and a list of doctors with Book Now buttons" data-cut="The doctor-profile detour"><span class="tag chosen">The big change</span><h3>Book Now, right from the list</h3><p>Search, filter by specialisation, location or fee, and book from the result. No profile page in between.</p><span class="cut">Cut: the forced trip to the doctor’s profile.</span></div>
+            <div class="beat" data-img="t-book" data-alt="Booking appointment: date, time slots, symptoms and a Confirm Appointment button" data-cut="Extra booking steps"><span class="tag">Booking</span><h3>Date, time, confirm</h3><p>The date, the time slot and an optional note about symptoms share one screen, with one clear button at the bottom.</p><span class="cut">Cut: the extra booking steps.</span></div>
+            <div class="beat" data-img="t-video" data-alt="A permission prompt asking to allow camera and microphone access" data-cut="Confusing permissions"><span class="tag">The call</span><h3>Say why, then ask once</h3><p>A short prompt explains the camera and microphone request, with a single Allow Access button.</p><span class="cut">Cut: confusing permissions.</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="stage" id="t-mobile" data-stage="Mobile">
+        <div class="stage-head"><span class="pot">Mobile · the same booking on a phone</span><h2>Eleven screens, including the unhappy paths</h2></div>
+        <p>The mobile version covers onboarding and login, a home screen led by the next appointment, doctor search, and a booking that takes a date, a time and one tap to confirm.</p>
+        <p>The unhappy paths are designed too: a home screen and a records tab with nothing in them yet, a booking that asks you to pick a time slot, and a form that flags an invalid email.</p>
+        <div class="hscroll tall" role="region" aria-label="Mobile screens, scroll sideways" tabindex="0">
+          <figure><img data-img="tm-1" loading="lazy" alt="Onboarding: Better Healthcare, Right at Your Fingertips, with a Get Started button"><figcaption>Onboarding</figcaption></figure>
+          <figure><img data-img="tm-2" loading="lazy" alt="Login: Welcome Back, with email and password and Google, Apple and Facebook sign-in"><figcaption>Login</figcaption></figure>
+          <figure><img data-img="tm-3" loading="lazy" alt="Home: the next appointment with a Join Video Call button, quick actions, health summary and notifications"><figcaption>Home</figcaption></figure>
+          <figure><img data-img="tm-4" loading="lazy" alt="Home with no upcoming appointments and a Find Doctors button"><figcaption>Home, no appointments</figcaption></figure>
+          <figure><img data-img="tm-5" loading="lazy" alt="Health records list with prescriptions and lab reports"><figcaption>Health records</figcaption></figure>
+          <figure><img data-img="tm-6" loading="lazy" alt="Health records empty state: no medical records available yet"><figcaption>Records, empty</figcaption></figure>
+          <figure><img data-img="tm-7" loading="lazy" alt="Find Doctors: search, filters and a list of doctors with Book Now buttons"><figcaption>Find doctors</figcaption></figure>
+          <figure><img data-img="tm-8" loading="lazy" alt="Book Appointment: choose a date and a time slot, then Confirm Appointment"><figcaption>Book appointment</figcaption></figure>
+          <figure><img data-img="tm-9" loading="lazy" alt="Book Appointment with an error asking the user to select a time slot"><figcaption>Booking, error</figcaption></figure>
+          <figure><img data-img="tm-10" loading="lazy" alt="Patient Details with an error for an invalid email address"><figcaption>Patient details</figcaption></figure>
+          <figure><img data-img="tm-11" loading="lazy" alt="Appointment Confirmed, with the appointment details"><figcaption>Confirmed</figcaption></figure>
+        </div>
+        <p class="credit">Mobile screens: Prasanthi.</p>
+      </section>
+      <section class="stage" id="t-fire" data-stage="Fire">
+        <div class="stage-head"><span class="pot">Fire · built to hold</span><h2>A kit so it stays consistent</h2></div>
+        <p>The screens come from a UI kit and a component library: a royal-blue primary, a type scale, spacing, and a note on WCAG AA colour and medical standards.</p>
+        <div class="pair">
+          <figure><div class="wide-fig"><div class="scroller" role="region" aria-label="UI kit, scrollable" tabindex="0"><img data-img="t-kit" loading="lazy" alt="UI foundations: colour palette, type scale, spacing and accessibility notes"></div></div><figcaption>UI kit. Scroll inside the frame.</figcaption></figure>
+          <figure><div class="wide-fig"><div class="scroller" role="region" aria-label="Component library, scrollable" tabindex="0"><img data-img="t-lib" loading="lazy" alt="Component library: buttons, inputs, navigation and layouts"></div></div><figcaption>Component library. Scroll inside the frame.</figcaption></figure>
+        </div>
+      </section>
+      <section class="stage" id="t-form" data-stage="Form">
+        <div class="stage-head"><span class="pot">The form</span><h2>One screen to book</h2></div>
+        <figure style="margin:0"><div class="wide-fig"><img data-img="t-book" loading="lazy" alt="The booking screen"></div><figcaption>Search, Book Now, date, time, confirm: five clicks from the dashboard, four from the doctor list.</figcaption></figure>
+        <div class="next-up"><div><h2>Next: a shorter way to the checkout</h2><p>Omni Fashion.</p></div><a class="btn btn-line" href="#fashion">Read Omni Fashion</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- ================= FASHION ================= -->
+<main class="view" id="v-fashion" hidden>
+  <section class="wrap cs-hero">
+    <a class="back" href="#work">← All work</a>
+    <p class="kicker">Omni Fashion, mobile app, Infotact Solutions, 2026</p>
+    <h1>A shorter way to the checkout</h1>
+    <dl class="facts">
+      <div><dt>My role</dt><dd>UX and visual design: wireframes, screens, components</dd></div>
+      <div><dt>Team</dt><dd>Infotact Solutions team, with Prasanthi, Sujeevana and Diganta</dd></div>
+      <div><dt>Platform</dt><dd>Mobile app</dd></div>
+      <div><dt>Status</dt><dd>Designed, with one idea saved for next time</dd></div>
+    </dl>
+    <div class="minute">
+      <div><h2>What I started with</h2><p>Wireframes with a style quiz, a personal feed, nearby-store stock and quick pay.</p></div>
+      <div><h2>What I trimmed</h2><p>The style quiz and the nearby-store check, as the deadline closed in.</p></div>
+      <div class="form-cell"><h2>What remained</h2><p>A clear path from home to order confirmation. The nearby-stock idea is mocked up for next time.</p></div>
+    </div>
+  </section>
+  <div class="wrap cs-body" data-cs>
+    <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
+    <div>
+      <section class="stage" id="f-wedge" data-stage="Wedge">
+        <div class="stage-head"><span class="pot">Wedge · wireframes first</span><h2>Everything started as grey boxes</h2></div>
+        <p>The wireframes set out the whole app: a three-step style quiz that curates a personal feed, filters, a product page that shows stock at a nearby store, a cart that stays in sync across devices, and a quick-pay checkout.</p>
+        <div class="hscroll" role="region" aria-label="Wireframes, scroll sideways" tabindex="0">
+          <figure><img data-img="w-1" loading="lazy" alt="Wireframes: three-step style quiz, ending in a personal style feed"><figcaption>Style quiz</figcaption></figure>
+          <figure><img data-img="w-2" loading="lazy" alt="Wireframe: home with recommendations"><figcaption>Home</figcaption></figure>
+          <figure><img data-img="w-3" loading="lazy" alt="Wireframes: product list and a filter sheet"><figcaption>List and filters</figcaption></figure>
+          <figure><img data-img="w-4" loading="lazy" alt="Wireframe: product details with stock at a nearby store"><figcaption>Product</figcaption></figure>
+          <figure><img data-img="w-5" loading="lazy" alt="Wireframes: cart, empty cart and out-of-stock handling"><figcaption>Cart</figcaption></figure>
+          <figure><img data-img="w-6" loading="lazy" alt="Wireframe: checkout with quick pay"><figcaption>Checkout</figcaption></figure>
+        </div>
+      </section>
+      <section class="stage" id="f-throw" data-stage="Throw">
+        <div class="stage-head"><span class="pot">Throw · the screens</span><h2>From grey boxes to a working path</h2></div>
+        <div class="story" data-story>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="beats">
+            <div class="beat" data-img="f-onb" data-alt="Onboarding: Discover Latest Fashion with a Get Started button" data-cut="Style quiz"><span class="tag">Screen 1</span><h3>Welcome, and one button</h3><p>One clear Get Started, with Skip in the corner.</p><span class="cut">Cut: the three-step style quiz from the wireframes.</span></div>
+            <div class="beat" data-img="f-home-s" data-alt="Home: search, category chips and a Perfectly suits you grid"><span class="tag">Screen 2</span><h3>Suggestions first</h3><p>A search bar, category chips for Men, Women, Kids and Ethnic wear, a New Arrivals banner and a “Perfectly suits you” grid.</p></div>
+            <div class="beat" data-img="f-search-s" data-alt="Search with categories and recommended products"><span class="tag">Screen 3</span><h3>Search without losing your place</h3><p>Category circles and recommendations sit right under the search bar.</p></div>
+            <div class="beat" data-img="f-prod-s" data-alt="Product details: photo, rating, price, sizes and Add to cart" data-cut="Nearby-store stock"><span class="tag">Screen 4</span><h3>One product, one decision</h3><p>A large photo, rating, price, size chips and a single Add to cart.</p><span class="cut">Left for later: a “stock at a nearby store” check.</span></div>
+            <div class="beat" data-img="f-cart-s" data-alt="Shopping cart with two items, a delivery note and price details"><span class="tag">Screen 5</span><h3>Check before paying</h3><p>Items with size and quantity, a note that delivery is free on a first order, and the price details.</p></div>
+            <div class="beat" data-img="f-check" data-alt="Checkout: shipping address, payment method and order summary"><span class="tag">Screen 6</span><h3>Address, payment, order summary</h3><p>A shipping form and three ways to pay. The summary matches the cart total.</p></div>
+            <div class="beat" data-img="f-conf" data-alt="Order confirmation with order ID and a Track Order button"><span class="tag">Screen 7</span><h3>Order placed</h3><p>A green tick, the order ID, the estimated delivery and a Track Order button.</p></div>
+            <div class="beat" data-img="f-prof-s" data-alt="Profile with orders, addresses, payment methods, settings and support"><span class="tag chosen">Screen 8</span><h3>A home for the account</h3><p>Orders, shipping addresses, payment methods, settings and support, in one list.</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="stage" id="f-trim" data-stage="Trim">
+        <div class="stage-head"><span class="pot">Trim · what I left out</span><h2>Two ideas that didn’t make it</h2></div>
+        <p>The wireframes were richer than the screens I delivered. Two ideas dropped out: the style quiz, and a check for stock at a nearby store. As the deadline got close, we put our time into the core path from home to order instead.</p>
+        <p>The nearby-store idea was mine. I talked it through with Sujeevana and Prasanthi, and they agreed it was worth having. We just ran out of time for it.</p>
+      </section>
+      <section class="stage" id="f-fire" data-stage="Fire">
+        <div class="stage-head"><span class="pot">Fire · afterwards</span><h2>The nearby-stock idea, mocked up</h2></div>
+        <p>After the delivery, I designed the idea so it isn’t lost. A small green card says how many are left at a nearby store and offers same-day pickup. <b style="color:var(--ink)">This frame was made after the project and isn’t part of what we delivered.</b></p>
+        <div class="phones" style="margin-top:20px">
+          <figure style="flex:0 1 300px"><div class="frame" style="max-width:none"><img data-img="f-prod" loading="lazy" alt="Delivered product details screen"></div><figcaption>Delivered</figcaption></figure>
+          <figure style="flex:0 1 300px"><div class="frame" style="max-width:none"><img data-img="f-prod2" loading="lazy" alt="Next iteration: product details with a nearby-store stock card under the sizes"></div><figcaption>Next iteration, with the nearby-store card</figcaption></figure>
+        </div>
+      </section>
+      <section class="stage" id="f-form" data-stage="Form">
+        <div class="stage-head"><span class="pot">The form</span><h2>The parts behind the screens</h2></div>
+        <figure style="margin:0"><div class="wide-fig"><img data-img="f-comp" loading="lazy" alt="Component variables: buttons, quantity selector, search field, category chip, bottom navigation and icons"></div><figcaption>Component variables used across the screens.</figcaption></figure>
+        <div class="next-up"><div><h2>Next: a storefront for organic flavours</h2><p>FOOZ.</p></div><a class="btn btn-line" href="#fooz">Read FOOZ</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- ================= FOOZ ================= -->
+<main class="view" id="v-fooz" hidden>
+  <section class="wrap cs-hero">
+    <a class="back" href="#work">← All work</a>
+    <p class="kicker">FOOzFOOD, web and mobile, 2025</p>
+    <h1>A storefront for organic flavours</h1>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>UI/UX Design Intern</dd></div>
+      <div><dt>Company</dt><dd>FOOzFOOD, a business-to-customer food import and export company</dd></div>
+      <div><dt>Scope</dt><dd>14 pages, a mobile home page and the components behind them</dd></div>
+      <div><dt>Platform</dt><dd>Web and mobile</dd></div>
+    </dl>
+    <div class="minute">
+      <div><h2>The brief</h2><p>A storefront for organic tea, whole spices, rice and essential oils.</p></div>
+      <div><h2>What I made</h2><p>Every page from home to a 404, a mobile home page, and the components used on each.</p></div>
+      <div class="form-cell"><h2>One detail</h2><p>A delivery tracer: five stages, a carrier, a tracking ID and a way to reach support.</p></div>
+    </div>
+  </section>
+  <div class="wrap cs-body" data-cs>
+    <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
+    <div>
+      <section class="stage" id="z-center" data-stage="Center">
+        <div class="stage-head"><span class="pot">Center · the brief</span><h2>Pure, authentic, easy to follow</h2></div>
+        <p>FOOzFOOD imports and exports organic tea, whole spices, premium rice and essential oils, and sells them straight to customers. The storefront had to feel pure and authentic, and to make the road from product to doorstep easy to follow.</p>
+        <p>The pages cover home, shop, product details, checkout, delivery tracking, order confirmation, four account pages, About, Blog, Contact and a 404.</p>
+      </section>
+      <section class="stage" id="z-throw" data-stage="Throw">
+        <div class="stage-head"><span class="pot">Throw · the pages</span><h2>From the front door to the doorstep</h2></div>
+        <div class="story wide" data-story>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div></div>
+          <div class="beats">
+            <div class="beat" data-img="z-home" data-alt="Home: a peach hero with a Shop Now button, and four promises underneath"><span class="tag">Home</span><h3>A calm front door</h3><p>A warm hero, one red call to action, and four promises underneath: quick delivery, a 30-day money-back guarantee, 24/7 help and flexible payments.</p></div>
+            <div class="beat" data-img="z-cats" data-alt="Just In: three new products with prices and Add to cart buttons, then large tiles for Exotic Whole Spices, Premium Rice and Herbal Oils"><span class="tag">Home</span><h3>New arrivals, then three big doors</h3><p>Just In shows three products with their prices and an Add to cart button. Below, whole spices, premium rice and herbal oils sit in large photo tiles.</p></div>
+            <div class="beat" data-img="z-list" data-alt="All Products with filters for category, price range and rating, beside a grid of product cards"><span class="tag">Shop</span><h3>Filter, then choose</h3><p>Category, price range and customer rating sit beside a grid of product cards.</p></div>
+            <div class="beat" data-img="z-prod" data-alt="Product details for Pure Peppermint Oil with sizes, stock status and a cart drawer"><span class="tag">Product</span><h3>Everything to decide, on one screen</h3><p>Sizes, stock status, details and shipping information, with the cart in a side drawer.</p></div>
+            <div class="beat" data-img="z-check" data-alt="Checkout with contact, shipping and payment steps and an order summary"><span class="tag">Checkout</span><h3>Three steps, one at a time</h3><p>Contact, shipping and payment open one after another, with the order summary beside them.</p></div>
+            <div class="beat" data-img="z-track" data-alt="Delivery Tracer: five-stage order timeline with tracking updates"><span class="tag chosen">The detail</span><h3>Where is my order?</h3><p>A five-stage timeline with the carrier, the tracking ID and the latest updates. A note covers deliveries running more than three days late.</p></div>
+            <div class="beat" data-img="z-conf" data-alt="Order confirmation with the order, items and delivery address"><span class="tag">Confirmation</span><h3>Thank you, and what next</h3><p>The order number, delivery date, items and address, with Track Order and Continue Shopping.</p></div>
+            <div class="beat" data-img="z-acct" data-alt="My account dashboard with subscriptions, orders and loyalty points"><span class="tag">Account</span><h3>Everything in one account</h3><p>A dashboard with active subscriptions, total orders and loyalty points, and the next delivery.</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="stage" id="z-form" data-stage="Form">
+        <div class="stage-head"><span class="pot">The form</span><h2>And on a phone</h2></div>
+        <p>The mobile home page, scrolled from top to bottom.</p>
+        <div style="max-width:300px;margin:20px auto 0"><div class="frame"><div class="scroller" style="max-height:640px;border-radius:14px" role="region" aria-label="Mobile home page, scrollable" tabindex="0"><img data-img="z-mob" loading="lazy" alt="FOOZ mobile home page: hero, Just In products, category tiles and footer" style="border-radius:0"></div></div><p style="text-align:center;margin-top:10px;font-size:16px">Scroll inside the frame.</p></div>
+        <div class="next-up"><div><h2>Back to all work</h2><p>Seven pieces, from a call transfer to a food storefront.</p></div><a class="btn btn-line" href="#work">All work</a></div>
       </section>
     </div>
   </div>
 </main>
 
 <script>
-const IMG = {"before-active": "assets/before-active.webp", "before-consult": "assets/before-consult.webp", "before-sheet": "assets/before-sheet.webp", "after-active": "assets/after-active.webp", "after-transferring": "assets/after-transferring.webp", "after-consult": "assets/after-consult.webp", "after-conference": "assets/after-conference.webp", "opt-a": "assets/opt-a.webp", "opt-hold": "assets/opt-hold.webp", "opt-confirm": "assets/opt-confirm.webp", "result": "assets/result.webp", "ipad": "assets/ipad.webp", "jc-problem": "assets/jc-problem.webp", "jc-popup": "assets/jc-popup.webp", "jc-final": "assets/jc-final.webp", "jc-banner": "assets/jc-banner.webp", "jc-result": "assets/jc-result.webp", "jc-msheet": "assets/jc-msheet.webp", "jc-madded": "assets/jc-madded.webp"};
+const IMG = {"before-active": "assets/before-active.webp", "before-consult": "assets/before-consult.webp", "before-sheet": "assets/before-sheet.webp", "after-active": "assets/after-active.webp", "after-transferring": "assets/after-transferring.webp", "after-consult": "assets/after-consult.webp", "after-conference": "assets/after-conference.webp", "opt-a": "assets/opt-a.webp", "opt-hold": "assets/opt-hold.webp", "opt-confirm": "assets/opt-confirm.webp", "result": "assets/result.webp", "ipad": "assets/ipad.webp", "jc-problem": "assets/jc-problem.webp", "jc-popup": "assets/jc-popup.webp", "jc-final": "assets/jc-final.webp", "jc-banner": "assets/jc-banner.webp", "jc-result": "assets/jc-result.webp", "jc-msheet": "assets/jc-msheet.webp", "jc-madded": "assets/jc-madded.webp", "k-s1": "assets/k-s1.webp", "k-s2": "assets/k-s2.webp", "k-s3": "assets/k-s3.webp", "k-s4": "assets/k-s4.webp", "k-flow": "assets/k-flow.webp", "t-comp": "assets/t-comp.webp", "t-p1": "assets/t-p1.webp", "t-p2": "assets/t-p2.webp", "t-j1": "assets/t-j1.webp", "t-j2": "assets/t-j2.webp", "t-ia": "assets/t-ia.webp", "t-flow": "assets/t-flow.webp", "t-prob": "assets/t-prob.webp", "t-home": "assets/t-home.webp", "t-search": "assets/t-search.webp", "t-book": "assets/t-book.webp", "t-video": "assets/t-video.webp", "t-kit": "assets/t-kit.webp", "t-lib": "assets/t-lib.webp", "f-onb": "assets/f-onb.webp", "f-login": "assets/f-login.webp", "f-home": "assets/f-home.webp", "f-search": "assets/f-search.webp", "f-prod": "assets/f-prod.webp", "f-prod2": "assets/f-prod2.webp", "f-cart": "assets/f-cart.webp", "f-check": "assets/f-check.webp", "f-conf": "assets/f-conf.webp", "f-prof": "assets/f-prof.webp", "f-comp": "assets/f-comp.webp", "f-home-s": "assets/f-home-s.webp", "f-search-s": "assets/f-search-s.webp", "f-prod-s": "assets/f-prod-s.webp", "f-cart-s": "assets/f-cart-s.webp", "f-prof-s": "assets/f-prof-s.webp", "w-1": "assets/w-1.webp", "w-2": "assets/w-2.webp", "w-3": "assets/w-3.webp", "w-4": "assets/w-4.webp", "w-5": "assets/w-5.webp", "w-6": "assets/w-6.webp", "w-el": "assets/w-el.webp", "z-home": "assets/z-home.webp", "z-cats": "assets/z-cats.webp", "z-list": "assets/z-list.webp", "z-prod": "assets/z-prod.webp", "z-check": "assets/z-check.webp", "z-track": "assets/z-track.webp", "z-conf": "assets/z-conf.webp", "z-acct": "assets/z-acct.webp", "z-mob": "assets/z-mob.webp", "tm-1": "assets/tm-1.webp", "tm-2": "assets/tm-2.webp", "tm-3": "assets/tm-3.webp", "tm-4": "assets/tm-4.webp", "tm-5": "assets/tm-5.webp", "tm-6": "assets/tm-6.webp", "tm-7": "assets/tm-7.webp", "tm-8": "assets/tm-8.webp", "tm-9": "assets/tm-9.webp", "tm-10": "assets/tm-10.webp", "tm-11": "assets/tm-11.webp"};
 (function(){
   'use strict';
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -591,8 +949,8 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   function vessel(profile, color){ const n = profile.length, top = 30, base = 170; const pts = profile.map((w, i) => [100 + w, base - (base - top) * i / (n - 1)]); const all = pts.concat(pts.slice().reverse().map(([x, y]) => [200 - x, y])); return '<svg class="vessel" viewBox="0 0 200 190" aria-hidden="true"><ellipse cx="100" cy="176" rx="70" ry="9" fill="#00000033"/><path d="' + pathOf(all) + '" fill="' + color + '"/></svg>'; }
 
   /* ---------- router ---------- */
-  const views = { home: $('#v-home'), connect: $('#v-connect'), audit: $('#v-audit'), jobchat: $('#v-jobchat') };
-  const titles = { home: 'Rajesh Malick, Product Designer', connect: 'Zuper Connect case study', audit: 'Experience audit case study', jobchat: 'Job Chat case study' };
+  const views = { home: $('#v-home'), connect: $('#v-connect'), audit: $('#v-audit'), jobchat: $('#v-jobchat'), kern: $('#v-kern'), telemed: $('#v-telemed'), fashion: $('#v-fashion'), fooz: $('#v-fooz') };
+  const titles = { home: 'Rajesh Malick, Product Designer', connect: 'Zuper Connect case study', audit: 'Experience audit case study', jobchat: 'Job Chat case study', kern: 'Kern case study', telemed: 'Telemed Connect case study', fashion: 'Omni Fashion case study', fooz: 'FOOZ case study' };
   let current = null;
   function route(){
     const h = (location.hash || '#home').slice(1);
@@ -608,9 +966,10 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     { go: 'connect', badge: 'iOS and iPad', title: 'Undoing a call transfer', meta: 'Zuper Connect, 2026', start: 'A transfer with no way back', trim: 'Waveform bar, duplicate Record, dead buttons', form: 'Cancel where Transfer was', imgs: ['before-active', 'opt-a', 'after-active'] },
     { go: 'audit', badge: 'Web', title: '64 flaws, found before firing', meta: 'Zuper experience audit, 2026', start: 'Too complex, nobody knew where', trim: 'Found 64 flaws, 12 repeating patterns', form: 'One ranked map, top five first', vessel: [40, 60, 70, 74, 74, 72, 66, 56, 44, 34, 30, 34, 40] },
     { go: 'jobchat', badge: 'Web, mobile, tablet', title: 'Mentioned, but never invited', meta: 'Zuper Job Chat, 2026', start: '@mentions that reached nobody', trim: 'A popup that stopped the conversation', form: 'A quiet note for the sender', imgs: ['jc-problem', 'jc-popup', 'jc-final'], wide: true },
-    { kiln: true, badge: 'In the kiln', title: 'Five clicks to the doctor', meta: 'Telemed Connect, 2026', start: 'A 10 to 15 step booking flow', trim: 'Every step that didn\u2019t help a patient', form: 'Booking in under 5 clicks', vessel: [30, 46, 58, 64, 64, 60, 52, 40, 30, 22, 20, 22, 26, 30] },
-    { kiln: true, badge: 'In the kiln', title: 'Too many choices', meta: 'Omni Fashion, 2026', start: 'Decision fatigue, cluttered menus', trim: 'Menus that competed for attention', form: 'A calm discovery hub', vessel: [50, 56, 60, 62, 62, 60, 58, 56, 54, 54, 56, 60] },
-    { kiln: true, badge: 'In the kiln', title: 'One block, two journeys', meta: 'FOOZ Food Global, 2025', start: 'Buyers, sellers and agents in one flow', trim: 'The overlap between roles', form: 'Clear retail and wholesale journeys', vessel: [36, 52, 66, 76, 80, 80, 76, 68, 56, 44, 36, 34, 36] }
+    {"go": "kern", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "A calendar, success charts, a resume builder", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]},
+    {"go": "telemed", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "start": "7.2 clicks to book, plus a forced detour", "trim": "The profile detour and the extra steps", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true},
+    {"go": "fashion", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "start": "Wireframes with a style quiz and nearby stock", "trim": "The quiz and the stock check, at the deadline", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]},
+    {"go": "fooz", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOzFOOD, 2025", "start": "Organic tea, spices, rice and oils, sold direct", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Built"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true, "trim": "A five-stage delivery tracer"}
   ];
   const shelf = $('#shelf');
   WORK.forEach(w => {
@@ -620,7 +979,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     else shot.innerHTML = vessel(w.vessel, w.kiln ? '#8E5A40' : '#B86A45');
     shot.insertAdjacentHTML('beforeend', '<span class="badge' + (w.kiln ? ' kiln' : '') + '">' + w.badge + '</span>');
     const body = document.createElement('div'); body.className = 'piece-body';
-    body.innerHTML = '<div><h3>' + w.title + '</h3><p class="meta">' + w.meta + '</p></div><dl class="ladder"><dt>Started with</dt><dd>' + w.start + '</dd><dt>Trimmed</dt><dd>' + w.trim + '</dd><dt>What remained</dt><dd class="form">' + w.form + '</dd></dl><span class="read">' + (w.go ? 'Read the case study' : 'Write-up in progress') + '</span>';
+    body.innerHTML = '<div><h3>' + w.title + '</h3><p class="meta">' + w.meta + '</p></div><dl class="ladder"><dt>' + (w.labels || ['Started with', 'Trimmed', 'What remained'])[0] + '</dt><dd>' + w.start + '</dd><dt>' + (w.labels || ['Started with', 'Trimmed', 'What remained'])[1] + '</dt><dd>' + w.trim + '</dd><dt>' + (w.labels || ['Started with', 'Trimmed', 'What remained'])[2] + '</dt><dd class="form">' + w.form + '</dd></dl><span class="read">' + (w.go ? 'Read the case study' : 'Write-up in progress') + '</span>';
     el.append(shot, body); shelf.appendChild(el);
     if (!w.imgs) return;
     let timer = null, i = 0; const im = shot.querySelector('img');
@@ -645,7 +1004,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
       let active = -1;
       function set(i){ if (i === active) return; active = i; beats.forEach((b, j) => b.classList.toggle('on', j === i));
         const cuts = []; beats.slice(0, i + 1).forEach(b => { if (b.dataset.cut) b.dataset.cut.split('|').forEach(c => cuts.push(c)); });
-        tray.innerHTML = cuts.map(c => '<li>' + c + '</li>').join(''); empty.hidden = cuts.length > 0;
+        if (tray) { tray.innerHTML = cuts.map(c => '<li>' + c + '</li>').join(''); empty.hidden = cuts.length > 0; }
         const b = beats[i], src = IMG[b.dataset.img];
         if (!cur.src || reduce) { cur.src = src; cur.alt = b.dataset.alt; return; }
         nxt.src = src; nxt.style.opacity = 1; setTimeout(() => { cur.src = src; cur.alt = b.dataset.alt; nxt.style.opacity = 0; }, 340); }

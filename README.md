@@ -1,13 +1,8 @@
-# Rajesh Malick, portfolio
+# Rajesh Malick portfolio
 
-A static site (no build step). `index.html` + `assets/`.
+Static site. Upload `index.html` and the whole `assets/` folder to the repo root (RajeshMallik19/rajesh-portfolio) and Vercel redeploys.
 
-## Before sharing publicly, fill these in `index.html`
-- `[RESUME LINK]` (3 places)
-- `[Shipped / In development]`
-- `[A line about your pottery]`
-- `[Add which findings became tickets or were fixed.]`
-- Portrait and pot photo placeholders in the About section
+Pages: home, Zuper Connect, Experience audit, Job Chat, Kern, Telemed Connect, Omni Fashion, FOOZ.
 
-## Deploy
-Import this repo in Vercel. Framework preset: Other. No build command, no output directory.
+To replace an image, overwrite the file in `assets/` with the same name (webp).
+Note: assets/z-prod.webp is cropped above "Frequently Bought Together", which is empty in the FOOZ design itself.

@@ -548,9 +548,114 @@ tr.chosen td{background:#FFF1B0}
   .h-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;padding:15px 12px}
   .h-track [aria-hidden="true"]{display:none}
 }
+
+/* ===================== v5: per-project colour, folder tabs, playground, mascot, sketch ===================== */
+html,body{overflow-x:clip}
+svg.defs{position:absolute;width:0;height:0;overflow:hidden}
+.rough{filter:url(#rough)}
+
+/* ---- folder-tab nav ---- */
+.bar{background:var(--page)}
+.bar .wrap{align-items:flex-end;min-height:74px}
+.mark{align-self:center;padding:0 0 4px}
+.bar nav{gap:5px;align-items:flex-end;flex-wrap:nowrap}
+.bar nav a{margin-bottom:-2px;padding:11px 16px 9px;border:2px solid var(--ink);border-radius:14px 14px 0 0;background:var(--c,#fff);color:var(--ink);transition:transform .12s ease;white-space:nowrap}
+.bar nav a:nth-child(1){--c:var(--sky)}.bar nav a:nth-child(2){--c:var(--yellow)}.bar nav a:nth-child(3){--c:var(--pink)}.bar nav a:nth-child(4){--c:var(--green)}.bar nav a:nth-child(5){--c:var(--lilac)}
+.bar nav a.cta{--c:var(--ink);color:#fff}
+.bar nav a:hover{background:var(--c);transform:translateY(-5px);color:var(--ink)}
+.bar nav a.cta:hover{color:#fff;background:var(--ink)}
+.bar nav a.on{transform:translateY(-6px);padding-bottom:13px;border-bottom-color:var(--c);box-shadow:0 -3px 0 var(--ink) inset}
+
+/* ---- per-project colour ---- */
+.view[data-pc] .cs-hero{position:relative;isolation:isolate;padding-bottom:56px}
+.view[data-pc] .cs-hero::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;background-color:var(--pc);background-image:radial-gradient(rgba(16,16,18,.16) 1.6px,transparent 1.7px);background-size:22px 22px;border-bottom:2px solid var(--ink)}
+.view[data-pc] .cs-hero .kicker{color:var(--ink)}
+.view[data-pc] .facts div,.view[data-pc] .facts div:nth-child(n){background:#fff}
+.view[data-pc] .minute div:nth-child(2){background:#FFF3B0}
+.view[data-pc] .minute .form-cell{background:var(--ink)}
+.view[data-pc] .minute .form-cell h2,.view[data-pc] .minute .form-cell p{color:#fff}
+.view[data-pc] .stage-head .pot{background:var(--pc)}
+.view[data-pc] .rail a.on{background:var(--pc)}
+.view[data-pc] .beat .tag.chosen{background:var(--pc)}
+.view[data-pc] .next-up{background:var(--pc);color:var(--ink)}
+.view[data-pc] .next-up h2,.view[data-pc] .next-up p{color:var(--ink)}
+.view[data-pc] .spot{box-shadow:5px 5px 0 var(--pc)}
+.view[data-pc] .cs-body{padding-top:64px}
+
+/* ---- hand-drawn outlines (wobbly border on a pseudo-element; text stays crisp) ---- */
+.h-stk,.h-note,.facts div,.h-sp,.pc,.sn,.h-hello,.minute div{border-color:transparent!important}
+.h-note,.facts div,.h-sp,.minute div{position:relative}
+.h-stk::after,.h-note::after,.facts div::after,.h-sp::after,.pc::after,.sn::after,.h-hello::after,.minute div::after{content:"";position:absolute;inset:-2px;border:2px solid var(--ink);border-radius:inherit;pointer-events:none;filter:url(#rough)}
+.doodle{position:absolute;pointer-events:none;overflow:visible}
+.hand{position:absolute;font:600 clamp(22px,2.2vw,30px)/1 var(--hand);color:var(--ink);pointer-events:none;white-space:nowrap}
+.h-hero .hand.a1{left:2%;bottom:20%;transform:rotate(-6deg)}
+.h-hero .doodle.d1{left:17%;bottom:6%;width:80px;height:60px}
+.h-hero .doodle.st1{left:33%;top:0%;width:44px;height:44px}
+.h-hero .doodle.st2{left:66%;top:66%;width:30px;height:30px}
+.h-head{position:relative}
+.h-head .hand{right:2%;bottom:-40px;transform:rotate(-3deg)}
+.h-head .doodle{right:-6px;bottom:-62px;width:80px;height:56px}
+
+/* ---- playground ---- */
+.h-play{position:relative;height:clamp(760px,70vw,900px);border:2px dashed var(--ink);border-radius:22px;background:rgba(255,255,255,.55)}
+.pc{position:absolute;background:#fff;padding:8px 8px 10px;box-shadow:5px 5px 0 var(--ink);margin:0;z-index:2}
+.pc img{width:100%;height:auto;display:block;border:2px solid var(--ink);background:#fff}
+.pc figcaption{font:600 22px var(--hand);text-align:center;margin-top:4px;text-transform:none;letter-spacing:0;color:var(--ink)}
+.pc.w{width:clamp(200px,22vw,290px)}
+.pc.p{width:clamp(118px,12vw,160px)}
+.pc.grab,.sn.grab{cursor:grabbing;box-shadow:9px 9px 0 var(--ink);z-index:50}
+@media (pointer:fine){.pc,.sn{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}}
+.pc1{left:2%;top:4%;transform:rotate(-5deg)}.pc2{left:17%;top:3%;transform:rotate(3deg)}.pc3{left:18%;top:36%;transform:rotate(4deg)}
+.pc4{left:36%;top:66%;transform:rotate(-3deg)}.pc5{left:63%;top:3%;transform:rotate(-4deg)}.pc6{left:69%;top:40%;transform:rotate(4deg)}
+.pc7{left:2%;top:50%;transform:rotate(5deg)}.pc8{left:85.5%;top:4%;transform:rotate(-5deg)}
+.sn{position:absolute;padding:14px 16px 18px;font:600 clamp(22px,2.3vw,30px)/1.02 var(--hand);color:#101012;box-shadow:4px 4px 0 var(--ink);width:clamp(130px,14vw,185px);z-index:2}
+.sn1{background:var(--yellow);left:45%;top:4%;transform:rotate(-4deg)}.sn2{background:var(--pink);left:63%;top:71%;transform:rotate(3deg)}
+.sn3{background:var(--green);left:76%;top:81%;transform:rotate(-2deg)}.sn4{background:var(--sky);left:18%;top:85%;transform:rotate(4deg)}.sn5{background:var(--lilac);left:2%;top:38%;transform:rotate(-3deg)}
+.h-dev{position:absolute;left:34%;top:28%;width:clamp(250px,27vw,330px);background:#E7E1D3;border:2px solid var(--ink);border-radius:26px;padding:16px 16px 14px;box-shadow:7px 7px 0 var(--ink);z-index:1}
+.h-dev .scr{background:#101012;border:2px solid var(--ink);border-radius:12px;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.h-dev .scr img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.h-dev .cap{position:absolute;left:8px;bottom:6px;font:500 11px var(--mono);color:#fff;background:rgba(16,16,18,.78);padding:2px 8px;border-radius:6px}
+.h-dev .ctl{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.h-dev button{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);background:var(--yellow);font:700 16px var(--mono);box-shadow:3px 3px 0 var(--ink);cursor:pointer;color:var(--ink)}
+.h-dev button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.h-dev .brand{font:600 11px var(--mono);letter-spacing:.2em;color:#55555D}
+.h-play .hand{left:auto;right:3%;top:auto;bottom:12px;transform:rotate(-2deg)}
+
+/* ---- mascot ---- */
+.mascot{display:inline-flex;align-items:flex-end;gap:2px;position:relative}
+.mascot .mbody{width:96px;height:106px;flex:none;display:block}
+.mascot svg{width:100%;height:100%;overflow:visible}
+.mascot .eye{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
+@keyframes blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.mascot .bubble{background:#fff;border:2px solid var(--ink);border-radius:16px 16px 4px 16px;padding:10px 14px;font:600 16px/1.25 var(--body);max-width:215px;box-shadow:3px 3px 0 var(--ink);color:#101012;margin-bottom:50px;position:relative}
+.mascot .bubble::after{content:"";position:absolute;right:-9px;bottom:5px;width:15px;height:15px;background:#fff;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-40deg) skew(12deg,12deg)}
+.cs-hero .mascot{position:absolute;right:clamp(8px,4vw,56px);top:clamp(20px,4vw,56px)}
+.h-canvas .mascot{position:absolute;right:3%;bottom:-6px;z-index:3}
+.h-about .mascot{margin-top:26px}
+.h-contact .mascot{position:absolute;right:6%;top:clamp(70px,8vw,130px)}
+
+@media (max-width:1100px){
+  .cs-hero .mascot{position:static;margin:22px 0 0}
+}
+@media (max-width:900px){
+  .h-play{height:auto;display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:flex-start;padding:30px 14px 26px}
+  .h-play>*{position:static!important}
+  .pc.w{width:min(280px,82%)}.pc.p{width:150px}.sn{width:150px;min-height:110px}
+  .h-dev{order:-1;width:100%;max-width:340px}
+  .h-play .hand{display:none}
+  .h-contact .mascot{position:static;margin:26px 0 0}
+  .bar nav{overflow-x:auto;scrollbar-width:none;padding-top:8px}
+  .bar nav a{font-size:12px;padding:10px 12px 8px}
+}
+@media (max-width:640px){
+  .h-canvas .mascot{display:none}
+  .h-hero .hand.a1,.h-hero .doodle.d1,.h-head .hand,.h-head .doodle{display:none}
+  .mascot .bubble{font-size:15px;max-width:180px}
+}
 </style>
 </head>
 <body>
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><filter id="rough" x="-12%" y="-12%" width="124%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.8" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
 <p class="sr" id="live" aria-live="polite"></p>
 
 <header class="bar">
@@ -558,8 +663,9 @@ tr.chosen td{background:#FFF1B0}
     <a class="mark" href="#home"><i aria-hidden="true">RM</i>Rajesh Malick</a>
     <nav aria-label="Main">
       <a href="#work" data-nav>01 Work</a>
-      <a href="#about" data-nav>02 About</a>
-      <a href="#faq" data-nav>03 Questions</a>
+      <a href="#play" data-nav>02 Playground</a>
+      <a href="#about" data-nav>03 About</a>
+      <a href="#faq" data-nav>04 Questions</a>
       <a href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a>
       <a href="#contact" class="cta" data-nav>Contact</a>
     </nav>
@@ -578,7 +684,7 @@ tr.chosen td{background:#FFF1B0}
       <span class="h-stk s3" data-drag aria-hidden="true"><i class="dot"></i>Open to work</span>
       <span class="h-stk s4" data-drag aria-hidden="true">Design intern at Zuper</span>
       <figure class="h-pol" data-drag aria-hidden="true"><img src="assets/portrait.webp" alt="" width="800" height="1000"><figcaption>me, 2026</figcaption></figure>
-      <span class="h-cursor" id="cursorChip" hidden aria-hidden="true">you</span>
+      <span class="hand a1" aria-hidden="true">drag the stickers!</span><svg class="doodle d1 rough" viewBox="0 0 120 84" aria-hidden="true"><path d="M6 10 C 42 2, 92 18, 104 62" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round"/><path d="M88 52 L105 66 L113 45" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="doodle st1 rough" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 L24.5 15 L37 16 L27.2 24 L30.5 37 L20 29.8 L9.5 37 L12.8 24 L3 16 L15.5 15 Z" fill="#FFD84D" stroke="#101012" stroke-width="2.6" stroke-linejoin="round"/></svg><svg class="doodle st2 rough" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 L24.5 15 L37 16 L27.2 24 L30.5 37 L20 29.8 L9.5 37 L12.8 24 L3 16 L15.5 15 Z" fill="#FF9BD2" stroke="#101012" stroke-width="2.6" stroke-linejoin="round"/></svg><div class="mascot" data-body="#FFD84D"><span class="bubble">Hi, I’m Snip. I hold the scissors while Rajesh decides what to cut.</span><span class="mbody" aria-hidden="true"></span></div><span class="h-cursor" id="cursorChip" hidden aria-hidden="true">you</span>
     </div>
     <div class="h-lede">
       <p class="big">Good design is often <mark>what you take away.</mark></p>
@@ -590,7 +696,7 @@ tr.chosen td{background:#FFF1B0}
   <div class="h-marq" aria-label="What I work with"><div class="h-track"><span>Interaction design</span><span>Prototyping</span><span>UX research</span><span>Design systems</span><span>B2B workflows</span><span>Accessibility</span><span>Information architecture</span><span>Usability audits</span><span>Figma</span><span>React and Tailwind</span><span aria-hidden="true" hidden></span><span aria-hidden="true">Interaction design</span><span aria-hidden="true">Prototyping</span><span aria-hidden="true">UX research</span><span aria-hidden="true">Design systems</span><span aria-hidden="true">B2B workflows</span><span aria-hidden="true">Accessibility</span><span aria-hidden="true">Information architecture</span><span aria-hidden="true">Usability audits</span><span aria-hidden="true">Figma</span><span aria-hidden="true">React and Tailwind</span></div></div>
 
   <section class="wrap h-section" id="work" aria-labelledby="workh">
-    <div class="h-head"><div><p class="h-eyebrow">01 / Selected work</p><h2 id="workh">Work<span class="h-cnt" aria-label="7 projects">07</span></h2></div><p>Seven projects, each one about what I took away. Hover a card to flip through its screens.</p></div>
+    <div class="h-head"><div><p class="h-eyebrow">01 / Selected work</p><h2 id="workh">Work<span class="h-cnt" aria-label="7 projects">07</span></h2></div><p>Seven projects, each one about what I took away. Hover a card to flip through its screens.</p><span class="hand" aria-hidden="true">hover a card</span><svg class="doodle  rough" viewBox="0 0 120 84" aria-hidden="true"><path d="M6 10 C 42 2, 92 18, 104 62" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round"/><path d="M88 52 L105 66 L113 45" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div class="h-deck" id="shelf"></div>
   </section>
 
@@ -609,11 +715,35 @@ tr.chosen td{background:#FFF1B0}
     </div>
   </section>
 
+    <section class="wrap h-section" id="play" aria-labelledby="playh">
+    <div class="h-head"><div><p class="h-eyebrow">02 / Playground</p><h2 id="playh">Playground</h2></div><p>The work, as a pile of stickers. Drag things around, or flip through the screens on the little viewer.</p></div>
+    <div class="h-play" id="playCanvas">
+      <span class="hand" aria-hidden="true">go on, throw things around</span>
+      <figure class="pc pc1 p" data-drag aria-hidden="true"><img data-img="after-active" alt="" loading="lazy"><figcaption>Connect</figcaption></figure>
+      <figure class="pc pc2 w" data-drag aria-hidden="true"><img data-img="jc-final" alt="" loading="lazy"><figcaption>Job Chat</figcaption></figure>
+      <figure class="pc pc3 p" data-drag aria-hidden="true"><img data-img="k-s1" alt="" loading="lazy"><figcaption>Kern</figcaption></figure>
+      <figure class="pc pc4 w" data-drag aria-hidden="true"><img data-img="t-search" alt="" loading="lazy"><figcaption>Telemed</figcaption></figure>
+      <figure class="pc pc5 p" data-drag aria-hidden="true"><img data-img="f-onb" alt="" loading="lazy"><figcaption>Omni Fashion</figcaption></figure>
+      <figure class="pc pc6 w" data-drag aria-hidden="true"><img data-img="z-home" alt="" loading="lazy"><figcaption>FOOZ</figcaption></figure>
+      <figure class="pc pc7 p" data-drag aria-hidden="true"><img data-img="tm-3" alt="" loading="lazy"><figcaption>Telemed, mobile</figcaption></figure>
+      <figure class="pc pc8 p" data-drag aria-hidden="true"><img data-img="k-s3" alt="" loading="lazy"><figcaption>Safe-Zone</figcaption></figure>
+      <p class="sn sn1" data-drag aria-hidden="true">less, but better</p>
+      <p class="sn sn2" data-drag aria-hidden="true">7.2 → 4 clicks</p>
+      <p class="sn sn3" data-drag aria-hidden="true">a popup is a last resort</p>
+      <p class="sn sn4" data-drag aria-hidden="true">ask why, then cut</p>
+      <p class="sn sn5" data-drag aria-hidden="true">delete first, polish later</p>
+      <div class="h-dev" role="group" aria-label="Screen viewer">
+        <div class="scr"><img id="devImg" alt="" width="640" height="400"><span class="cap" id="devCap" aria-live="polite"></span></div>
+        <div class="ctl"><button type="button" id="devPrev" aria-label="Previous screen">◀</button><span class="brand" aria-hidden="true">PLAYGROUND</span><button type="button" id="devNext" aria-label="Next screen">▶</button></div>
+      </div>
+    </div>
+  </section>
+
   <section class="wrap h-section" id="about" aria-labelledby="abouth">
     <div class="h-about">
       <div class="h-ab-photo"><figure class="h-pol2"><img src="assets/portrait.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a dark blazer" loading="lazy"><figcaption>Rajesh, Chennai</figcaption></figure><span class="h-tape" aria-hidden="true"></span></div>
       <div>
-        <p class="h-eyebrow">02 / About</p>
+        <p class="h-eyebrow">03 / About</p>
         <h2 id="abouth">A designer who also builds.</h2>
         <p>I’m a B.E. Computer Science graduate (St. Joseph’s College of Engineering, 2026) who chose design. Four internships across SaaS, e-commerce, telemedicine, food import and export, and health-tech taught me to start from the user’s real problem, and to keep the developer in mind from the first sketch.</p>
         <p>The part I like most is cutting: the blocking popup, the extra booking step, the feature that adds stress instead of help.</p>
@@ -623,12 +753,13 @@ tr.chosen td{background:#FFF1B0}
           <div class="h-note"><b>Tools</b><span>Figma, Claude, React, Tailwind, Framer</span></div>
           <div class="h-note"><b>Languages</b><span>English, Hindi, Tamil, Odia</span></div>
         </div>
+        <div class="mascot" data-body="#6FD3FF"><span class="bubble">He says “a designer who also builds”. I say he cuts things.</span><span class="mbody" aria-hidden="true"></span></div>
       </div>
     </div>
   </section>
 
   <section class="wrap h-section" id="faq" aria-labelledby="faqh">
-    <div class="h-head"><div><p class="h-eyebrow">03 / Questions</p><h2 id="faqh">Things people ask</h2></div></div>
+    <div class="h-head"><div><p class="h-eyebrow">04 / Questions</p><h2 id="faqh">Things people ask</h2></div></div>
     <div class="h-faq">
       <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">A recruiter, probably</p><p class="h-bub">What do you design best?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">Complex B2B workflows: a call transfer, @mentions in a chat, a whole-product audit at Zuper. I find the real problem, then cut whatever doesn’t help.</p></div></div></article>
       <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">An engineer</p><p class="h-bub">Do you build, or just design?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">Both. I built Zuper Labs OS in React and Tailwind with the Claude API, and a platform for reviewing designs together called Prelude. I keep the developer in mind from the first sketch.</p></div></div></article>
@@ -638,7 +769,7 @@ tr.chosen td{background:#FFF1B0}
   </section>
 
   <section class="wrap h-section" id="side" aria-labelledby="sideh">
-    <div class="h-head"><div><p class="h-eyebrow">04 / Side projects</p><h2 id="sideh">Side projects</h2></div><p>Things I designed and built myself.</p></div>
+    <div class="h-head"><div><p class="h-eyebrow">05 / Side projects</p><h2 id="sideh">Side projects</h2></div><p>Things I designed and built myself.</p></div>
     <div class="h-side">
       <div class="h-sp"><span class="t">React · Tailwind · Claude API</span><h3>Zuper Labs OS</h3><p>A desktop-style workspace for the design team.</p></div>
       <div class="h-sp"><span class="t">Designer + developer</span><h3>Prelude Workspace</h3><p>A platform for reviewing designs together.</p></div>
@@ -649,7 +780,7 @@ tr.chosen td{background:#FFF1B0}
 
   <section class="h-contact" id="contact" aria-labelledby="conth">
     <div class="wrap">
-      <p class="h-eyebrow">05 / Contact</p>
+      <div class="mascot" data-body="#5BE3A5"><span class="bubble">Say hi. I’ll hold the scissors.</span><span class="mbody" aria-hidden="true"></span></div><p class="h-eyebrow">06 / Contact</p>
       <h2 id="conth">Let’s make something with less in it.</h2>
       <p class="sub">I’m looking for a product design role on a team building complex, useful software.</p>
       <div class="actions"><button class="btn btn-solid" id="copyEmail" type="button">Copy rajeshmalick16@gmail.com</button><a class="btn btn-line" href="mailto:rajeshmalick16@gmail.com">Send an email</a><a class="btn btn-line" href="https://www.linkedin.com/in/rajesh-malick-5497b2242/">LinkedIn</a><a class="btn btn-line" href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a></div>
@@ -660,9 +791,9 @@ tr.chosen td{background:#FFF1B0}
 </main>
 
 <!-- ================= CONNECT ================= -->
-<main class="view" id="v-connect" hidden>
+<main class="view" id="v-connect" hidden data-pc style="--pc:#6FD3FF">
   <section class="wrap cs-hero">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#FFD84D"><span class="bubble">He cut the waveform bar. I approve.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">Zuper Connect, iOS and iPad, 2026</p>
     <h1>Undoing a call transfer, without losing the customer</h1>
     <dl class="facts">
@@ -730,9 +861,9 @@ tr.chosen td{background:#FFF1B0}
 </main>
 
 <!-- ================= AUDIT ================= -->
-<main class="view" id="v-audit" hidden>
+<main class="view" id="v-audit" hidden data-pc style="--pc:#FFD84D">
   <section class="wrap cs-hero">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#FF9BD2"><span class="bubble">64 flaws. Even I got dizzy.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">Zuper web app, experience audit, 2026</p>
     <h1>64 flaws, one ranked map</h1>
     <dl class="facts">
@@ -783,9 +914,9 @@ tr.chosen td{background:#FFF1B0}
 </main>
 
 <!-- ================= JOB CHAT ================= -->
-<main class="view" id="v-jobchat" hidden>
+<main class="view" id="v-jobchat" hidden data-pc style="--pc:#5BE3A5">
   <section class="wrap cs-hero">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#BFAEFF"><span class="bubble">One popup, binned. Good riddance.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">Zuper Job Chat, web, mobile and tablet, 2026</p>
     <h1>Mentioned, but never invited</h1>
     <dl class="facts">
@@ -838,9 +969,9 @@ tr.chosen td{background:#FFF1B0}
 </main>
 
 <!-- ================= KERN ================= -->
-<main class="view" id="v-kern" hidden>
+<main class="view" id="v-kern" hidden data-pc style="--pc:#FF9BD2">
   <section class="wrap cs-hero">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#FFD84D"><span class="bubble">A calendar? Cut. Less to remember.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">Kern, a placement tracker, Zuper hiring assessment, 2026</p>
     <h1>Less to remember, more to act on</h1>
     <dl class="facts">
@@ -932,9 +1063,9 @@ tr.chosen td{background:#FFF1B0}
 </main>
 
 <!-- ================= TELEMED ================= -->
-<main class="view" id="v-telemed" hidden>
+<main class="view" id="v-telemed" hidden data-pc style="--pc:#BFAEFF">
   <section class="wrap cs-hero">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#5BE3A5"><span class="bubble">7.2 clicks became four. I counted.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">Telemed Connect, web, Infotact Solutions, 2026</p>
     <h1>Five clicks to the doctor</h1>
     <dl class="facts">
@@ -1041,9 +1172,9 @@ tr.chosen td{background:#FFF1B0}
 </main>
 
 <!-- ================= FASHION ================= -->
-<main class="view" id="v-fashion" hidden>
+<main class="view" id="v-fashion" hidden data-pc style="--pc:#FF7A45">
   <section class="wrap cs-hero">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#6FD3FF"><span class="bubble">Two ideas saved for later. I’m guarding them.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">Omni Fashion, mobile app, Infotact Solutions, 2026</p>
     <h1>A shorter way to the checkout</h1>
     <dl class="facts">
@@ -1112,9 +1243,9 @@ tr.chosen td{background:#FFF1B0}
 </main>
 
 <!-- ================= FOOZ ================= -->
-<main class="view" id="v-fooz" hidden>
+<main class="view" id="v-fooz" hidden data-pc style="--pc:#FF6B6B">
   <section class="wrap cs-hero">
-    <a class="back" href="#work">← All work</a>
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#FFD84D"><span class="bubble">Pure flavours, fewer clicks. Now I’m hungry.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">FOOzFOOD, web and mobile, 2025</p>
     <h1>A storefront for organic flavours</h1>
     <dl class="facts">
@@ -1181,7 +1312,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     const h = (location.hash || '#home').slice(1);
     let view = views[h] ? h : null; const anchor = view ? null : document.getElementById(h);
     if (!view) { view = 'home'; Object.keys(views).forEach(k => { if (anchor && views[k].contains(anchor)) view = k; }); }
-    if (view !== current) { Object.keys(views).forEach(k => views[k].hidden = k !== view); current = view; document.title = titles[view] + (view === 'home' ? '' : ' · Rajesh Malick'); $('#live').textContent = 'Showing ' + titles[view]; if (!anchor) window.scrollTo(0, 0); setupCase(); }
+    if (view !== current) { Object.keys(views).forEach(k => views[k].hidden = k !== view); current = view; document.title = titles[view] + (view === 'home' ? '' : ' · Rajesh Malick'); $('#live').textContent = 'Showing ' + titles[view]; if (!anchor) window.scrollTo(0, 0); setupCase(); if (window.navSync) window.navSync(); }
     if (anchor) requestAnimationFrame(() => anchor.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }));
   }
   window.addEventListener('hashchange', route);
@@ -1356,6 +1487,50 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     });
   })();
   buildShelf();
+
+  /* ---------- v5: nav tabs, playground, viewer, mascot ---------- */
+  (function(){
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    /* active folder tab */
+    const links = $$('.bar nav a[data-nav]');
+    const setNav = id => links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + id));
+    window.navSync = () => { if (current && current !== 'home') setNav('work'); };
+    const secs = ['work', 'play', 'about', 'faq', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
+    const spy = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && current === 'home') setNav(e.target.id); }), { rootMargin: '-40% 0px -55% 0px' });
+    secs.forEach(s => spy.observe(s));
+    window.addEventListener('scroll', () => { if (current === 'home' && window.scrollY < 300) links.forEach(a => a.classList.remove('on')); }, { passive: true });
+
+    /* playground drag */
+    const play = $('#playCanvas');
+    if (play && fine) {
+      let z = 10;
+      $$('[data-drag]', play).forEach(el => {
+        let sx, sy, ox, oy, on = false;
+        el.addEventListener('pointerdown', e => { on = true; el.setPointerCapture(e.pointerId); sx = e.clientX; sy = e.clientY; ox = el.offsetLeft; oy = el.offsetTop; el.style.left = ox + 'px'; el.style.top = oy + 'px'; el.style.zIndex = ++z; el.classList.add('grab'); e.preventDefault(); });
+        el.addEventListener('pointermove', e => { if (!on) return; const r = play.getBoundingClientRect(); el.style.left = Math.max(0, Math.min(r.width - el.offsetWidth, ox + e.clientX - sx)) + 'px'; el.style.top = Math.max(0, Math.min(r.height - el.offsetHeight, oy + e.clientY - sy)) + 'px'; });
+        const end = () => { on = false; el.classList.remove('grab'); };
+        el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+      });
+    }
+    /* screen viewer */
+    const SCR = [['before-active', 'Connect, before'], ['after-active', 'Connect, after'], ['jc-final', 'Job Chat'], ['k-s3', 'Kern'], ['t-home', 'Telemed'], ['tm-3', 'Telemed, mobile'], ['f-onb', 'Omni Fashion'], ['z-track', 'FOOZ tracker']];
+    const img = $('#devImg'), cap = $('#devCap'); let n = 0;
+    function show(i){ n = (i + SCR.length) % SCR.length; img.src = IMG[SCR[n][0]]; img.alt = SCR[n][1] + ' screen'; cap.textContent = SCR[n][1]; }
+    if (img) { show(0); $('#devPrev').addEventListener('click', () => show(n - 1)); $('#devNext').addEventListener('click', () => show(n + 1)); }
+
+    /* mascot */
+    const mascotSVG = c => '<svg viewBox="0 0 130 132" aria-hidden="true"><rect x="30" y="108" width="20" height="14" rx="6" fill="' + c + '" stroke="#101012" stroke-width="4"/><rect x="66" y="108" width="20" height="14" rx="6" fill="' + c + '" stroke="#101012" stroke-width="4"/><rect x="12" y="12" width="92" height="96" rx="28" fill="' + c + '" stroke="#101012" stroke-width="4"/><ellipse class="eye" cx="42" cy="54" rx="12" ry="15" fill="#fff" stroke="#101012" stroke-width="3.5"/><ellipse class="eye" cx="76" cy="54" rx="12" ry="15" fill="#fff" stroke="#101012" stroke-width="3.5"/><circle class="pupil" cx="42" cy="57" r="5.5" fill="#101012"/><circle class="pupil" cx="76" cy="57" r="5.5" fill="#101012"/><path d="M44 84 Q59 97 74 84" fill="none" stroke="#101012" stroke-width="4" stroke-linecap="round"/><g transform="translate(100,86) rotate(-28)" stroke="#101012" stroke-width="4" stroke-linecap="round" fill="none"><path d="M0 0 L24 -17"/><path d="M0 0 L24 17"/><circle cx="-5" cy="-7" r="5.5" fill="#fff"/><circle cx="-5" cy="7" r="5.5" fill="#fff"/></g></svg>';
+    $$('.mascot').forEach(m => { const h = $('.mbody', m); if (h && !h.firstChild) h.innerHTML = mascotSVG(m.dataset.body || '#FFD84D'); });
+    if (fine && !reduce) document.addEventListener('pointermove', e => {
+      $$('.mascot .mbody').forEach(h => {
+        if (!h.offsetParent) return;
+        const r = h.getBoundingClientRect(), cx = r.left + r.width * 0.42, cy = r.top + r.height * 0.45;
+        const dx = e.clientX - cx, dy = e.clientY - cy, d = Math.hypot(dx, dy) || 1, k = Math.min(1, d / 220);
+        const t = 'translate(' + (dx / d * 5 * k).toFixed(1) + ' ' + (dy / d * 5 * k).toFixed(1) + ')';
+        h.querySelectorAll('.pupil').forEach(p => p.setAttribute('transform', t));
+      });
+    }, { passive: true });
+  })();
 })();
 </script>
 </body>

@@ -103,6 +103,7 @@ h1,h2,h3{font-family:var(--display);font-variation-settings:'SOFT' 100;font-weig
 .about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
 .ph{background:var(--surface);border:1px dashed var(--fired);border-radius:20px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:16px;padding:20px}
 .portrait{aspect-ratio:4/5}
+.portrait-img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:20px;background:var(--surface)}
 .pots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
 .pots .ph{aspect-ratio:1}
 .about h2{font-size:clamp(36px,4.6vw,56px)}
@@ -284,7 +285,7 @@ tr.chosen td{background:var(--surface)}
       <a href="#work" data-nav>Work</a>
       <a href="#process" data-nav>Process</a>
       <a href="#about" data-nav>About</a>
-      <a href="[RESUME LINK]">Resume</a>
+      <a href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a>
       <a href="#contact" data-nav>Contact</a>
     </nav>
   </div>
@@ -336,7 +337,7 @@ tr.chosen td{background:var(--surface)}
   <section class="wrap section" id="about" aria-labelledby="abouth">
     <div class="about">
       <div>
-        <div class="ph portrait">[Your portrait, ideally at the wheel]</div>
+        <img class="portrait-img" src="assets/portrait.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a dark blazer" loading="lazy">
         <div class="pots"><div class="ph">[Your pot]</div><div class="ph">[Your pot]</div><div class="ph">[Your pot]</div></div>
       </div>
       <div>
@@ -367,7 +368,7 @@ tr.chosen td{background:var(--surface)}
     <div class="wrap">
       <h2 id="conth">Let's make something with less in it.</h2>
       <p>I'm looking for a product design role on a team building complex, useful software.</p>
-      <div class="actions"><a class="btn btn-solid" href="mailto:rajeshmalick16@gmail.com">rajeshmalick16@gmail.com</a><a class="btn btn-line" href="https://www.linkedin.com/in/rajesh-malick-5497b2242/">LinkedIn</a><a class="btn btn-line" href="[RESUME LINK]">Resume</a></div>
+      <div class="actions"><a class="btn btn-solid" href="mailto:rajeshmalick16@gmail.com">rajeshmalick16@gmail.com</a><a class="btn btn-line" href="https://www.linkedin.com/in/rajesh-malick-5497b2242/">LinkedIn</a><a class="btn btn-line" href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a></div>
       <p class="foot">© 2026 Rajesh Malick, Chennai</p>
     </div>
   </section>
@@ -383,7 +384,7 @@ tr.chosen td{background:var(--surface)}
       <div><dt>Role</dt><dd>Product Design Intern</dd></div>
       <div><dt>Team</dt><dd>Lead product designer, iOS engineer, iOS developer, engineering manager</dd></div>
       <div><dt>Platform</dt><dd>iOS and iPad</dd></div>
-      <div><dt>Status</dt><dd>[Shipped / In development]</dd></div>
+      <div><dt>Status</dt><dd>In development</dd></div>
     </dl>
     <div class="minute">
       <div><h2>What I started with</h2><p>A call screen with seven controls, recording shown twice, and a transfer you couldn't take back.</p></div>
@@ -506,7 +507,7 @@ tr.chosen td{background:var(--surface)}
       <div><dt>Role</dt><dd>Product Design Intern</dd></div>
       <div><dt>Team</dt><dd>Product manager</dd></div>
       <div><dt>Platform</dt><dd>Web, mobile and tablet</dd></div>
-      <div><dt>Status</dt><dd>[Shipped / In development]</dd></div>
+      <div><dt>Status</dt><dd>In development</dd></div>
     </dl>
     <div class="minute">
       <div><h2>What I started with</h2><p>@mentions to people outside a chat reached nobody, and nothing said so.</p></div>

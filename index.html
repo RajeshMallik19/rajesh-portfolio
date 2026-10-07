@@ -7,21 +7,21 @@
 <meta name="description" content="Rajesh Malick, product designer for complex B2B workflows. Good design is often what you take away.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
+
 :root{
-  --page:#E8DCCB; --surface:#F5EEE4; --ink:#26211D; --muted:#5F544B; --line:#D2C2AC;
-  --fired:#8E3F22; --kiln:#5A2716; --glaze:#4E6E5D; --on-dark:#F5EEE4; --dark:#26211D; --dark-2:#332B25;
-  --sev-c:#26211D; --sev-h:#8E3F22; --sev-m:#C08A4E; --sev-l:#CDBBA3;
-  --display:'Fraunces', Georgia, 'Times New Roman', serif;
-  --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --page:#F4F3EE; --surface:#FFFFFF; --ink:#101012; --muted:#55555D; --line:#D9D6CA;
+  --fired:#2646E6; --glaze:#0F7A4B; --on-dark:#F6F4EE; --dark:#101012; --dark-2:#1B1B1F;
+  --blue:#2F5BFF; --yellow:#FFD84D; --pink:#FF9BD2; --green:#5BE3A5; --orange:#FF7A45; --lilac:#BFAEFF; --sky:#6FD3FF; --coral:#FF6B6B;
+  --sev-c:#101012; --sev-h:#E8452C; --sev-m:#FFB020; --sev-l:#CFCBBE;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --hand:'Caveat','Comic Sans MS',cursive;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){ --page:#1E1A17; --surface:#2A2420; --ink:#F0E6DA; --muted:#C2B5A7; --line:#43392F; --fired:#E3956C; --kiln:#F0B48F; --glaze:#8FB8A0; --sev-l:#6F6152; }
-}
-:root[data-theme="dark"]{ --page:#1E1A17; --surface:#2A2420; --ink:#F0E6DA; --muted:#C2B5A7; --line:#43392F; --fired:#E3956C; --kiln:#F0B48F; --glaze:#8FB8A0; --sev-l:#6F6152; }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--page);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.6}
@@ -83,13 +83,10 @@ h1,h2,h3{font-family:var(--display);font-variation-settings:'SOFT' 100;font-weig
 .shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:28px}
 .piece{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;color:var(--ink);text-decoration:none;transition:transform .2s}
 .piece:hover{transform:translateY(-3px)}
-.piece.kiln{opacity:.88}
 .piece-shot{position:relative;aspect-ratio:16/10;background:var(--dark);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .piece-shot img{height:86%;width:auto;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:opacity .3s}
 .piece-shot img.wide{height:auto;width:90%;border-radius:8px}
-.piece-shot .vessel{height:70%;width:auto}
 .badge{position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;font-weight:600}
-.badge.kiln{background:#5A2716;color:#F5EEE4}
 .piece-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:14px;flex-grow:1}
 .piece-body h3{font-size:28px;line-height:1.15}
 .piece-body .meta{margin:0;color:var(--muted);font-size:16px}
@@ -305,6 +302,252 @@ tr.chosen td{background:var(--surface)}
 .hscroll.tall img{height:520px}
 @media (max-width:900px){.cs-body{grid-template-columns:minmax(0,1fr)}.hscroll img{height:360px}.hscroll.tall img{height:440px}.pair{grid-template-columns:minmax(0,1fr)}}
 
+
+/* ===================== v4 canvas theme ===================== */
+body{background-color:var(--page);background-image:linear-gradient(rgba(16,16,18,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(16,16,18,.05) 1px,transparent 1px);background-size:44px 44px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+a{color:var(--fired)}
+h1,h2,h3{font-variation-settings:normal;font-weight:700;letter-spacing:-.025em}
+.btn{border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font:600 16px var(--body);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn-solid{background:var(--blue);color:#fff}
+.btn-line{background:#fff;color:var(--ink);border-color:var(--ink)}
+button.btn{cursor:pointer}
+
+/* header */
+.bar{background:rgba(244,243,238,.92);border-bottom:2px solid var(--ink)}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}
+.mark i{width:32px;height:32px;border-radius:9px;background:var(--blue);color:#fff;display:grid;place-items:center;font:700 13px var(--mono);font-style:normal;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.bar nav a{font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.04em;padding:8px 11px;border-radius:9px;border:2px solid transparent;text-decoration:none;color:var(--ink)}
+.bar nav a:hover{background:var(--yellow);border-color:var(--ink);text-decoration:none;color:var(--ink)}
+.bar nav a.cta{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bar nav a.cta:hover{background:var(--blue);color:#fff}
+.ruler{height:12px;pointer-events:none;background-image:repeating-linear-gradient(90deg,#10101299 0 1px,transparent 1px 8px),repeating-linear-gradient(90deg,#101012 0 1px,transparent 1px 80px);background-size:100% 5px,100% 12px;background-repeat:repeat-x;background-position:0 100%,0 100%;border-bottom:1px solid var(--line)}
+
+/* hero */
+.h-hero{padding-top:clamp(28px,4vw,56px);padding-bottom:clamp(40px,6vw,72px)}
+.h-canvas{position:relative;min-height:clamp(440px,50vw,620px)}
+.h-hello{position:absolute;left:1%;top:3%;font:500 14px var(--mono);text-transform:uppercase;letter-spacing:.08em;background:#fff;border:2px solid var(--ink);padding:5px 12px;border-radius:999px;box-shadow:3px 3px 0 var(--ink)}
+.h-sel{position:absolute;left:1.5%;top:17%;padding:16px 26px 12px;outline:2px solid var(--blue);background:rgba(47,91,255,.05)}
+.h-sel h1{font-size:clamp(58px,12.4vw,190px);line-height:.86;letter-spacing:-.055em;font-weight:800;text-transform:uppercase;margin:0;max-width:none}
+.h-sel .hd{position:absolute;width:13px;height:13px;background:#fff;border:2px solid var(--blue)}
+.h-sel .tl{left:-7px;top:-7px}.h-sel .tr{right:-7px;top:-7px}.h-sel .bl{left:-7px;bottom:-7px}.h-sel .br{right:-7px;bottom:-7px}
+.h-sel .dim{position:absolute;left:50%;bottom:-38px;transform:translateX(-50%);background:var(--blue);color:#fff;font:500 12px var(--mono);padding:5px 10px;border-radius:6px;white-space:nowrap}
+.h-stk{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:2px solid var(--ink);border-radius:999px;font:600 16px var(--body);box-shadow:3px 3px 0 var(--ink);color:#101012;user-select:none;-webkit-user-select:none}
+.h-stk.grab{cursor:grabbing;box-shadow:7px 7px 0 var(--ink);z-index:5}
+@media (pointer:fine){.h-stk,.h-pol{cursor:grab;touch-action:none}}
+.h-stk .dot{width:10px;height:10px;border-radius:50%;background:#12B76A;border:2px solid var(--ink);display:inline-block}
+.s1{background:var(--orange);left:55%;top:4%;transform:rotate(-6deg)}
+.s2{background:var(--pink);left:56%;top:70%;transform:rotate(5deg)}
+.s3{background:var(--green);left:4%;bottom:2%;transform:rotate(-3deg)}
+.s4{background:var(--yellow);left:30%;bottom:0%;transform:rotate(3deg)}
+.h-pol{position:absolute;right:2%;top:6%;width:clamp(150px,19vw,250px);background:#fff;padding:10px 10px 12px;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transform:rotate(4deg);margin:0}
+.h-pol img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;border:2px solid var(--ink)}
+.h-pol figcaption{font:600 24px var(--hand);text-align:center;margin:6px 0 0;color:var(--ink)}
+.h-cursor{position:absolute;left:0;top:0;pointer-events:none;z-index:9;background:var(--ink);color:#fff;font:600 12px var(--mono);padding:3px 9px;border-radius:0 10px 10px 10px;will-change:transform}
+.h-cursor[hidden]{display:none}
+.h-lede{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,64px);align-items:end;margin-top:clamp(44px,5vw,64px)}
+.h-lede .big{font:800 clamp(30px,4.4vw,58px)/1.04 var(--display);letter-spacing:-.035em;margin:0}
+.h-lede .big mark{background:var(--yellow);padding:0 .12em}
+.h-lede p{margin:0;color:var(--muted);font-size:clamp(18px,1.5vw,21px)}
+.h-lede p.big{color:var(--ink)}
+.feat .h-card .read,.h-card.feat .read{margin-top:6px}
+.h-lede .actions{grid-column:1/-1;margin-top:8px}
+
+/* marquee */
+.h-marq{background:var(--yellow);border-block:2px solid var(--ink);overflow:hidden}
+.h-track{display:flex;gap:14px;width:max-content;padding:15px 0;animation:marq 38s linear infinite}
+.h-marq:hover .h-track{animation-play-state:paused}
+.h-track span{flex:none;padding:7px 18px;border:2px solid var(--ink);border-radius:999px;background:#fff;font:600 17px var(--body);box-shadow:2px 2px 0 var(--ink)}
+.h-track span:nth-child(4n+1){background:var(--sky)}.h-track span:nth-child(4n+2){background:var(--pink)}.h-track span:nth-child(4n+3){background:var(--green)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* sections */
+.h-section{padding-top:clamp(72px,9vw,120px)}
+.h-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:34px}
+.h-eyebrow{font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.07em;margin:0 0 10px;color:var(--fired)}
+.h-head h2,.h-title{font:800 clamp(40px,6vw,84px)/.95 var(--display);letter-spacing:-.04em;margin:0}
+.h-head p{margin:0;max-width:40ch;color:var(--muted)}
+.h-cnt{font:700 14px var(--mono);background:var(--ink);color:#fff;border-radius:999px;padding:3px 12px;vertical-align:middle;margin-left:10px;position:relative;top:-.4em;letter-spacing:0}
+
+/* work cards */
+.h-deck{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+.h-card{display:flex;flex-direction:column;background:#fff;border:2px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:7px 7px 0 var(--ink);color:var(--ink);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.h-card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink)}
+.h-card:focus-visible{outline-offset:5px}
+.h-card.feat{grid-column:1/-1;flex-direction:row}
+.h-shot{position:relative;background:var(--c);border-bottom:2px solid var(--ink);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.feat .h-shot{flex:1 1 56%;aspect-ratio:auto;min-height:430px;border-bottom:0;border-right:2px solid var(--ink)}
+.h-shot img{height:84%;width:auto;border:2px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);background:#fff;transition:opacity .25s}
+.h-shot img.wide{height:auto;width:86%;border-radius:8px}
+.h-badge{position:absolute;top:14px;left:14px;font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:4px 11px;box-shadow:2px 2px 0 var(--ink)}
+.h-body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:16px;flex-grow:1}
+.feat .h-body{flex:1 1 44%;justify-content:center}
+.h-body .meta{margin:0 0 6px;font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.h-body h3{font:800 clamp(28px,3vw,40px)/1.04 var(--display);letter-spacing:-.03em;margin:0}
+.h-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.h-tags li{font:500 12px var(--mono);border:1.5px solid var(--ink);border-radius:999px;padding:3px 10px;background:var(--page)}
+.h-card .ladder{background:transparent;border:2px dashed var(--line);border-radius:14px;padding:14px 16px;font-size:17px}
+.h-card .ladder dt{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.04em;padding-top:3px}
+.h-card .ladder dd.form{font-weight:700;color:var(--ink);background:linear-gradient(transparent 58%,var(--yellow) 58%);align-self:start;justify-self:start}
+.h-card .read{margin-top:auto;font:600 16px var(--body);color:var(--fired)}
+.pixels{display:grid;grid-template-columns:repeat(11,1fr);gap:6px;width:min(80%,400px)}
+.pixels span{aspect-ratio:1;border:2px solid var(--ink);border-radius:4px;display:block}
+
+/* how I work */
+.h-proc{background:var(--ink);color:#fff;margin-top:clamp(72px,9vw,120px);padding:clamp(64px,8vw,104px) 0;border-block:2px solid var(--ink)}
+.h-proc .h-eyebrow{color:var(--yellow)}
+.h-proc h2{font:800 clamp(38px,5.4vw,76px)/.96 var(--display);letter-spacing:-.04em;margin:0;max-width:16ch}
+.h-proc .intro{max-width:56ch;color:#CFCBC0;margin:18px 0 40px}
+.h-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.h-step{background:var(--c);color:#101012;border:2px solid #fff;border-radius:18px;padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:5px 5px 0 #fff}
+.h-step .n{font:700 13px var(--mono);background:#101012;color:#fff;border-radius:999px;padding:2px 10px;align-self:flex-start}
+.h-step h3{font:800 28px/1 var(--display);letter-spacing:-.03em;margin:6px 0 0}
+.h-step .ux{font-weight:700}
+.h-step p{margin:0;font-size:17px;color:#101012}
+.h-step.key{transform:rotate(-1.5deg)}
+
+/* about */
+.h-about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,6vw,84px);align-items:start}
+.h-ab-photo{position:relative;max-width:420px}
+.h-pol2{background:#fff;padding:12px 12px 14px;border:2px solid var(--ink);box-shadow:7px 7px 0 var(--ink);transform:rotate(-3deg);margin:0}
+.h-pol2 img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;border:2px solid var(--ink)}
+.h-pol2 figcaption{font:600 26px var(--hand);text-align:center;margin-top:6px}
+.h-tape{position:absolute;left:50%;top:-14px;width:110px;height:30px;background:rgba(255,216,77,.85);border:1.5px solid rgba(16,16,18,.35);transform:translateX(-50%) rotate(-3deg)}
+.h-about h2{font:800 clamp(36px,5vw,68px)/.98 var(--display);letter-spacing:-.04em;margin:0 0 20px}
+.h-about p{color:var(--muted);margin:0 0 14px;max-width:60ch}
+.h-notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:28px}
+.h-note{padding:16px 18px;border:2px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 var(--ink);color:#101012}
+.h-note:nth-child(1){background:var(--yellow);transform:rotate(-1.2deg)}.h-note:nth-child(2){background:var(--pink);transform:rotate(1deg)}.h-note:nth-child(3){background:var(--green);transform:rotate(-.7deg)}.h-note:nth-child(4){background:var(--sky);transform:rotate(1.3deg)}
+.h-note b{display:block;font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.h-note span{font-weight:600}
+
+/* faq */
+.h-faq{display:grid;gap:26px;max-width:880px}
+.h-thread{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:20px;box-shadow:6px 6px 0 var(--ink);display:grid;gap:16px}
+.h-msg{display:grid;grid-template-columns:46px minmax(0,1fr);gap:14px;align-items:start}
+.h-av{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font:700 13px var(--mono);background:var(--sky);color:#101012}
+.h-av.me{background:#fff url(assets/portrait.webp) center 14%/cover}
+.h-who{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 4px}
+.h-bub{background:var(--page);border-radius:4px 16px 16px 16px;padding:12px 16px;margin:0;color:var(--ink)}
+.h-msg.q .h-bub{background:var(--sky);font-weight:600;color:#101012}
+
+/* side projects */
+.h-side{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.h-sp{padding:22px;border:2px solid var(--ink);border-radius:18px;box-shadow:5px 5px 0 var(--ink);color:#101012;display:flex;flex-direction:column;gap:8px}
+.h-sp:nth-child(1){background:var(--yellow);transform:rotate(-1deg)}.h-sp:nth-child(2){background:var(--pink);transform:rotate(1deg)}.h-sp:nth-child(3){background:var(--green);transform:rotate(-.6deg)}.h-sp:nth-child(4){background:var(--lilac);transform:rotate(.9deg)}
+.h-sp h3{font:800 26px/1.05 var(--display);letter-spacing:-.03em;margin:0}
+.h-sp p{margin:0;color:#101012;font-size:17px}
+.h-sp .t{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.05em}
+
+/* contact */
+.h-contact{background:var(--ink);color:#fff;margin-top:clamp(72px,9vw,120px);padding-top:clamp(72px,9vw,120px);overflow:hidden;position:relative;border-top:2px solid var(--ink)}
+.h-contact .h-eyebrow{color:var(--yellow)}
+.h-contact h2{font:800 clamp(40px,7vw,100px)/.95 var(--display);letter-spacing:-.045em;margin:0;max-width:14ch}
+.h-contact p.sub{color:#CFCBC0;max-width:48ch;margin:20px 0 0}
+.h-contact .actions .btn-line{background:#fff;color:var(--ink)}
+.h-contact .actions .btn{box-shadow:4px 4px 0 var(--yellow);border-color:#fff}
+.h-contact .actions .btn:hover{box-shadow:6px 6px 0 var(--yellow)}
+.h-word{font:800 19.5vw/.74 var(--display);letter-spacing:-.06em;text-transform:uppercase;color:var(--blue);margin:clamp(40px,6vw,80px) 0 -.1em;white-space:nowrap;user-select:none;text-align:center;width:100%;overflow:hidden}
+.h-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font:500 13px var(--mono);color:#B9B5AA;padding:18px 0 22px;border-top:1px solid #34343A;position:relative;background:var(--ink)}
+
+/* ===== case study pages ===== */
+.back{font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.05em;text-decoration:none;color:var(--ink);padding:7px 13px;border:2px solid var(--ink);border-radius:999px;background:#fff;box-shadow:3px 3px 0 var(--ink)}
+.back:hover{background:var(--yellow)}
+.cs-hero .kicker{font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--fired)}
+.cs-hero h1{font-size:clamp(46px,7.6vw,112px);line-height:.94;font-weight:800;letter-spacing:-.045em;max-width:13ch}
+.facts{border:0;padding:6px 0 0;gap:18px}
+.facts div{padding:16px 18px;border:2px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 var(--ink);background:var(--yellow);transform:rotate(-1.1deg);color:#101012}
+.facts div:nth-child(2){background:var(--pink);transform:rotate(1deg)}
+.facts div:nth-child(3){background:var(--green);transform:rotate(-.6deg)}
+.facts div:nth-child(4){background:var(--sky);transform:rotate(1.4deg)}
+.facts dt{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:#101012;opacity:.75}
+.facts dd{font-weight:600;color:#101012}
+.minute{gap:18px;background:none;border-radius:0;overflow:visible;margin-top:44px}
+.minute div{background:#fff;border:2px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);padding:24px}
+.minute div:nth-child(2){background:var(--pink)}
+.minute h2{font:600 13px var(--mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;color:var(--ink)}
+.minute p{color:var(--ink);font-size:20px;line-height:1.35}
+.minute .form-cell{background:var(--blue)}
+.minute .form-cell h2,.minute .form-cell p{color:#fff}
+.rail{counter-reset:rl;gap:6px}
+.rail a{counter-increment:rl;font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.04em;border:2px solid transparent;border-radius:10px}
+.rail a::before{content:counter(rl,decimal-leading-zero);opacity:.55}
+.rail a .dot{display:none}
+.rail a.on{background:var(--yellow);border-color:var(--ink);box-shadow:3px 3px 0 var(--ink);color:var(--ink);font-weight:600}
+.rail a.done{color:var(--ink)}
+.cs-body > div{counter-reset:st}
+.stage{counter-increment:st}
+.stage-head .pot{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);border-radius:999px;padding:3px 12px;align-self:flex-start}
+.stage-head .pot::before{content:counter(st,decimal-leading-zero) " / "}
+.stage-head h2{font-size:clamp(32px,4.4vw,58px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.stage p,.stage ul{color:var(--muted)}
+.frame{background:#101012;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.tray{background:var(--yellow);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);border-radius:12px;color:#101012}
+.tray b{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:#101012}
+.tray li{background:#fff;color:#101012;border:1.5px solid var(--ink);text-decoration-color:var(--coral)}
+.tray .empty{color:#101012;opacity:.7}
+.beat .tag{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;border:2px solid var(--ink);background:#fff;color:var(--ink)}
+.beat .tag.chosen{background:var(--green);border-color:var(--ink);color:#101012}
+.beat h3{font-weight:800;letter-spacing:-.03em}
+.beat .cut{font:600 14px var(--mono);color:#101012;background:var(--pink);padding:6px 10px;border-radius:8px;align-self:flex-start;border:2px solid var(--ink)}
+.ba{background:var(--ink);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.ba-handle{background:var(--yellow)}
+.ba-handle::after{background:var(--yellow);border:2px solid var(--ink)}
+.ba-labels{color:#CFCBC0;font-family:var(--mono);font-size:13px;text-transform:uppercase}
+.wide-fig{background:#101012;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);border-radius:18px}
+figcaption{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.scroller{border:0}
+.hscroll img{border:2px solid var(--ink)}
+.table-wrap{border:2px solid var(--ink);border-radius:14px;background:#fff;box-shadow:5px 5px 0 var(--ink)}
+th{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--ink);background:var(--page)}
+td{color:var(--ink)}
+tr.chosen td{background:#FFF1B0}
+.tag-s{color:var(--glaze)}
+.col{background:#fff;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);border-radius:16px}
+.col.keep{background:#E3FAEE}.col.cut{background:#FFE8E0}
+.col li span:not(.ic){color:var(--ink);opacity:.8}
+.col p{color:var(--ink)}
+.col.keep .ic{color:var(--glaze)}.col.cut .ic{color:#C2331A}
+.spot{background:var(--ink);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--blue);border-radius:14px}
+.spot b{color:var(--yellow);font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.next-up{background:var(--blue);color:#fff;border:2px solid var(--ink);box-shadow:7px 7px 0 var(--ink);border-radius:22px}
+.next-up h2{color:#fff;font-weight:800;letter-spacing:-.035em}
+.next-up p{color:#E4EAFF}
+.next-up .btn-line{background:#fff;color:var(--ink);border-color:var(--ink)}
+.tile{border:2px solid var(--ink);border-radius:14px;background:#fff;box-shadow:3px 3px 0 var(--ink)}
+.tile[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tile.lit{box-shadow:0 0 0 4px var(--yellow),3px 3px 0 var(--ink);border-color:var(--ink)}
+.pill{border:2px solid var(--ink);background:#fff;color:var(--ink)}
+.pill[aria-pressed="true"]{background:var(--ink);color:#fff}
+.pill.vein[aria-pressed="true"]{background:var(--blue);border-color:var(--ink)}
+.findings{border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);border-radius:16px;background:#fff}
+.findings header{background:var(--ink)}
+.fix{background:var(--ink);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--blue)}
+.fix-btn{background:var(--yellow);color:#101012;border:2px solid #fff}
+.fix-btn[aria-pressed="true"]{background:var(--green)}
+.rail-note{display:none}
+@media (max-width:900px){
+  .h-lede,.h-about{grid-template-columns:1fr}
+  .h-card.feat{flex-direction:column}
+  .feat .h-shot{min-height:0;aspect-ratio:16/10;border-right:0;border-bottom:2px solid var(--ink)}
+  .h-deck{grid-template-columns:1fr}
+  .h-ab-photo{max-width:320px;margin:0 auto}
+  .bar nav a{font-size:12px;padding:8px 8px}
+}
+@media (max-width:640px){
+  .h-canvas{min-height:560px}
+  .h-sel{top:13%;left:0;padding:12px 16px 8px}
+  .h-sel h1{font-size:18.5vw}
+  .h-hello{top:0;left:0}
+  .h-pol{width:134px;right:0;top:41%}
+  .s1{left:0;top:41%}.s2{left:3%;top:58%}.s3{left:0;bottom:3%}.s4{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .h-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;padding:15px 12px}
+  .h-track [aria-hidden="true"]{display:none}
+}
 </style>
 </head>
 <body>
@@ -312,97 +555,107 @@ tr.chosen td{background:var(--surface)}
 
 <header class="bar">
   <div class="wrap">
-    <a class="mark" href="#home">Rajesh Malick</a>
+    <a class="mark" href="#home"><i aria-hidden="true">RM</i>Rajesh Malick</a>
     <nav aria-label="Main">
-      <a href="#work" data-nav>Work</a>
-      <a href="#process" data-nav>Process</a>
-      <a href="#about" data-nav>About</a>
+      <a href="#work" data-nav>01 Work</a>
+      <a href="#about" data-nav>02 About</a>
+      <a href="#faq" data-nav>03 Questions</a>
       <a href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a>
-      <a href="#contact" data-nav>Contact</a>
+      <a href="#contact" class="cta" data-nav>Contact</a>
     </nav>
   </div>
 </header>
+<div class="ruler" aria-hidden="true"></div>
 
 <!-- ================= HOME ================= -->
 <main class="view" id="v-home">
-  <section class="wrap hero">
-    <div>
-      <p class="who">Rajesh Malick, product designer</p>
-      <h1>Good design is often what you take away.</h1>
-      <p class="lede">I design complex B2B workflows at Zuper, then trim them down until only what people need is left. Pottery is my hobby, and it's where I learned that. I design it, and I can build it.</p>
-      <div class="actions"><a class="btn btn-solid" href="#work">See the work</a><a class="btn btn-line" href="mailto:rajeshmalick16@gmail.com">Email me</a></div>
+  <section class="wrap h-hero" aria-labelledby="hname">
+    <div class="h-canvas" id="heroCanvas">
+      <span class="h-hello" aria-hidden="true">Hello, I’m</span>
+      <div class="h-sel"><h1 id="hname">Rajesh<br>Malick</h1><i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i><span class="dim" aria-hidden="true">Rajesh Malick · Product designer</span></div>
+      <span class="h-stk s1" data-drag aria-hidden="true">Product designer</span>
+      <span class="h-stk s2" data-drag aria-hidden="true">Chennai, India</span>
+      <span class="h-stk s3" data-drag aria-hidden="true"><i class="dot"></i>Open to work</span>
+      <span class="h-stk s4" data-drag aria-hidden="true">Design intern at Zuper</span>
+      <figure class="h-pol" data-drag aria-hidden="true"><img src="assets/portrait.webp" alt="" width="800" height="1000"><figcaption>me, 2026</figcaption></figure>
+      <span class="h-cursor" id="cursorChip" hidden aria-hidden="true">you</span>
     </div>
-    <div class="wheel">
-      <svg viewBox="0 0 440 460" role="img" aria-labelledby="wheelt">
-        <title id="wheelt">A lump of clay on a potter's wheel, trimmed into a vessel</title>
-        <ellipse cx="220" cy="412" rx="190" ry="30" fill="var(--dark)"/>
-        <ellipse class="spin" cx="220" cy="406" rx="160" ry="22" fill="none" stroke="#5F544B" stroke-width="2" stroke-dasharray="6 24"/>
-        <ellipse cx="220" cy="402" rx="150" ry="18" fill="#4A4038"/>
-        <defs><linearGradient id="clayGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#9E5434"/><stop offset=".32" stop-color="#C77A52"/><stop offset=".55" stop-color="#B86A45"/><stop offset="1" stop-color="#7E3F24"/></linearGradient></defs>
-        <path id="clay" fill="url(#clayGrad)" d=""/>
-        <g id="shavings"></g>
-      </svg>
-      <div class="trim-ctl"><label for="trim">Trim</label><input id="trim" type="range" min="0" max="100" value="0" aria-describedby="trimhint"><button type="button" id="rethrow">Start again</button></div>
-      <p class="sr" id="trimhint">Drag to trim the clay yourself.</p>
+    <div class="h-lede">
+      <p class="big">Good design is often <mark>what you take away.</mark></p>
+      <p>I’m a product designer in Chennai. I design complex B2B workflows at Zuper, then trim them down until only what people need is left. I design it, and I can build it.</p>
+      <div class="actions"><a class="btn btn-solid" href="#work">See the work</a><a class="btn btn-line" href="mailto:rajeshmalick16@gmail.com">Email me</a></div>
     </div>
   </section>
 
-  <section class="process" id="process" aria-labelledby="proch">
+  <div class="h-marq" aria-label="What I work with"><div class="h-track"><span>Interaction design</span><span>Prototyping</span><span>UX research</span><span>Design systems</span><span>B2B workflows</span><span>Accessibility</span><span>Information architecture</span><span>Usability audits</span><span>Figma</span><span>React and Tailwind</span><span aria-hidden="true" hidden></span><span aria-hidden="true">Interaction design</span><span aria-hidden="true">Prototyping</span><span aria-hidden="true">UX research</span><span aria-hidden="true">Design systems</span><span aria-hidden="true">B2B workflows</span><span aria-hidden="true">Accessibility</span><span aria-hidden="true">Information architecture</span><span aria-hidden="true">Usability audits</span><span aria-hidden="true">Figma</span><span aria-hidden="true">React and Tailwind</span></div></div>
+
+  <section class="wrap h-section" id="work" aria-labelledby="workh">
+    <div class="h-head"><div><p class="h-eyebrow">01 / Selected work</p><h2 id="workh">Work<span class="h-cnt" aria-label="7 projects">07</span></h2></div><p>Seven projects, each one about what I took away. Hover a card to flip through its screens.</p></div>
+    <div class="h-deck" id="shelf"></div>
+  </section>
+
+  <section class="h-proc" id="process" aria-labelledby="proch">
     <div class="wrap">
-      <h2 id="proch">How I work, in clay terms</h2>
-      <p class="intro-p">Pottery taught me that most of the work is taking things away. Every project here moves through the same five stages.</p>
-      <ol class="steps-row" style="list-style:none;margin:0;padding:0">
-        <li class="ps"><span class="n">1</span><h3>Wedge</h3><span class="ux">Research and audit</span><p>Knead out the air pockets that would crack the piece later.</p></li>
-        <li class="ps"><span class="n">2</span><h3>Center</h3><span class="ux">Find the real problem</span><p>Nothing good comes off the wheel until the clay is centered.</p></li>
-        <li class="ps"><span class="n">3</span><h3>Throw</h3><span class="ux">Explore options</span><p>Pull up a few shapes quickly, and keep the ones that hold.</p></li>
-        <li class="ps key"><span class="n">4</span><h3>Trim</h3><span class="ux">Remove what doesn't belong</span><p>Cut away the excess until the form is light and clear.</p></li>
-        <li class="ps"><span class="n">5</span><h3>Fire</h3><span class="ux">Review and feedback</span><p>The kiln tests everything. What survives is real.</p></li>
+      <p class="h-eyebrow">How I work</p>
+      <h2 id="proch">Most of the work is taking things away.</h2>
+      <p class="intro">Every project here moves through the same five steps. The fourth is the one I care about most.</p>
+      <ol class="h-steps">
+        <li class="h-step" style="--c:var(--sky)"><span class="n">01</span><h3>Research</h3><span class="ux">Audit what exists</span><p>Use the product like a real person, and talk to the people who do.</p></li>
+        <li class="h-step" style="--c:var(--lilac)"><span class="n">02</span><h3>Problem</h3><span class="ux">Find the real one</span><p>Name what is actually going wrong before drawing anything.</p></li>
+        <li class="h-step" style="--c:var(--green)"><span class="n">03</span><h3>Explore</h3><span class="ux">Try a few directions</span><p>Sketch quickly, and keep the ones that hold up.</p></li>
+        <li class="h-step key" style="--c:var(--yellow)"><span class="n">04</span><h3>Trim</h3><span class="ux">Remove what doesn’t belong</span><p>Cut the extra step, the extra popup, the extra feature.</p></li>
+        <li class="h-step" style="--c:var(--pink)"><span class="n">05</span><h3>Review</h3><span class="ux">Test it against feedback</span><p>What survives review is what ships.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="wrap section" id="work" aria-labelledby="workh">
-    <div class="head"><h2 id="workh">Work</h2><p>Hover a piece to see it come together.</p></div>
-    <div class="shelf" id="shelf"></div>
-  </section>
-
-  <section class="wrap section" id="about" aria-labelledby="abouth">
-    <div class="about">
+  <section class="wrap h-section" id="about" aria-labelledby="abouth">
+    <div class="h-about">
+      <div class="h-ab-photo"><figure class="h-pol2"><img src="assets/portrait.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a dark blazer" loading="lazy"><figcaption>Rajesh, Chennai</figcaption></figure><span class="h-tape" aria-hidden="true"></span></div>
       <div>
-        <img class="portrait-img" src="assets/portrait.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a dark blazer" loading="lazy">
-        <div class="pots"><div class="ph">[Your pot]</div><div class="ph">[Your pot]</div><div class="ph">[Your pot]</div></div>
-      </div>
-      <div>
-        <h2 id="abouth">About</h2>
-        <p>I'm a B.E. Computer Science graduate (St. Joseph's College of Engineering, 2026) who chose design. Four internships across SaaS, e-commerce, telemedicine, food import and export, and health-tech taught me to start from the user's real problem, and to keep the developer in mind from the first sketch.</p>
-        <p>Off screen, I'm at the potter's wheel. Clay is honest: it shows every extra gram you left on. [Add a line about your pottery.]</p>
-        <div class="facts-list">
-          <div><b>Now</b><span>Product Design Intern, Zuper</span></div>
-          <div><b>Works with</b><span>PMs, iOS engineers, developers, QA</span></div>
-          <div><b>Tools</b><span>Figma, Claude, React, Tailwind, Framer</span></div>
-          <div><b>Languages</b><span>English, Hindi, Tamil, Odia</span></div>
+        <p class="h-eyebrow">02 / About</p>
+        <h2 id="abouth">A designer who also builds.</h2>
+        <p>I’m a B.E. Computer Science graduate (St. Joseph’s College of Engineering, 2026) who chose design. Four internships across SaaS, e-commerce, telemedicine, food import and export, and health-tech taught me to start from the user’s real problem, and to keep the developer in mind from the first sketch.</p>
+        <p>The part I like most is cutting: the blocking popup, the extra booking step, the feature that adds stress instead of help.</p>
+        <div class="h-notes">
+          <div class="h-note"><b>Now</b><span>Product Design Intern, Zuper</span></div>
+          <div class="h-note"><b>Works with</b><span>PMs, iOS engineers, developers, QA</span></div>
+          <div class="h-note"><b>Tools</b><span>Figma, Claude, React, Tailwind, Framer</span></div>
+          <div class="h-note"><b>Languages</b><span>English, Hindi, Tamil, Odia</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="wrap section" aria-labelledby="labh">
-    <div class="head"><h2 id="labh">Also made by hand</h2><p>Things I designed and built myself.</p></div>
-    <div class="lab">
-      <div class="lab-card"><h3>Zuper Labs OS</h3><p>A desktop-style workspace for the design team, built in React and Tailwind with the Claude API.</p></div>
-      <div class="lab-card"><h3>Prelude Workspace</h3><p>A platform for reviewing designs together, built as a designer-developer.</p></div>
-      <div class="lab-card"><h3>Hackathons</h3><p>Smart India Hackathon finalist. Also a finalist at AIVF and PECHACKS.</p></div>
-      <div class="lab-card"><h3>PeerHub chapter</h3><p>Chairperson of a 40+ student chapter at St. Joseph's.</p></div>
+  <section class="wrap h-section" id="faq" aria-labelledby="faqh">
+    <div class="h-head"><div><p class="h-eyebrow">03 / Questions</p><h2 id="faqh">Things people ask</h2></div></div>
+    <div class="h-faq">
+      <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">A recruiter, probably</p><p class="h-bub">What do you design best?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">Complex B2B workflows: a call transfer, @mentions in a chat, a whole-product audit at Zuper. I find the real problem, then cut whatever doesn’t help.</p></div></div></article>
+      <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">An engineer</p><p class="h-bub">Do you build, or just design?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">Both. I built Zuper Labs OS in React and Tailwind with the Claude API, and a platform for reviewing designs together called Prelude. I keep the developer in mind from the first sketch.</p></div></div></article>
+      <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">A designer</p><p class="h-bub">How do you use AI?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">As a second pair of eyes, never as the last word. In the audit, some first-pass AI findings were wrong, so I checked them by hand and flagged the uncertain ones.</p></div></div></article>
+      <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">A hiring manager</p><p class="h-bub">What are you looking for?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">A product design role on a team building complex, useful software. My internship at Zuper ends on 26 October.</p></div></div></article>
     </div>
   </section>
 
-  <section class="contact" id="contact" aria-labelledby="conth">
-    <div class="wrap">
-      <h2 id="conth">Let's make something with less in it.</h2>
-      <p>I'm looking for a product design role on a team building complex, useful software.</p>
-      <div class="actions"><a class="btn btn-solid" href="mailto:rajeshmalick16@gmail.com">rajeshmalick16@gmail.com</a><a class="btn btn-line" href="https://www.linkedin.com/in/rajesh-malick-5497b2242/">LinkedIn</a><a class="btn btn-line" href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a></div>
-      <p class="foot">© 2026 Rajesh Malick, Chennai</p>
+  <section class="wrap h-section" id="side" aria-labelledby="sideh">
+    <div class="h-head"><div><p class="h-eyebrow">04 / Side projects</p><h2 id="sideh">Side projects</h2></div><p>Things I designed and built myself.</p></div>
+    <div class="h-side">
+      <div class="h-sp"><span class="t">React · Tailwind · Claude API</span><h3>Zuper Labs OS</h3><p>A desktop-style workspace for the design team.</p></div>
+      <div class="h-sp"><span class="t">Designer + developer</span><h3>Prelude Workspace</h3><p>A platform for reviewing designs together.</p></div>
+      <div class="h-sp"><span class="t">Finalist</span><h3>Hackathons</h3><p>Smart India Hackathon finalist. Also a finalist at AIVF and PECHACKS.</p></div>
+      <div class="h-sp"><span class="t">Chairperson</span><h3>PeerHub chapter</h3><p>A 40+ student chapter at St. Joseph’s.</p></div>
     </div>
+  </section>
+
+  <section class="h-contact" id="contact" aria-labelledby="conth">
+    <div class="wrap">
+      <p class="h-eyebrow">05 / Contact</p>
+      <h2 id="conth">Let’s make something with less in it.</h2>
+      <p class="sub">I’m looking for a product design role on a team building complex, useful software.</p>
+      <div class="actions"><button class="btn btn-solid" id="copyEmail" type="button">Copy rajeshmalick16@gmail.com</button><a class="btn btn-line" href="mailto:rajeshmalick16@gmail.com">Send an email</a><a class="btn btn-line" href="https://www.linkedin.com/in/rajesh-malick-5497b2242/">LinkedIn</a><a class="btn btn-line" href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a></div>
+    </div>
+    <div class="h-word" aria-hidden="true">Rajesh</div>
+    <div class="h-foot"><div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;width:100%"><span>© 2026 Rajesh Malick, Chennai</span><span>Designed and built by me</span></div></div>
   </section>
 </main>
 
@@ -427,17 +680,17 @@ tr.chosen td{background:var(--surface)}
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="c-wedge" data-stage="Wedge">
-        <div class="stage-head"><span class="pot">Wedge · research</span><h2>Finding the air pockets</h2></div>
+      <section class="stage" id="c-research" data-stage="Research">
+        <div class="stage-head"><span class="pot">Research</span><h2>Finding what was wrong</h2></div>
         <p>At Zuper, an AI agent answers customers first. When it can't help, a human takes over and may transfer the call to a colleague. I captured every call state on iPhone and iPad and compared transfers in Aircall, RingCentral, Zoom and the native dialers.</p>
       </section>
-      <section class="stage" id="c-center" data-stage="Center">
-        <div class="stage-head"><span class="pot">Center · the real problem</span><h2>A transfer with no way back</h2></div>
-        <p>While Agent 2's phone rang, Swap, Transfer Now and Merge were greyed out. If the customer didn't want to wait, the only exit was ending the call for everyone. Scroll on: the screen changes with the story, and everything I cut lands in the trimmings tray.</p>
+      <section class="stage" id="c-problem" data-stage="Problem">
+        <div class="stage-head"><span class="pot">The problem</span><h2>A transfer with no way back</h2></div>
+        <p>While Agent 2's phone rang, Swap, Transfer Now and Merge were greyed out. If the customer didn't want to wait, the only exit was ending the call for everyone. Scroll on: the screen changes with the story, and everything I cut lands in the cut list.</p>
       </section>
-      <section class="stage" id="c-throw" data-stage="Throw">
+      <section class="stage" id="c-explore" data-stage="Explore">
         <div class="story" data-story>
-          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Cut list</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
           <div class="beats">
             <div class="beat" data-img="before-active" data-alt="Live app: active call with a waveform bar"><span class="tag">Before</span><h3>Recording, shown twice</h3><p>A Record button, plus a waveform bar taking a whole row.</p></div>
             <div class="beat" data-img="before-consult" data-alt="Live app: greyed-out controls during a transfer"><span class="tag">Before</span><h3>Dead buttons while Agent 2 rings</h3><p>Three greyed-out controls and no way to stop the transfer.</p></div>
@@ -451,7 +704,7 @@ tr.chosen td{background:var(--surface)}
         </div>
       </section>
       <section class="stage" id="c-trim" data-stage="Trim">
-        <div class="stage-head"><span class="pot">Trim · the decision</span><h2>Where does Cancel transfer live?</h2></div>
+        <div class="stage-head"><span class="pot">The decision</span><h2>Where does Cancel transfer live?</h2></div>
         <div class="table-wrap"><table>
           <thead><tr><th>Option</th><th>How it works</th><th>Trade-off</th></tr></thead>
           <tbody>
@@ -461,16 +714,16 @@ tr.chosen td{background:var(--surface)}
             <tr><td>D · Confirm before End</td><td>Ask "End for everyone?"</td><td>Protects the customer, but adds a step at the worst moment</td></tr>
           </tbody></table></div>
       </section>
-      <section class="stage" id="c-fire" data-stage="Fire">
-        <div class="stage-head"><span class="pot">Fire · review</span><h2>What the kiln changed</h2></div>
+      <section class="stage" id="c-review" data-stage="Review">
+        <div class="stage-head"><span class="pot">Review</span><h2>What review changed</h2></div>
         <ul><li>Speaker and Mute stay in row 1 everywhere, after design review.</li><li>The dev team removed redundant status text, since the banner already shows it.</li><li>Hold can't work in a merged conference, so it was removed; Record stayed.</li></ul>
       </section>
-      <section class="stage" id="c-form" data-stage="Form">
-        <div class="stage-head"><span class="pot">The form</span><h2>Drag to compare</h2></div>
+      <section class="stage" id="c-result" data-stage="Result">
+        <div class="stage-head"><span class="pot">The result</span><h2>Drag to compare</h2></div>
         <div class="ba" data-ba><div class="ba-stage"><img data-img="before-active" alt="Before: live app active call"><div class="ba-top"><img data-img="after-active" alt="After: redesigned active call"></div><input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after"><div class="ba-handle"></div></div><div class="ba-labels"><span>Before</span><span>After</span></div></div>
         <figure style="margin:32px 0 0"><div class="wide-fig"><img data-img="ipad" alt="iPad landscape: caller on the left, controls on the right"></div><figcaption>iPad landscape: the caller on the left, controls on the right.</figcaption></figure>
         <p style="margin-top:32px"><b style="color:var(--ink)">What I'd do differently:</b> push for a more flexible recording control, like Wispr Flow's floating bar, and test Cancel near the avatar with real agents.</p>
-        <div class="next-up"><div><h2>Next: 64 flaws, found before firing</h2><p>The experience audit.</p></div><a class="btn btn-line" href="#audit">Read the audit</a></div>
+        <div class="next-up"><div><h2>Next: 64 flaws, one ranked map</h2><p>The experience audit.</p></div><a class="btn btn-line" href="#audit">Read the audit</a></div>
       </section>
     </div>
   </div>
@@ -481,7 +734,7 @@ tr.chosen td{background:var(--surface)}
   <section class="wrap cs-hero">
     <a class="back" href="#work">← All work</a>
     <p class="kicker">Zuper web app, experience audit, 2026</p>
-    <h1>64 flaws, found before firing</h1>
+    <h1>64 flaws, one ranked map</h1>
     <dl class="facts">
       <div><dt>Role</dt><dd>Product Design Intern</dd></div>
       <div><dt>Team</dt><dd>My manager, product managers, QA testers</dd></div>
@@ -490,16 +743,16 @@ tr.chosen td{background:var(--surface)}
     </dl>
     <div class="minute">
       <div><h2>What I started with</h2><p>Customers on every platform said the same thing: too complex, too many clicks. Nobody had mapped where.</p></div>
-      <div><h2>What I found</h2><p>64 findings. Most weren't one-offs: 12 patterns ran through the whole product, like veins in clay.</p></div>
+      <div><h2>What I found</h2><p>64 findings. Most weren't one-offs: 12 patterns ran through the whole product.</p></div>
       <div class="form-cell"><h2>What remained</h2><p>One ranked map: severity on every finding, the 12 patterns, and a top-five list up front.</p></div>
     </div>
   </section>
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="a-wedge" data-stage="Wedge">
-        <div class="stage-head"><span class="pot">Wedge · the whole project</span><h2>An audit is wedging</h2></div>
-        <p>Potters knead clay to push out air pockets that would crack the piece in the kiln. An audit does the same for a product. I walked every module like a real user, asked PMs and QA what they already knew, checked it all against UX principles, and ran an AI pass as a second pair of eyes.</p>
+      <section class="stage" id="a-research" data-stage="Research">
+        <div class="stage-head"><span class="pot">The project</span><h2>Walking the whole product</h2></div>
+        <p>An audit is a patient walk through the whole product. I went through every module like a real user, asked PMs and QA what they already knew, checked it all against UX principles, and ran an AI pass as a second pair of eyes.</p>
       </section>
       <section class="stage" id="a-map" data-stage="Map">
         <div class="stage-head"><span class="pot">Try it</span><h2>Pick a module to see its flaws</h2></div>
@@ -508,20 +761,20 @@ tr.chosen td{background:var(--surface)}
         <div class="chips" id="sevs" aria-label="Filter by severity"></div>
         <div class="findings"><header><b id="fTitle">Jobs</b><span id="fCount"></span></header><ul class="flist" id="flist"></ul></div>
       </section>
-      <section class="stage" id="a-veins" data-stage="Veins">
-        <div class="stage-head"><span class="pot">Try it</span><h2>Twelve veins through the whole block</h2></div>
+      <section class="stage" id="a-patterns" data-stage="Patterns">
+        <div class="stage-head"><span class="pot">Try it</span><h2>Twelve patterns through the whole product</h2></div>
         <p>Pick a pattern and the modules it runs through light up on the map above. Fix it once, and every one of them improves.</p>
         <div class="chips" id="pats" aria-label="Patterns"></div>
         <div class="spot" id="spot" hidden><b id="spotReach"></b><p id="spotDesc"></p></div>
       </section>
       <section class="stage" id="a-fix" data-stage="Trim">
-        <div class="stage-head"><span class="pot">Trim · try it</span><h2>Four flaws, before and after</h2></div>
+        <div class="stage-head"><span class="pot">Try it</span><h2>Four flaws, before and after</h2></div>
         <div class="fixes" id="fixes"></div>
       </section>
-      <section class="stage" id="a-fire" data-stage="Fire">
-        <div class="stage-head"><span class="pot">Fire · review</span><h2>I checked the AI, too</h2></div>
+      <section class="stage" id="a-review" data-stage="Review">
+        <div class="stage-head"><span class="pot">Review</span><h2>I checked the AI, too</h2></div>
         <p>The AI pass caught things we'd missed, but some first-pass findings were wrong: the calendar wasn't empty, jobs just loaded 5+ seconds late with no loader. I corrected them by hand and flagged uncertain ones as "needs a human check".</p>
-        <p>The result went to the team ranked by severity, with the top five up front: AI deep links that hang, status colours, the calendar, numbers that don't add up, and findability. [Add which findings became tickets or were fixed.]</p>
+        <p>The result went to the team ranked by severity, with the top five up front: AI deep links that hang, status colours, the calendar, numbers that don't add up, and findability.</p>
         <p><b style="color:var(--ink)">What I'd do differently:</b> talk directly to customers who struggle, and write the issues from their words.</p>
         <div class="next-up"><div><h2>Next: mentioned, but never invited</h2><p>Job Chat @mentions.</p></div><a class="btn btn-line" href="#jobchat">Read Job Chat</a></div>
       </section>
@@ -550,13 +803,13 @@ tr.chosen td{background:var(--surface)}
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="j-center" data-stage="Center">
-        <div class="stage-head"><span class="pot">Center · the real problem</span><h2>Tagged, but never told</h2></div>
+      <section class="stage" id="j-problem" data-stage="Problem">
+        <div class="stage-head"><span class="pot">The problem</span><h2>Tagged, but never told</h2></div>
         <p>You could @mention someone who wasn't in the chat, and the message went out, but they were neither notified nor added. Slack already handles this by asking whether to add them. I asked why Job Chat couldn't.</p>
       </section>
-      <section class="stage" id="j-throw" data-stage="Throw">
+      <section class="stage" id="j-explore" data-stage="Explore">
         <div class="story wide" data-story>
-          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Cut list</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
           <div class="beats">
             <div class="beat" data-img="jc-problem" data-alt="Mentioning people who aren't in the chat"><span class="tag">Before</span><h3>The mention that went nowhere</h3><p>Five people tagged. None of them would see it.</p></div>
             <div class="beat" data-img="jc-popup" data-alt="First version: a confirmation popup"><span class="tag">My first version</span><h3>Ask before sending</h3><p>Add &amp; Send, or Send only. Clear, but it blocks the conversation every time.</p></div>
@@ -566,18 +819,18 @@ tr.chosen td{background:var(--surface)}
           </div>
         </div>
       </section>
-      <section class="stage" id="j-fire" data-stage="Fire">
-        <div class="stage-head"><span class="pot">Fire · review</span><h2>One rule, two patterns</h2></div>
+      <section class="stage" id="j-review" data-stage="Review">
+        <div class="stage-head"><span class="pot">Review</span><h2>One rule, two patterns</h2></div>
         <p>The product manager's feedback: on web, a popup interrupts every conversation. So web got the quiet note. On mobile and tablet, a note can scroll out of view, so a short confirmation sheet stays.</p>
         <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:20px">
           <figure style="margin:0;flex:0 1 260px"><div class="frame"><img data-img="jc-msheet" alt="Mobile confirmation sheet"></div><figcaption>Mobile: confirmation sheet</figcaption></figure>
           <figure style="margin:0;flex:0 1 260px"><div class="frame"><img data-img="jc-madded" alt="Mobile: members added"></div><figcaption>Mobile: added via mention</figcaption></figure>
         </div>
       </section>
-      <section class="stage" id="j-form" data-stage="Form">
-        <div class="stage-head"><span class="pot">The form</span><h2>Drag to compare</h2></div>
+      <section class="stage" id="j-result" data-stage="Result">
+        <div class="stage-head"><span class="pot">The result</span><h2>Drag to compare</h2></div>
         <div class="ba" data-ba><div class="ba-stage wide"><img data-img="jc-problem" alt="Before: a mention that reaches nobody"><div class="ba-top"><img data-img="jc-final" alt="After: the note only the sender sees"></div><input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after"><div class="ba-handle"></div></div><div class="ba-labels"><span>Before</span><span>After</span></div></div>
-        <p style="margin-top:32px"><b style="color:var(--ink)">What I learned:</b> the same rule can need different patterns per platform. [Add what you'd do differently.]</p>
+        <p style="margin-top:32px"><b style="color:var(--ink)">What I learned:</b> the same rule can need different patterns per platform.</p>
         <div class="next-up"><div><h2>Next: less to remember, more to act on</h2><p>Kern, a placement tracker.</p></div><a class="btn btn-line" href="#kern">Read Kern</a></div>
       </section>
     </div>
@@ -605,8 +858,8 @@ tr.chosen td{background:var(--surface)}
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="k-wedge" data-stage="Wedge">
-        <div class="stage-head"><span class="pot">Wedge · research</span><h2>Two interviews, three problems</h2></div>
+      <section class="stage" id="k-research" data-stage="Research">
+        <div class="stage-head"><span class="pot">Research</span><h2>Two interviews, three problems</h2></div>
         <p>To ground the design, I interviewed two active placement candidates, a final-year student and a recent graduate. The same three things came up both times.</p>
         <ol class="insights">
           <li><b>The status black hole.</b> Candidates wait indefinitely for results, with no timeline and no word from recruiters.</li>
@@ -622,17 +875,17 @@ tr.chosen td{background:var(--surface)}
             <tr><td><em style="font-weight:400">“Inconsistent notifications mean we miss things unless we manually log into portals daily.”</em></td><td>A “Today’s Focus” first screen: a strict, chronological urgency stack for the next 24 hours.</td></tr>
           </tbody></table></div>
       </section>
-      <section class="stage" id="k-center" data-stage="Center">
-        <div class="stage-head"><span class="pot">Center · the real problem</span><h2>Not short of data, short of one place to look</h2></div>
+      <section class="stage" id="k-problem" data-stage="Problem">
+        <div class="stage-head"><span class="pot">The problem</span><h2>Not short of data, short of one place to look</h2></div>
         <p>Placement tracking doesn’t fail because people lack information. It fails because the information is spread across channels that don’t talk to each other. That fragmentation overloads people, and milestones slip.</p>
         <div class="spot"><b>The idea behind Kern</b><p>Move from managing data to a chronological urgency stack, one that favours recognition over recall.</p></div>
       </section>
-      <section class="stage" id="k-throw" data-stage="Throw">
-        <div class="stage-head"><span class="pot">Throw · the shape</span><h2>Four screens, one path</h2></div>
+      <section class="stage" id="k-explore" data-stage="Explore">
+        <div class="stage-head"><span class="pot">The shape</span><h2>Four screens, one path</h2></div>
         <p>The whole product is one straight line: a first screen of what’s urgent, a list of every application, the detail of one, and an editor for when the process changes.</p>
         <figure style="margin:8px 0 36px;max-width:520px"><div class="wide-fig"><img data-img="k-flow" loading="lazy" alt="Flow: Root Dashboard with Today's Focus, Application Board with filter chips, Track Details with a milestones timeline and Safe-Zone status, and the Flex-Pipeline Editor"></div><figcaption>The system and the user flow.</figcaption></figure>
         <div class="story" data-story>
-          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Cut list</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
           <div class="beats">
             <div class="beat" data-img="k-s1" data-alt="Today's Focus: urgent items due today, then recent applications" data-cut="Calendar view"><span class="tag">Screen 1</span><h3>Open the app, see what’s due</h3><p>Anything closing within 24 hours sits at the top, with a count of applications in a waiting phase.</p><span class="cut">Cut: the calendar. A short list ends decisions faster than a dense grid.</span></div>
             <div class="beat" data-img="k-s2" data-alt="Applications list with stage and days in stage" data-cut="Success charts"><span class="tag">Screen 2</span><h3>Every application, one filter away</h3><p>Each job shows its stage and how long it has been there. Filter chips: All, In-Flight, Offers, Archived.</p><span class="cut">Cut: success charts. Showing rejection rates mid-season only adds stress.</span></div>
@@ -642,7 +895,7 @@ tr.chosen td{background:var(--surface)}
         </div>
       </section>
       <section class="stage" id="k-trim" data-stage="Trim">
-        <div class="stage-head"><span class="pot">Trim · scope</span><h2>What I cut, and why</h2></div>
+        <div class="stage-head"><span class="pot">Scope</span><h2>What I cut, and why</h2></div>
         <div class="cutlist">
           <div class="col keep"><h3>Kept</h3><ul>
             <li><span class="ic" aria-hidden="true">✓</span><div><b>Today’s Focus (urgency stack)</b><span>Immediate view of items closing within 24 hours.</span></div></li>
@@ -656,16 +909,16 @@ tr.chosen td{background:var(--surface)}
           </ul></div>
         </div>
       </section>
-      <section class="stage" id="k-fire" data-stage="Fire">
-        <div class="stage-head"><span class="pot">Fire · review</span><h2>Where it’s weakest</h2></div>
+      <section class="stage" id="k-review" data-stage="Review">
+        <div class="stage-head"><span class="pot">Review</span><h2>Where it’s weakest</h2></div>
         <div class="cutlist">
           <div class="col"><h3>Manual upkeep</h3><p style="margin:0">Kern relies on people updating their own stages. Parsing email automatically would cut the friction, but for version one I kept users in control of data that changes without warning.</p></div>
           <div class="col"><h3>It needs to be opened</h3><p style="margin:0">The design only works if someone opens the app. Making Today’s Focus the first screen puts the priorities in front of them the moment they do.</p></div>
         </div>
         <div class="spot" style="margin-top:20px;max-width:none"><b>How I used AI</b><p>To stress-test edge cases in the workflow and to tidy the structure of this write-up. The mechanics, the micro-copy and the features came from the interviews.</p></div>
       </section>
-      <section class="stage" id="k-form" data-stage="Form">
-        <div class="stage-head"><span class="pot">The form</span><h2>The four screens</h2></div>
+      <section class="stage" id="k-result" data-stage="Result">
+        <div class="stage-head"><span class="pot">The result</span><h2>The four screens</h2></div>
         <div class="phones">
           <figure><div class="frame"><img data-img="k-s1" loading="lazy" alt="Today's Focus"></div><figcaption>Today’s Focus</figcaption></figure>
           <figure><div class="frame"><img data-img="k-s2" loading="lazy" alt="Applications"></div><figcaption>Applications</figcaption></figure>
@@ -699,13 +952,13 @@ tr.chosen td{background:var(--surface)}
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="t-wedge" data-stage="Wedge">
-        <div class="stage-head"><span class="pot">Wedge · research</span><h2>Looking at what already exists</h2></div>
+      <section class="stage" id="t-research" data-stage="Research">
+        <div class="stage-head"><span class="pot">Research</span><h2>Looking at what already exists</h2></div>
         <p>The project opens with a competitor review of telemedicine patient dashboards: Practo, Apollo 24|7, Tata 1mg and PharmEasy. It found cluttered home screens, heavy cross-selling, steep booking friction, and small type that older patients struggle with.</p><p>It also put a number on the problem: an average of 7.2 clicks to book, against a team target of under five. The primary goal it set was to make booking and joining obvious, fast and accessible for all ages.</p>
         <figure style="margin:20px 0 0"><div class="wide-fig"><div class="scroller" role="region" aria-label="Competitor research, scrollable" tabindex="0"><img data-img="t-comp" loading="lazy" alt="Competitor research on telemedicine patient dashboards: categories, feature matrix, UI patterns, opportunities, SWOT and UX gaps"></div></div><figcaption>Competitor research. Scroll inside the frame.</figcaption></figure>
       </section>
-      <section class="stage" id="t-center" data-stage="Center">
-        <div class="stage-head"><span class="pot">Center · the real problem</span><h2>Two patients, one shared frustration</h2></div>
+      <section class="stage" id="t-problem" data-stage="Problem">
+        <div class="stage-head"><span class="pot">The problem</span><h2>Two patients, one shared frustration</h2></div>
         <p><b style="color:var(--ink)">Lakshmi Devi</b> is 67, a retired teacher with low tech literacy. She wants large text and simple, guided steps. <b style="color:var(--ink)">Rahul Sharma</b> is 29, a software engineer who wants to book in as few steps as possible.</p>
         <div class="pair">
           <figure><div class="wide-fig"><img data-img="t-p1" loading="lazy" alt="Persona: Lakshmi Devi, 67, retired teacher, low tech literacy"></div><figcaption>Lakshmi Devi</figcaption></figure>
@@ -718,8 +971,8 @@ tr.chosen td{background:var(--surface)}
         </div>
         <p class="credit">Personas and journey maps: Sujeevana.</p>
       </section>
-      <section class="stage" id="t-throw" data-stage="Throw">
-        <div class="stage-head"><span class="pot">Throw · the shortest route</span><h2>Mapping the way to a booking</h2></div>
+      <section class="stage" id="t-explore" data-stage="Explore">
+        <div class="stage-head"><span class="pot">The shortest route</span><h2>Mapping the way to a booking</h2></div>
         <p>The information architecture keeps four places at the top: Dashboard, Search, Appointments and Records. The booking flow runs Home, Search, Doctor list, Book Now, Date and time, Confirm, Booked. The cart stays optional.</p>
         <div class="pair">
           <figure><div class="wide-fig"><img data-img="t-ia" loading="lazy" alt="Information architecture: Home with Dashboard, Search, Appointments and Records, and the pages beneath them"></div><figcaption>Information architecture</figcaption></figure>
@@ -729,7 +982,7 @@ tr.chosen td{background:var(--surface)}
         <p class="credit">Information architecture and user flow: Prasanthi.</p>
       </section>
       <section class="stage" id="t-trim" data-stage="Trim">
-        <div class="stage-head"><span class="pot">Trim · remove what doesn’t belong</span><h2>What I cut</h2></div>
+        <div class="stage-head"><span class="pot">Trim</span><h2>What I cut</h2></div>
         <div class="table-wrap" role="region" aria-label="Problems and what changed" tabindex="0"><table>
           <thead><tr><th>Problem found</th><th>What changed</th><th>Where it shows</th></tr></thead>
           <tbody>
@@ -742,7 +995,7 @@ tr.chosen td{background:var(--surface)}
           </tbody></table></div>
         <p style="margin:32px 0 20px">The screens, one cut at a time:</p>
         <div class="story wide" data-story>
-          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Cut list</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
           <div class="beats">
             <div class="beat" data-img="t-home" data-alt="Home dashboard with the next appointment, prescriptions, quick actions and health summary" data-cut="Confusing navigation"><span class="tag">Home</span><h3>Start with today</h3><p>The next appointment and a Join Video Call button come first, then prescriptions, quick actions and a health summary.</p><span class="cut">Cut: a confusing navigation structure.</span></div>
             <div class="beat" data-img="t-search" data-alt="Find your specialist: search, filters and a list of doctors with Book Now buttons" data-cut="The doctor-profile detour"><span class="tag chosen">The big change</span><h3>Book Now, right from the list</h3><p>Search, filter by specialisation, location or fee, and book from the result. No profile page in between.</p><span class="cut">Cut: the forced trip to the doctor’s profile.</span></div>
@@ -752,7 +1005,7 @@ tr.chosen td{background:var(--surface)}
         </div>
       </section>
       <section class="stage" id="t-mobile" data-stage="Mobile">
-        <div class="stage-head"><span class="pot">Mobile · the same booking on a phone</span><h2>Eleven screens, including the unhappy paths</h2></div>
+        <div class="stage-head"><span class="pot">Mobile</span><h2>Eleven screens, including the unhappy paths</h2></div>
         <p>The mobile version covers onboarding and login, a home screen led by the next appointment, doctor search, and a booking that takes a date, a time and one tap to confirm.</p>
         <p>The unhappy paths are designed too: a home screen and a records tab with nothing in them yet, a booking that asks you to pick a time slot, and a form that flags an invalid email.</p>
         <div class="hscroll tall" role="region" aria-label="Mobile screens, scroll sideways" tabindex="0">
@@ -770,16 +1023,16 @@ tr.chosen td{background:var(--surface)}
         </div>
         <p class="credit">Mobile screens: Prasanthi.</p>
       </section>
-      <section class="stage" id="t-fire" data-stage="Fire">
-        <div class="stage-head"><span class="pot">Fire · built to hold</span><h2>A kit so it stays consistent</h2></div>
+      <section class="stage" id="t-review" data-stage="Review">
+        <div class="stage-head"><span class="pot">Built to hold</span><h2>A kit so it stays consistent</h2></div>
         <p>The screens come from a UI kit and a component library: a royal-blue primary, a type scale, spacing, and a note on WCAG AA colour and medical standards.</p>
         <div class="pair">
           <figure><div class="wide-fig"><div class="scroller" role="region" aria-label="UI kit, scrollable" tabindex="0"><img data-img="t-kit" loading="lazy" alt="UI foundations: colour palette, type scale, spacing and accessibility notes"></div></div><figcaption>UI kit. Scroll inside the frame.</figcaption></figure>
           <figure><div class="wide-fig"><div class="scroller" role="region" aria-label="Component library, scrollable" tabindex="0"><img data-img="t-lib" loading="lazy" alt="Component library: buttons, inputs, navigation and layouts"></div></div><figcaption>Component library. Scroll inside the frame.</figcaption></figure>
         </div>
       </section>
-      <section class="stage" id="t-form" data-stage="Form">
-        <div class="stage-head"><span class="pot">The form</span><h2>One screen to book</h2></div>
+      <section class="stage" id="t-result" data-stage="Result">
+        <div class="stage-head"><span class="pot">The result</span><h2>One screen to book</h2></div>
         <figure style="margin:0"><div class="wide-fig"><img data-img="t-book" loading="lazy" alt="The booking screen"></div><figcaption>Search, Book Now, date, time, confirm: five clicks from the dashboard, four from the doctor list.</figcaption></figure>
         <div class="next-up"><div><h2>Next: a shorter way to the checkout</h2><p>Omni Fashion.</p></div><a class="btn btn-line" href="#fashion">Read Omni Fashion</a></div>
       </section>
@@ -808,8 +1061,8 @@ tr.chosen td{background:var(--surface)}
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="f-wedge" data-stage="Wedge">
-        <div class="stage-head"><span class="pot">Wedge · wireframes first</span><h2>Everything started as grey boxes</h2></div>
+      <section class="stage" id="f-research" data-stage="Research">
+        <div class="stage-head"><span class="pot">Wireframes</span><h2>Everything started as grey boxes</h2></div>
         <p>The wireframes set out the whole app: a three-step style quiz that curates a personal feed, filters, a product page that shows stock at a nearby store, a cart that stays in sync across devices, and a quick-pay checkout.</p>
         <div class="hscroll" role="region" aria-label="Wireframes, scroll sideways" tabindex="0">
           <figure><img data-img="w-1" loading="lazy" alt="Wireframes: three-step style quiz, ending in a personal style feed"><figcaption>Style quiz</figcaption></figure>
@@ -820,10 +1073,10 @@ tr.chosen td{background:var(--surface)}
           <figure><img data-img="w-6" loading="lazy" alt="Wireframe: checkout with quick pay"><figcaption>Checkout</figcaption></figure>
         </div>
       </section>
-      <section class="stage" id="f-throw" data-stage="Throw">
-        <div class="stage-head"><span class="pot">Throw · the screens</span><h2>From grey boxes to a working path</h2></div>
+      <section class="stage" id="f-explore" data-stage="Explore">
+        <div class="stage-head"><span class="pot">The screens</span><h2>From grey boxes to a working path</h2></div>
         <div class="story" data-story>
-          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Trimmings</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
+          <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div><div class="tray" aria-live="polite"><b>Cut list</b><ul data-tray></ul><span class="empty" data-empty>Nothing cut yet.</span></div></div>
           <div class="beats">
             <div class="beat" data-img="f-onb" data-alt="Onboarding: Discover Latest Fashion with a Get Started button" data-cut="Style quiz"><span class="tag">Screen 1</span><h3>Welcome, and one button</h3><p>One clear Get Started, with Skip in the corner.</p><span class="cut">Cut: the three-step style quiz from the wireframes.</span></div>
             <div class="beat" data-img="f-home-s" data-alt="Home: search, category chips and a Perfectly suits you grid"><span class="tag">Screen 2</span><h3>Suggestions first</h3><p>A search bar, category chips for Men, Women, Kids and Ethnic wear, a New Arrivals banner and a “Perfectly suits you” grid.</p></div>
@@ -837,20 +1090,20 @@ tr.chosen td{background:var(--surface)}
         </div>
       </section>
       <section class="stage" id="f-trim" data-stage="Trim">
-        <div class="stage-head"><span class="pot">Trim · what I left out</span><h2>Two ideas that didn’t make it</h2></div>
+        <div class="stage-head"><span class="pot">What I left out</span><h2>Two ideas that didn’t make it</h2></div>
         <p>The wireframes were richer than the screens I delivered. Two ideas dropped out: the style quiz, and a check for stock at a nearby store. As the deadline got close, we put our time into the core path from home to order instead.</p>
         <p>The nearby-store idea was mine. I talked it through with Sujeevana and Prasanthi, and they agreed it was worth having. We just ran out of time for it.</p>
       </section>
-      <section class="stage" id="f-fire" data-stage="Fire">
-        <div class="stage-head"><span class="pot">Fire · afterwards</span><h2>The nearby-stock idea, mocked up</h2></div>
+      <section class="stage" id="f-review" data-stage="Review">
+        <div class="stage-head"><span class="pot">Afterwards</span><h2>The nearby-stock idea, mocked up</h2></div>
         <p>After the delivery, I designed the idea so it isn’t lost. A small green card says how many are left at a nearby store and offers same-day pickup. <b style="color:var(--ink)">This frame was made after the project and isn’t part of what we delivered.</b></p>
         <div class="phones" style="margin-top:20px">
           <figure style="flex:0 1 300px"><div class="frame" style="max-width:none"><img data-img="f-prod" loading="lazy" alt="Delivered product details screen"></div><figcaption>Delivered</figcaption></figure>
           <figure style="flex:0 1 300px"><div class="frame" style="max-width:none"><img data-img="f-prod2" loading="lazy" alt="Next iteration: product details with a nearby-store stock card under the sizes"></div><figcaption>Next iteration, with the nearby-store card</figcaption></figure>
         </div>
       </section>
-      <section class="stage" id="f-form" data-stage="Form">
-        <div class="stage-head"><span class="pot">The form</span><h2>The parts behind the screens</h2></div>
+      <section class="stage" id="f-result" data-stage="Result">
+        <div class="stage-head"><span class="pot">The result</span><h2>The parts behind the screens</h2></div>
         <figure style="margin:0"><div class="wide-fig"><img data-img="f-comp" loading="lazy" alt="Component variables: buttons, quantity selector, search field, category chip, bottom navigation and icons"></div><figcaption>Component variables used across the screens.</figcaption></figure>
         <div class="next-up"><div><h2>Next: a storefront for organic flavours</h2><p>FOOZ.</p></div><a class="btn btn-line" href="#fooz">Read FOOZ</a></div>
       </section>
@@ -879,13 +1132,13 @@ tr.chosen td{background:var(--surface)}
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="z-center" data-stage="Center">
-        <div class="stage-head"><span class="pot">Center · the brief</span><h2>Pure, authentic, easy to follow</h2></div>
+      <section class="stage" id="z-problem" data-stage="Problem">
+        <div class="stage-head"><span class="pot">The brief</span><h2>Pure, authentic, easy to follow</h2></div>
         <p>FOOzFOOD imports and exports organic tea, whole spices, premium rice and essential oils, and sells them straight to customers. The storefront had to feel pure and authentic, and to make the road from product to doorstep easy to follow.</p>
         <p>The pages cover home, shop, product details, checkout, delivery tracking, order confirmation, four account pages, About, Blog, Contact and a 404.</p>
       </section>
-      <section class="stage" id="z-throw" data-stage="Throw">
-        <div class="stage-head"><span class="pot">Throw · the pages</span><h2>From the front door to the doorstep</h2></div>
+      <section class="stage" id="z-explore" data-stage="Explore">
+        <div class="stage-head"><span class="pot">The pages</span><h2>From the front door to the doorstep</h2></div>
         <div class="story wide" data-story>
           <div class="device"><div class="frame"><img data-cur alt=""><img class="nxt" data-nxt alt="" aria-hidden="true"></div></div>
           <div class="beats">
@@ -900,8 +1153,8 @@ tr.chosen td{background:var(--surface)}
           </div>
         </div>
       </section>
-      <section class="stage" id="z-form" data-stage="Form">
-        <div class="stage-head"><span class="pot">The form</span><h2>And on a phone</h2></div>
+      <section class="stage" id="z-result" data-stage="Result">
+        <div class="stage-head"><span class="pot">The result</span><h2>And on a phone</h2></div>
         <p>The mobile home page, scrolled from top to bottom.</p>
         <div style="max-width:300px;margin:20px auto 0"><div class="frame"><div class="scroller" style="max-height:640px;border-radius:14px" role="region" aria-label="Mobile home page, scrollable" tabindex="0"><img data-img="z-mob" loading="lazy" alt="FOOZ mobile home page: hero, Just In products, category tiles and footer" style="border-radius:0"></div></div><p style="text-align:center;margin-top:10px;font-size:16px">Scroll inside the frame.</p></div>
         <div class="next-up"><div><h2>Back to all work</h2><p>Seven pieces, from a call transfer to a food storefront.</p></div><a class="btn btn-line" href="#work">All work</a></div>
@@ -909,6 +1162,7 @@ tr.chosen td{background:var(--surface)}
     </div>
   </div>
 </main>
+
 
 <script>
 const IMG = {"before-active": "assets/before-active.webp", "before-consult": "assets/before-consult.webp", "before-sheet": "assets/before-sheet.webp", "after-active": "assets/after-active.webp", "after-transferring": "assets/after-transferring.webp", "after-consult": "assets/after-consult.webp", "after-conference": "assets/after-conference.webp", "opt-a": "assets/opt-a.webp", "opt-hold": "assets/opt-hold.webp", "opt-confirm": "assets/opt-confirm.webp", "result": "assets/result.webp", "ipad": "assets/ipad.webp", "jc-problem": "assets/jc-problem.webp", "jc-popup": "assets/jc-popup.webp", "jc-final": "assets/jc-final.webp", "jc-banner": "assets/jc-banner.webp", "jc-result": "assets/jc-result.webp", "jc-msheet": "assets/jc-msheet.webp", "jc-madded": "assets/jc-madded.webp", "k-s1": "assets/k-s1.webp", "k-s2": "assets/k-s2.webp", "k-s3": "assets/k-s3.webp", "k-s4": "assets/k-s4.webp", "k-flow": "assets/k-flow.webp", "t-comp": "assets/t-comp.webp", "t-p1": "assets/t-p1.webp", "t-p2": "assets/t-p2.webp", "t-j1": "assets/t-j1.webp", "t-j2": "assets/t-j2.webp", "t-ia": "assets/t-ia.webp", "t-flow": "assets/t-flow.webp", "t-prob": "assets/t-prob.webp", "t-home": "assets/t-home.webp", "t-search": "assets/t-search.webp", "t-book": "assets/t-book.webp", "t-video": "assets/t-video.webp", "t-kit": "assets/t-kit.webp", "t-lib": "assets/t-lib.webp", "f-onb": "assets/f-onb.webp", "f-login": "assets/f-login.webp", "f-home": "assets/f-home.webp", "f-search": "assets/f-search.webp", "f-prod": "assets/f-prod.webp", "f-prod2": "assets/f-prod2.webp", "f-cart": "assets/f-cart.webp", "f-check": "assets/f-check.webp", "f-conf": "assets/f-conf.webp", "f-prof": "assets/f-prof.webp", "f-comp": "assets/f-comp.webp", "f-home-s": "assets/f-home-s.webp", "f-search-s": "assets/f-search-s.webp", "f-prod-s": "assets/f-prod-s.webp", "f-cart-s": "assets/f-cart-s.webp", "f-prof-s": "assets/f-prof-s.webp", "w-1": "assets/w-1.webp", "w-2": "assets/w-2.webp", "w-3": "assets/w-3.webp", "w-4": "assets/w-4.webp", "w-5": "assets/w-5.webp", "w-6": "assets/w-6.webp", "w-el": "assets/w-el.webp", "z-home": "assets/z-home.webp", "z-cats": "assets/z-cats.webp", "z-list": "assets/z-list.webp", "z-prod": "assets/z-prod.webp", "z-check": "assets/z-check.webp", "z-track": "assets/z-track.webp", "z-conf": "assets/z-conf.webp", "z-acct": "assets/z-acct.webp", "z-mob": "assets/z-mob.webp", "tm-1": "assets/tm-1.webp", "tm-2": "assets/tm-2.webp", "tm-3": "assets/tm-3.webp", "tm-4": "assets/tm-4.webp", "tm-5": "assets/tm-5.webp", "tm-6": "assets/tm-6.webp", "tm-7": "assets/tm-7.webp", "tm-8": "assets/tm-8.webp", "tm-9": "assets/tm-9.webp", "tm-10": "assets/tm-10.webp", "tm-11": "assets/tm-11.webp"};
@@ -918,35 +1172,6 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
   $$('img[data-img]').forEach(img => { if (IMG[img.dataset.img]) img.src = IMG[img.dataset.img]; });
-
-  /* ---------- clay on the wheel ---------- */
-  const N = 20, BASE = 398, TOP_LUMP = 168, TOP_POT = 92;
-  const lumpW = i => { const f = i / (N - 1); return 150 * Math.sqrt(Math.max(0, 1 - Math.pow(f * 0.98, 2.2))) + 10 * Math.sin(f * 9.3) + 6 * Math.cos(f * 17); };
-  const potProfile = [64, 70, 92, 112, 124, 128, 126, 120, 110, 98, 86, 74, 64, 56, 52, 50, 50, 52, 56, 60];
-  function outline(t){
-    const e = t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-    const top = TOP_LUMP + (TOP_POT - TOP_LUMP) * e;
-    const pts = [];
-    for (let i = 0; i < N; i++) { const y = BASE - (BASE - top) * (i / (N - 1)); const w = lumpW(i) * (1 - e) + potProfile[i] * e; pts.push([220 + w, y]); }
-    const lip = e > .6 ? 6 * (e - .6) / .4 : 0;
-    const right = pts, left = pts.slice().reverse().map(([x, y]) => [440 - x, y]);
-    const all = right.concat([[220 + potProfile[N - 1] * e - lip, top + 4 * e]], [[220 - potProfile[N - 1] * e + lip, top + 4 * e]], left);
-    return all;
-  }
-  function pathOf(pts){ let d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1); for (let i = 0; i < pts.length; i++) { const p0 = pts[(i - 1 + pts.length) % pts.length], p1 = pts[i], p2 = pts[(i + 1) % pts.length], p3 = pts[(i + 2) % pts.length]; const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6], c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6]; d += 'C' + c1.map(v => v.toFixed(1)).join(' ') + ' ' + c2.map(v => v.toFixed(1)).join(' ') + ' ' + p2.map(v => v.toFixed(1)).join(' '); } return d + 'Z'; }
-  const clay = $('#clay'), shav = $('#shavings'), trim = $('#trim');
-  let lastT = 0;
-  function drawClay(t){
-    const pts = outline(t); clay.setAttribute('d', pathOf(pts));
-    if (!reduce && t > lastT + .06) { for (let k = 0; k < 2; k++) { const side = Math.random() < .5 ? -1 : 1; const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); const y = 200 + Math.random() * 180; const x = 220 + side * (outline(t)[Math.floor((1 - (y - 92) / 306) * (N - 1)) || 0][0] - 220); p.setAttribute('d', 'M' + x + ' ' + y + ' q ' + (8 * side) + ' -6 ' + (14 * side) + ' 2 q -4 6 ' + (6 * side) + ' 10'); p.setAttribute('fill', 'none'); p.setAttribute('stroke', '#B86A45'); p.setAttribute('stroke-width', '3'); p.setAttribute('stroke-linecap', 'round'); p.setAttribute('class', 'shaving fall'); p.style.setProperty('--dx', (side * (20 + Math.random() * 40)) + 'px'); p.style.setProperty('--r', (side * 160) + 'deg'); p.style.transformBox = 'fill-box'; shav.appendChild(p); setTimeout(() => p.remove(), 1500); } lastT = t; }
-    if (t < lastT) lastT = t;
-  }
-  trim.addEventListener('input', () => drawClay(trim.value / 100));
-  function throwPot(){ trim.value = 0; lastT = 0; drawClay(0); if (reduce) { trim.value = 100; drawClay(1); return; } const t0 = performance.now(), dur = 2600; function step(now){ const t = Math.min(1, (now - t0) / dur); trim.value = Math.round(t * 100); drawClay(t); if (t < 1) requestAnimationFrame(step); } setTimeout(() => requestAnimationFrame(step), 500); }
-  $('#rethrow').addEventListener('click', throwPot);
-
-  /* ---------- vessel icons ---------- */
-  function vessel(profile, color){ const n = profile.length, top = 30, base = 170; const pts = profile.map((w, i) => [100 + w, base - (base - top) * i / (n - 1)]); const all = pts.concat(pts.slice().reverse().map(([x, y]) => [200 - x, y])); return '<svg class="vessel" viewBox="0 0 200 190" aria-hidden="true"><ellipse cx="100" cy="176" rx="70" ry="9" fill="#00000033"/><path d="' + pathOf(all) + '" fill="' + color + '"/></svg>'; }
 
   /* ---------- router ---------- */
   const views = { home: $('#v-home'), connect: $('#v-connect'), audit: $('#v-audit'), jobchat: $('#v-jobchat'), kern: $('#v-kern'), telemed: $('#v-telemed'), fashion: $('#v-fashion'), fooz: $('#v-fooz') };
@@ -961,32 +1186,34 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   }
   window.addEventListener('hashchange', route);
 
-  /* ---------- shelf ---------- */
-  const WORK = [
-    { go: 'connect', badge: 'iOS and iPad', title: 'Undoing a call transfer', meta: 'Zuper Connect, 2026', start: 'A transfer with no way back', trim: 'Waveform bar, duplicate Record, dead buttons', form: 'Cancel where Transfer was', imgs: ['before-active', 'opt-a', 'after-active'] },
-    { go: 'audit', badge: 'Web', title: '64 flaws, found before firing', meta: 'Zuper experience audit, 2026', start: 'Too complex, nobody knew where', trim: 'Found 64 flaws, 12 repeating patterns', form: 'One ranked map, top five first', vessel: [40, 60, 70, 74, 74, 72, 66, 56, 44, 34, 30, 34, 40] },
-    { go: 'jobchat', badge: 'Web, mobile, tablet', title: 'Mentioned, but never invited', meta: 'Zuper Job Chat, 2026', start: '@mentions that reached nobody', trim: 'A popup that stopped the conversation', form: 'A quiet note for the sender', imgs: ['jc-problem', 'jc-popup', 'jc-final'], wide: true },
-    {"go": "kern", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "A calendar, success charts, a resume builder", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]},
-    {"go": "telemed", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "start": "7.2 clicks to book, plus a forced detour", "trim": "The profile detour and the extra steps", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true},
-    {"go": "fashion", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "start": "Wireframes with a style quiz and nearby stock", "trim": "The quiz and the stock check, at the deadline", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]},
-    {"go": "fooz", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOzFOOD, 2025", "start": "Organic tea, spices, rice and oils, sold direct", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Built"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true, "trim": "A five-stage delivery tracer"}
-  ];
-  const shelf = $('#shelf');
-  WORK.forEach(w => {
-    const el = document.createElement(w.go ? 'a' : 'div'); el.className = 'piece' + (w.kiln ? ' kiln' : ''); if (w.go) el.href = '#' + w.go;
-    const shot = document.createElement('div'); shot.className = 'piece-shot';
-    if (w.imgs) { const im = document.createElement('img'); im.src = IMG[w.imgs[0]]; im.alt = ''; if (w.wide) im.className = 'wide'; shot.appendChild(im); }
-    else shot.innerHTML = vessel(w.vessel, w.kiln ? '#8E5A40' : '#B86A45');
-    shot.insertAdjacentHTML('beforeend', '<span class="badge' + (w.kiln ? ' kiln' : '') + '">' + w.badge + '</span>');
-    const body = document.createElement('div'); body.className = 'piece-body';
-    body.innerHTML = '<div><h3>' + w.title + '</h3><p class="meta">' + w.meta + '</p></div><dl class="ladder"><dt>' + (w.labels || ['Started with', 'Trimmed', 'What remained'])[0] + '</dt><dd>' + w.start + '</dd><dt>' + (w.labels || ['Started with', 'Trimmed', 'What remained'])[1] + '</dt><dd>' + w.trim + '</dd><dt>' + (w.labels || ['Started with', 'Trimmed', 'What remained'])[2] + '</dt><dd class="form">' + w.form + '</dd></dl><span class="read">' + (w.go ? 'Read the case study' : 'Write-up in progress') + '</span>';
-    el.append(shot, body); shelf.appendChild(el);
-    if (!w.imgs) return;
-    let timer = null, i = 0; const im = shot.querySelector('img');
-    const start = () => { if (timer || reduce) return; timer = setInterval(() => { i = (i + 1) % w.imgs.length; im.src = IMG[w.imgs[i]]; }, 1100); };
-    const stop = () => { clearInterval(timer); timer = null; i = 0; im.src = IMG[w.imgs[0]]; };
-    el.addEventListener('mouseenter', start); el.addEventListener('mouseleave', stop); el.addEventListener('focus', start); el.addEventListener('blur', stop);
-  });
+  /* ---------- work cards ---------- */
+  const WORK = [{"go": "connect", "color": "#6FD3FF", "badge": "iOS and iPad", "title": "Undoing a call transfer", "meta": "Zuper Connect, 2026", "tags": ["Mobile", "Telephony", "Interaction design"], "start": "A transfer with no way back", "trim": "Waveform bar, duplicate Record, dead buttons", "form": "Cancel where Transfer was", "imgs": ["before-active", "opt-a", "after-active"]}, {"go": "audit", "color": "#FFD84D", "badge": "Web", "title": "64 flaws, one ranked map", "meta": "Zuper experience audit, 2026", "tags": ["Audit", "Research", "Prioritisation"], "start": "Too complex, nobody knew where", "trim": "Found 64 flaws, 12 repeating patterns", "form": "One ranked map, top five first", "pixels": true}, {"go": "jobchat", "color": "#5BE3A5", "badge": "Web, mobile, tablet", "title": "Mentioned, but never invited", "meta": "Zuper Job Chat, 2026", "tags": ["Web", "Mobile", "Tablet", "Chat"], "start": "@mentions that reached nobody", "trim": "A popup that stopped the conversation", "form": "A quiet note for the sender", "imgs": ["jc-problem", "jc-popup", "jc-final"], "wide": true}, {"go": "kern", "color": "#FF9BD2", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "tags": ["Mobile", "Research", "1 day"], "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "A calendar, success charts, a resume builder", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]}, {"go": "telemed", "color": "#BFAEFF", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "tags": ["Web", "Mobile", "Design system"], "start": "7.2 clicks to book, plus a forced detour", "trim": "The profile detour and the extra steps", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true}, {"go": "fashion", "color": "#FF7A45", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "tags": ["Mobile", "E-commerce", "Wireframes"], "start": "Wireframes with a style quiz and nearby stock", "trim": "The quiz and the stock check, at the deadline", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]}, {"go": "fooz", "color": "#FF6B6B", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOzFOOD, 2025", "tags": ["Web", "Mobile", "E-commerce"], "start": "Organic tea, spices, rice and oils, sold direct", "trim": "A five-stage delivery tracer", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Built"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true}];
+  function pixelGrid(){
+    const order = ['C', 'H', 'M', 'L'], cells = [];
+    M.forEach(m => m[1].forEach(f => cells.push(f[1])));
+    cells.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+    return '<div class="pixels" aria-hidden="true">' + cells.map(k => '<span style="background:' + SEV[k][1] + '"></span>').join('') + '</div>';
+  }
+  function buildShelf(){
+    const deck = $('#shelf');
+    WORK.forEach((w, i) => {
+      const el = document.createElement('a'); el.className = 'h-card' + (i === 0 ? ' feat' : ''); el.href = '#' + w.go; el.style.setProperty('--c', w.color);
+      const shot = document.createElement('div'); shot.className = 'h-shot';
+      let im = null;
+      if (w.pixels) shot.innerHTML = pixelGrid();
+      else { im = document.createElement('img'); im.src = IMG[w.imgs[0]]; im.alt = ''; if (w.wide) im.className = 'wide'; shot.appendChild(im); }
+      shot.insertAdjacentHTML('beforeend', '<span class="h-badge">' + w.badge + '</span>');
+      const L = w.labels || ['Started with', 'Trimmed', 'What remained'];
+      const body = document.createElement('div'); body.className = 'h-body';
+      body.innerHTML = '<div><p class="meta">' + w.meta + '</p><h3>' + w.title + '</h3></div><ul class="h-tags">' + w.tags.map(t => '<li>' + t + '</li>').join('') + '</ul><dl class="ladder"><dt>' + L[0] + '</dt><dd>' + w.start + '</dd><dt>' + L[1] + '</dt><dd>' + w.trim + '</dd><dt>' + L[2] + '</dt><dd class="form">' + w.form + '</dd></dl><span class="read">Read the case study \u2192</span>';
+      el.append(shot, body); deck.appendChild(el);
+      if (!im || reduce) return;
+      let timer = null, k = 0;
+      const start = () => { if (timer) return; timer = setInterval(() => { k = (k + 1) % w.imgs.length; im.src = IMG[w.imgs[k]]; }, 1100); };
+      const stop = () => { clearInterval(timer); timer = null; k = 0; im.src = IMG[w.imgs[0]]; };
+      el.addEventListener('mouseenter', start); el.addEventListener('mouseleave', stop); el.addEventListener('focus', start); el.addEventListener('blur', stop);
+    });
+  }
 
   /* ---------- case pages: stage rail, story, tray ---------- */
   const obs = [];
@@ -1099,7 +1326,36 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     draw(); fixes.appendChild(card); });
 
   route();
-  throwPot();
+
+  /* ---------- hero: draggable stickers and a "you" cursor ---------- */
+  (function(){
+    const hero = $('#heroCanvas'); if (!hero) return;
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    if (fine) $$('[data-drag]', hero).forEach(el => {
+      let sx, sy, ox, oy, on = false;
+      el.addEventListener('pointerdown', e => { on = true; el.setPointerCapture(e.pointerId); sx = e.clientX; sy = e.clientY; ox = el.offsetLeft; oy = el.offsetTop; el.style.left = ox + 'px'; el.style.top = oy + 'px'; el.style.right = 'auto'; el.style.bottom = 'auto'; el.classList.add('grab'); e.preventDefault(); });
+      el.addEventListener('pointermove', e => { if (!on) return; const r = hero.getBoundingClientRect(); const x = Math.max(0, Math.min(r.width - el.offsetWidth, ox + e.clientX - sx)); const y = Math.max(0, Math.min(r.height - el.offsetHeight, oy + e.clientY - sy)); el.style.left = x + 'px'; el.style.top = y + 'px'; });
+      const end = () => { on = false; el.classList.remove('grab'); };
+      el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+    });
+    const chip = $('#cursorChip');
+    if (chip && fine && !reduce) {
+      hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); chip.hidden = false; chip.style.transform = 'translate(' + (e.clientX - r.left + 14) + 'px,' + (e.clientY - r.top + 16) + 'px)'; });
+      hero.addEventListener('pointerleave', () => { chip.hidden = true; });
+    }
+  })();
+
+  /* ---------- copy email ---------- */
+  (function(){
+    const btn = $('#copyEmail'); if (!btn) return;
+    const label = btn.textContent;
+    btn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText('rajeshmalick16@gmail.com'); btn.textContent = 'Copied \u2713'; $('#live').textContent = 'Email address copied'; }
+      catch (e) { window.location.href = 'mailto:rajeshmalick16@gmail.com'; }
+      setTimeout(() => { btn.textContent = label; }, 2200);
+    });
+  })();
+  buildShelf();
 })();
 </script>
 </body>

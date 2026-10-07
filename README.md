@@ -1,4 +1,4 @@
-# Rajesh Malick portfolio (v5)
+# Rajesh Malick portfolio (v6)
 
 Static site. Upload `index.html` and the whole `assets/` folder to the repo root (RajeshMallik19/rajesh-portfolio). Vercel redeploys on its own.
 

@@ -560,7 +560,7 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 .mark{align-self:center;padding:0 0 4px}
 .bar nav{gap:5px;align-items:flex-end;flex-wrap:nowrap}
 .bar nav a{margin-bottom:-2px;padding:11px 16px 9px;border:2px solid var(--ink);border-radius:14px 14px 0 0;background:var(--c,#fff);color:var(--ink);transition:transform .12s ease;white-space:nowrap}
-.bar nav a:nth-child(1){--c:var(--sky)}.bar nav a:nth-child(2){--c:var(--yellow)}.bar nav a:nth-child(3){--c:var(--pink)}.bar nav a:nth-child(4){--c:var(--green)}.bar nav a:nth-child(5){--c:var(--lilac)}
+.bar nav a:nth-child(1){--c:var(--sky)}.bar nav a:nth-child(2){--c:var(--yellow)}.bar nav a:nth-child(3){--c:var(--pink)}.bar nav a:nth-child(4){--c:var(--green)}.bar nav a:nth-child(5){--c:var(--orange)}.bar nav a:nth-child(6){--c:var(--lilac)}
 .bar nav a.cta{--c:var(--ink);color:#fff}
 .bar nav a:hover{background:var(--c);transform:translateY(-5px);color:var(--ink)}
 .bar nav a.cta:hover{color:#fff;background:var(--ink)}
@@ -621,6 +621,18 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 .h-dev .brand{font:600 11px var(--mono);letter-spacing:.2em;color:#55555D}
 .h-play .hand{left:auto;right:3%;top:auto;bottom:12px;transform:rotate(-2deg)}
 
+/* ---- experience ---- */
+.h-jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.h-job{background:#fff;border:2px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.h-job .when{background:var(--c);border-bottom:2px solid var(--ink);padding:10px 18px;font:600 13px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:#101012}
+.h-job .in{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px}
+.h-job h3{font:800 28px/1.05 var(--display);letter-spacing:-.03em;margin:0}
+.h-job .role{font:600 16px var(--body);color:var(--muted);margin:0}
+.h-job p{margin:0;font-size:17px;color:var(--ink)}
+.h-job .out{background:linear-gradient(transparent 58%,var(--yellow) 58%);align-self:flex-start;font-weight:700}
+.h-sp:nth-child(5){background:var(--sky);transform:rotate(-.8deg)}
+.h-sp .t{line-height:1.3}
+
 /* ---- mascot ---- */
 .mascot{display:inline-flex;align-items:flex-end;gap:2px;position:relative}
 .mascot .mbody{width:96px;height:106px;flex:none;display:block}
@@ -665,7 +677,8 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
       <a href="#work" data-nav>01 Work</a>
       <a href="#play" data-nav>02 Playground</a>
       <a href="#about" data-nav>03 About</a>
-      <a href="#faq" data-nav>04 Questions</a>
+      <a href="#exp" data-nav>04 Experience</a>
+      <a href="#faq" data-nav>05 Questions</a>
       <a href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a>
       <a href="#contact" class="cta" data-nav>Contact</a>
     </nav>
@@ -745,10 +758,10 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
       <div>
         <p class="h-eyebrow">03 / About</p>
         <h2 id="abouth">A designer who also builds.</h2>
-        <p>I’m a B.E. Computer Science graduate (St. Joseph’s College of Engineering, 2026) who chose design. Four internships across SaaS, e-commerce, telemedicine, food import and export, and health-tech taught me to start from the user’s real problem, and to keep the developer in mind from the first sketch.</p>
+        <p>I’m a B.E. Computer Science graduate (St. Joseph’s College of Engineering, 2026) who chose design. Design work across SaaS, telemedicine, e-commerce, food import and export, and health-tech taught me to start from the user’s real problem, and to keep the developer in mind from the first sketch.</p>
         <p>The part I like most is cutting: the blocking popup, the extra booking step, the feature that adds stress instead of help.</p>
         <div class="h-notes">
-          <div class="h-note"><b>Now</b><span>Product Design Intern, Zuper</span></div>
+          <div class="h-note"><b>Now</b><span>Product Design Intern, Zuper, Jul to Oct 2026</span></div>
           <div class="h-note"><b>Works with</b><span>PMs, iOS engineers, developers, QA</span></div>
           <div class="h-note"><b>Tools</b><span>Figma, Claude, React, Tailwind, Framer</span></div>
           <div class="h-note"><b>Languages</b><span>English, Hindi, Tamil, Odia</span></div>
@@ -758,29 +771,41 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
     </div>
   </section>
 
+    <section class="wrap h-section" id="exp" aria-labelledby="exph">
+    <div class="h-head"><div><p class="h-eyebrow">04 / Experience</p><h2 id="exph">Where I’ve worked</h2></div><p>Most recent first.</p></div>
+    <div class="h-jobs">
+      <article class="h-job" style="--c:var(--sky)"><div class="when">Jul 2026 – Oct 2026</div><div class="in"><h3>Zuper</h3><p class="role">Product Design Intern</p><p>Zuper Connect on iOS and iPad, Job Chat, a web-app experience audit and the Labs concept. The Zuper Labs website is in development.</p><p class="out">Prototype Dashboard: deployed, and used by other designers.</p></div></article>
+      <article class="h-job" style="--c:var(--yellow)"><div class="when">2026</div><div class="in"><h3>Infotact Solutions</h3><p class="role">Design Associate and UI/UX Designer Intern</p><p>Telemed Connect, a healthcare booking product, and an omnichannel fashion e-commerce app, with Prasanthi, Sujeevana and Diganta.</p><p class="out">Telemed booking in under five clicks, from the doctor list.</p></div></article>
+      <article class="h-job" style="--c:var(--pink)"><div class="when">Mar 2025 – Jun 2025</div><div class="in"><h3>FOOZ Food Global LLP</h3><p class="role">UI/UX Designer Intern</p><p>Designed most of the main website for a business-to-customer import and export platform: home, hero, product details, About, Contact and more.</p><p class="out">Learned to design experiences for users, not just websites.</p></div></article>
+      <article class="h-job" style="--c:var(--green)"><div class="when">Oct 2024 · about a month</div><div class="in"><h3>Brainwave Solutions</h3><p>Designed a healthcare app, reimagining a Practo-style experience.</p><p class="out">Built my Auto Layout and prototyping skills.</p></div></article>
+      <article class="h-job" style="--c:var(--lilac)"><div class="when">2023 · about a month</div><div class="in"><h3>YBI Foundation</h3><p>Data analytics with Python and Google Colab, including a Naive Bayes classifier for women’s clothing reviews.</p><p class="out">Learned how Python applies to everyday problems.</p></div></article>
+    </div>
+  </section>
+
   <section class="wrap h-section" id="faq" aria-labelledby="faqh">
-    <div class="h-head"><div><p class="h-eyebrow">04 / Questions</p><h2 id="faqh">Things people ask</h2></div></div>
+    <div class="h-head"><div><p class="h-eyebrow">05 / Questions</p><h2 id="faqh">Things people ask</h2></div></div>
     <div class="h-faq">
       <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">A recruiter, probably</p><p class="h-bub">What do you design best?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">Complex B2B workflows: a call transfer, @mentions in a chat, a whole-product audit at Zuper. I find the real problem, then cut whatever doesn’t help.</p></div></div></article>
-      <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">An engineer</p><p class="h-bub">Do you build, or just design?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">Both. I built Zuper Labs OS in React and Tailwind with the Claude API, and a platform for reviewing designs together called Prelude. I keep the developer in mind from the first sketch.</p></div></div></article>
+      <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">An engineer</p><p class="h-bub">Do you build, or just design?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">Both. I made Zuper Labs OS, an OS-style interface that is deployed and in use. At hackathons I built a Telegram moderation bot and programmed the hardware for a face-recognition attendance system. I keep the developer in mind from the first sketch.</p></div></div></article>
       <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">A designer</p><p class="h-bub">How do you use AI?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">As a second pair of eyes, never as the last word. In the audit, some first-pass AI findings were wrong, so I checked them by hand and flagged the uncertain ones.</p></div></div></article>
       <article class="h-thread"><div class="h-msg q"><span class="h-av" aria-hidden="true">?</span><div><p class="h-who">A hiring manager</p><p class="h-bub">What are you looking for?</p></div></div><div class="h-msg"><span class="h-av me" aria-hidden="true"></span><div><p class="h-who">Rajesh</p><p class="h-bub">A product design role on a team building complex, useful software. My internship at Zuper ends on 26 October.</p></div></div></article>
     </div>
   </section>
 
   <section class="wrap h-section" id="side" aria-labelledby="sideh">
-    <div class="h-head"><div><p class="h-eyebrow">05 / Side projects</p><h2 id="sideh">Side projects</h2></div><p>Things I designed and built myself.</p></div>
+    <div class="h-head"><div><p class="h-eyebrow">06 / Also</p><h2 id="sideh">Beyond the case studies</h2></div><p>Things I built, entered and led.</p></div>
     <div class="h-side">
-      <div class="h-sp"><span class="t">React · Tailwind · Claude API</span><h3>Zuper Labs OS</h3><p>A desktop-style workspace for the design team.</p></div>
-      <div class="h-sp"><span class="t">Designer + developer</span><h3>Prelude Workspace</h3><p>A platform for reviewing designs together.</p></div>
-      <div class="h-sp"><span class="t">Finalist</span><h3>Hackathons</h3><p>Smart India Hackathon finalist. Also a finalist at AIVF and PECHACKS.</p></div>
-      <div class="h-sp"><span class="t">Chairperson</span><h3>PeerHub chapter</h3><p>A 40+ student chapter at St. Joseph’s.</p></div>
+      <div class="h-sp"><span class="t">Deployed and in use</span><h3>Zuper Labs OS</h3><p>A paper-clip-inspired, OS-style interface I made at Zuper, after first exploring a 3D concept. Zuper managers liked it, and one suggested a pixel-art, Game Boy-style direction.</p></div>
+      <div class="h-sp"><span class="t">AIVF No-Code AI Hackathon, 2024 · Finalist</span><h3>Telegram moderation bot</h3><p>A bot that detects and blocks nudity and abusive content in groups. I designed and built it.</p></div>
+      <div class="h-sp"><span class="t">Hackathon, 2024 · Finalist</span><h3>Face-recognition attendance</h3><p>An offline, Wi-Fi based attendance system. I was the designer, the hardware programmer and the presenter.</p></div>
+      <div class="h-sp"><span class="t">Smart India Hackathon, 2024</span><h3>Dropout prediction</h3><p>A student dropout prediction and analysis concept for a Gujarat Government problem statement, built with a team as designer and developer. It grew into my final-year research on AI and ML.</p></div>
+      <div class="h-sp"><span class="t">Chapter President, 2026</span><h3>PeerHub at St. Joseph’s</h3><p>Led a chapter of 40+ members with a five-person core team, reaching about 200 to 300 people.</p></div>
     </div>
   </section>
 
   <section class="h-contact" id="contact" aria-labelledby="conth">
     <div class="wrap">
-      <div class="mascot" data-body="#5BE3A5"><span class="bubble">Say hi. I’ll hold the scissors.</span><span class="mbody" aria-hidden="true"></span></div><p class="h-eyebrow">06 / Contact</p>
+      <div class="mascot" data-body="#5BE3A5"><span class="bubble">Say hi. I’ll hold the scissors.</span><span class="mbody" aria-hidden="true"></span></div><p class="h-eyebrow">07 / Contact</p>
       <h2 id="conth">Let’s make something with less in it.</h2>
       <p class="sub">I’m looking for a product design role on a team building complex, useful software.</p>
       <div class="actions"><button class="btn btn-solid" id="copyEmail" type="button">Copy rajeshmalick16@gmail.com</button><a class="btn btn-line" href="mailto:rajeshmalick16@gmail.com">Send an email</a><a class="btn btn-line" href="https://www.linkedin.com/in/rajesh-malick-5497b2242/">LinkedIn</a><a class="btn btn-line" href="https://docs.google.com/document/d/1zEdc86k5VtmKvJfRTTKjBJJpesOVfeRL/edit?usp=drive_link" target="_blank" rel="noopener">Resume</a></div>
@@ -1246,17 +1271,17 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 <main class="view" id="v-fooz" hidden data-pc style="--pc:#FF6B6B">
   <section class="wrap cs-hero">
     <a class="back" href="#work">← All work</a><div class="mascot" data-body="#FFD84D"><span class="bubble">Pure flavours, fewer clicks. Now I’m hungry.</span><span class="mbody" aria-hidden="true"></span></div>
-    <p class="kicker">FOOzFOOD, web and mobile, 2025</p>
+    <p class="kicker">FOOZ Food Global, web and mobile, 2025</p>
     <h1>A storefront for organic flavours</h1>
     <dl class="facts">
-      <div><dt>Role</dt><dd>UI/UX Design Intern</dd></div>
-      <div><dt>Company</dt><dd>FOOzFOOD, a business-to-customer food import and export company</dd></div>
-      <div><dt>Scope</dt><dd>14 pages, a mobile home page and the components behind them</dd></div>
-      <div><dt>Platform</dt><dd>Web and mobile</dd></div>
+      <div><dt>Role</dt><dd>UI/UX Designer Intern, on the design team</dd></div>
+      <div><dt>Company</dt><dd>FOOZ Food Global LLP, a business-to-customer import and export platform</dd></div>
+      <div><dt>My pages</dt><dd>Home, hero, product details, About, Contact and more</dd></div>
+      <div><dt>Timeline</dt><dd>March to June 2025</dd></div>
     </dl>
     <div class="minute">
       <div><h2>The brief</h2><p>A storefront for organic tea, whole spices, rice and essential oils.</p></div>
-      <div><h2>What I made</h2><p>Every page from home to a 404, a mobile home page, and the components used on each.</p></div>
+      <div><h2>What I made</h2><p>Home, hero, product details, About, Contact and other pages, plus the components behind them.</p></div>
       <div class="form-cell"><h2>One detail</h2><p>A delivery tracer: five stages, a carrier, a tracking ID and a way to reach support.</p></div>
     </div>
   </section>
@@ -1265,8 +1290,8 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
     <div>
       <section class="stage" id="z-problem" data-stage="Problem">
         <div class="stage-head"><span class="pot">The brief</span><h2>Pure, authentic, easy to follow</h2></div>
-        <p>FOOzFOOD imports and exports organic tea, whole spices, premium rice and essential oils, and sells them straight to customers. The storefront had to feel pure and authentic, and to make the road from product to doorstep easy to follow.</p>
-        <p>The pages cover home, shop, product details, checkout, delivery tracking, order confirmation, four account pages, About, Blog, Contact and a 404.</p>
+        <p>FOOZ imports and exports organic tea, whole spices, premium rice and essential oils, and sells them straight to customers. The company is built around problems in the organic-food chain, like inconsistent quality, adulteration and middlemen. The storefront had to feel pure and authentic, and to make the road from product to doorstep easy to follow.</p>
+        <p>The file holds 14 pages: home, shop, product details, checkout, delivery tracking, order confirmation, four account pages, About, Blog, Contact and a 404.</p>
       </section>
       <section class="stage" id="z-explore" data-stage="Explore">
         <div class="stage-head"><span class="pot">The pages</span><h2>From the front door to the doorstep</h2></div>
@@ -1288,6 +1313,7 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
         <div class="stage-head"><span class="pot">The result</span><h2>And on a phone</h2></div>
         <p>The mobile home page, scrolled from top to bottom.</p>
         <div style="max-width:300px;margin:20px auto 0"><div class="frame"><div class="scroller" style="max-height:640px;border-radius:14px" role="region" aria-label="Mobile home page, scrollable" tabindex="0"><img data-img="z-mob" loading="lazy" alt="FOOZ mobile home page: hero, Just In products, category tiles and footer" style="border-radius:0"></div></div><p style="text-align:center;margin-top:10px;font-size:16px">Scroll inside the frame.</p></div>
+        <p style="margin-top:32px"><b style="color:var(--ink)">What I learned:</b> to build an experience for users, not just a website.</p>
         <div class="next-up"><div><h2>Back to all work</h2><p>Seven pieces, from a call transfer to a food storefront.</p></div><a class="btn btn-line" href="#work">All work</a></div>
       </section>
     </div>
@@ -1318,7 +1344,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   window.addEventListener('hashchange', route);
 
   /* ---------- work cards ---------- */
-  const WORK = [{"go": "connect", "color": "#6FD3FF", "badge": "iOS and iPad", "title": "Undoing a call transfer", "meta": "Zuper Connect, 2026", "tags": ["Mobile", "Telephony", "Interaction design"], "start": "A transfer with no way back", "trim": "Waveform bar, duplicate Record, dead buttons", "form": "Cancel where Transfer was", "imgs": ["before-active", "opt-a", "after-active"]}, {"go": "audit", "color": "#FFD84D", "badge": "Web", "title": "64 flaws, one ranked map", "meta": "Zuper experience audit, 2026", "tags": ["Audit", "Research", "Prioritisation"], "start": "Too complex, nobody knew where", "trim": "Found 64 flaws, 12 repeating patterns", "form": "One ranked map, top five first", "pixels": true}, {"go": "jobchat", "color": "#5BE3A5", "badge": "Web, mobile, tablet", "title": "Mentioned, but never invited", "meta": "Zuper Job Chat, 2026", "tags": ["Web", "Mobile", "Tablet", "Chat"], "start": "@mentions that reached nobody", "trim": "A popup that stopped the conversation", "form": "A quiet note for the sender", "imgs": ["jc-problem", "jc-popup", "jc-final"], "wide": true}, {"go": "kern", "color": "#FF9BD2", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "tags": ["Mobile", "Research", "1 day"], "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "A calendar, success charts, a resume builder", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]}, {"go": "telemed", "color": "#BFAEFF", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "tags": ["Web", "Mobile", "Design system"], "start": "7.2 clicks to book, plus a forced detour", "trim": "The profile detour and the extra steps", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true}, {"go": "fashion", "color": "#FF7A45", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "tags": ["Mobile", "E-commerce", "Wireframes"], "start": "Wireframes with a style quiz and nearby stock", "trim": "The quiz and the stock check, at the deadline", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]}, {"go": "fooz", "color": "#FF6B6B", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOzFOOD, 2025", "tags": ["Web", "Mobile", "E-commerce"], "start": "Organic tea, spices, rice and oils, sold direct", "trim": "A five-stage delivery tracer", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Built"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true}];
+  const WORK = [{"go": "connect", "color": "#6FD3FF", "badge": "iOS and iPad", "title": "Undoing a call transfer", "meta": "Zuper Connect, 2026", "tags": ["Mobile", "Telephony", "Interaction design"], "start": "A transfer with no way back", "trim": "Waveform bar, duplicate Record, dead buttons", "form": "Cancel where Transfer was", "imgs": ["before-active", "opt-a", "after-active"]}, {"go": "audit", "color": "#FFD84D", "badge": "Web", "title": "64 flaws, one ranked map", "meta": "Zuper experience audit, 2026", "tags": ["Audit", "Research", "Prioritisation"], "start": "Too complex, nobody knew where", "trim": "Found 64 flaws, 12 repeating patterns", "form": "One ranked map, top five first", "pixels": true}, {"go": "jobchat", "color": "#5BE3A5", "badge": "Web, mobile, tablet", "title": "Mentioned, but never invited", "meta": "Zuper Job Chat, 2026", "tags": ["Web", "Mobile", "Tablet", "Chat"], "start": "@mentions that reached nobody", "trim": "A popup that stopped the conversation", "form": "A quiet note for the sender", "imgs": ["jc-problem", "jc-popup", "jc-final"], "wide": true}, {"go": "kern", "color": "#FF9BD2", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "tags": ["Mobile", "Research", "1 day"], "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "A calendar, success charts, a resume builder", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]}, {"go": "telemed", "color": "#BFAEFF", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "tags": ["Web", "Mobile", "Design system"], "start": "7.2 clicks to book, plus a forced detour", "trim": "The profile detour and the extra steps", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true}, {"go": "fashion", "color": "#FF7A45", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "tags": ["Mobile", "E-commerce", "Wireframes"], "start": "Wireframes with a style quiz and nearby stock", "trim": "The quiz and the stock check, at the deadline", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]}, {"go": "fooz", "color": "#FF6B6B", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOZ Food Global, 2025", "tags": ["Web", "Mobile", "E-commerce"], "start": "Organic tea, spices, rice and oils, sold direct", "trim": "A five-stage delivery tracer", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Built"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true}];
   function pixelGrid(){
     const order = ['C', 'H', 'M', 'L'], cells = [];
     M.forEach(m => m[1].forEach(f => cells.push(f[1])));
@@ -1495,7 +1521,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     const links = $$('.bar nav a[data-nav]');
     const setNav = id => links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + id));
     window.navSync = () => { if (current && current !== 'home') setNav('work'); };
-    const secs = ['work', 'play', 'about', 'faq', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
+    const secs = ['work', 'play', 'about', 'exp', 'faq', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
     const spy = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && current === 'home') setNav(e.target.id); }), { rootMargin: '-40% 0px -55% 0px' });
     secs.forEach(s => spy.observe(s));
     window.addEventListener('scroll', () => { if (current === 'home' && window.scrollY < 300) links.forEach(a => a.classList.remove('on')); }, { passive: true });

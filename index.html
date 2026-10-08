@@ -751,6 +751,31 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   .mascot.jump .mbody{animation:mJump .6s cubic-bezier(.3,1.6,.5,1)}
   @keyframes mJump{0%{translate:0 0;scale:1 1}30%{translate:0 -28px;scale:.92 1.1}60%{translate:0 0;scale:1.08 .92}100%{translate:0 0;scale:1 1}}
 }
+/* header notes sit above the first card (never under it) */
+.h-head{margin-bottom:76px;z-index:4}
+.h-head .hand{bottom:-50px}
+.h-head .doodle{bottom:-64px}
+/* playground stickers: no words, just play */
+.stk{position:absolute;width:clamp(62px,7.4vw,104px);z-index:2;line-height:0;margin:0}
+.stk svg{width:100%;height:auto;display:block;overflow:visible;filter:drop-shadow(1.6px 0 0 #fff) drop-shadow(-1.6px 0 0 #fff) drop-shadow(0 1.6px 0 #fff) drop-shadow(0 -1.6px 0 #fff) drop-shadow(3px 4px 0 rgba(16,16,18,.92))}
+.stk.grab{z-index:50}
+.stk.grab svg{filter:drop-shadow(1.6px 0 0 #fff) drop-shadow(-1.6px 0 0 #fff) drop-shadow(0 1.6px 0 #fff) drop-shadow(0 -1.6px 0 #fff) drop-shadow(7px 9px 0 rgba(16,16,18,.92))}
+@media (pointer:fine){.stk{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}}
+.stk1{left:44%;top:2%;transform:rotate(-14deg)}.stk2{left:63%;top:68%;transform:rotate(8deg)}.stk3{left:77%;top:80%;transform:rotate(-12deg)}
+.stk4{left:20%;top:84%;transform:rotate(12deg)}.stk5{left:3%;top:37%;transform:rotate(-8deg)}.stk6{left:50%;top:60%;transform:rotate(6deg)}
+.stk7{left:88%;top:55%;transform:rotate(14deg)}.stk8{left:30%;top:7%;transform:rotate(-6deg)}
+@media (max-width:900px){.stk{width:78px}}
+/* About: studied / done / hobbies */
+.h-profile{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:18px;margin-top:26px}
+.h-pc{background:var(--c);border:2px solid var(--ink);border-radius:8px;box-shadow:5px 5px 0 var(--ink);padding:18px 20px 20px;color:#101012}
+.h-pc:nth-child(1){transform:rotate(-1deg)}.h-pc:nth-child(2){transform:rotate(.8deg)}.h-pc:nth-child(3){transform:rotate(-.6deg)}
+.h-pc h3{font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.07em;margin:0 0 10px;letter-spacing:.07em}
+.h-pc ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.h-pc li{font:600 16px/1.3 var(--body);padding-left:16px;position:relative}
+.h-pc li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;background:#101012;border-radius:50%}
+.h-tools{margin:20px 0 0;color:var(--muted);font-size:16px}
+.h-tools b{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-right:6px}
+@media (min-width:901px){.h-about{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}.h-about .h-profile{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.h-about .h-pc{padding:16px 16px 18px}.h-about .h-pc li{font-size:15px}}
 @media (max-width:640px){.h-swap{right:-6px}}
 </style>
 <script>document.documentElement.className+=" js"</script>
@@ -837,11 +862,14 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
       <figure class="pc pc6 w" data-drag aria-hidden="true"><img data-img="sk-wire" alt="" loading="lazy"><figcaption>Paper wireframes</figcaption></figure>
       <figure class="pc pc7 p" data-drag aria-hidden="true"><img data-img="ev-lib" alt="" loading="lazy"><figcaption>Reading time</figcaption></figure>
       <figure class="pc pc8 p" data-drag aria-hidden="true"><img data-img="sk-warm" alt="" loading="lazy"><figcaption>Warm Beats</figcaption></figure>
-      <p class="sn sn1" data-drag aria-hidden="true">less, but better</p>
-      <p class="sn sn2" data-drag aria-hidden="true">aim: under 5 clicks</p>
-      <p class="sn sn3" data-drag aria-hidden="true">a popup is a last resort</p>
-      <p class="sn sn4" data-drag aria-hidden="true">ask why, then cut</p>
-      <p class="sn sn5" data-drag aria-hidden="true">delete first, polish later</p>
+      <span class="stk stk1" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><g transform="rotate(45 50 50)" stroke="#101012" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="40" y="4" width="20" height="14" rx="3" fill="#FF9BD2"/><rect x="40" y="18" width="20" height="9" fill="#C9C9CF"/><rect x="40" y="27" width="20" height="46" fill="#FFD84D"/><path d="M40 73 L50 96 L60 73 Z" fill="#F4D9B0"/><path d="M46.5 87 L50 96 L53.5 87 Z" fill="#101012"/></g></svg></span>
+      <span class="stk stk2" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 9 C22 9 7 29 9 52 C11 75 30 91 53 91 C64 91 66 82 60 76 C54 70 58 62 68 62 L79 62 C91 62 95 47 90 35 C84 17 68 9 50 9 Z" fill="#FFF3B0" stroke="#101012" stroke-width="3.5" stroke-linejoin="round"/><circle cx="29" cy="40" r="7.5" fill="#FF6B6B" stroke="#101012" stroke-width="2.5"/><circle cx="47" cy="26" r="7.5" fill="#6FD3FF" stroke="#101012" stroke-width="2.5"/><circle cx="68" cy="30" r="7.5" fill="#5BE3A5" stroke="#101012" stroke-width="2.5"/><circle cx="28" cy="63" r="7.5" fill="#BFAEFF" stroke="#101012" stroke-width="2.5"/></svg></span>
+      <span class="stk stk3" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><g stroke="#101012" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 10 L66 66" fill="none" stroke-width="7"/><path d="M70 10 L34 66" fill="none" stroke-width="7"/><circle cx="68" cy="78" r="12" fill="#FF6B6B"/><circle cx="32" cy="78" r="12" fill="#FF6B6B"/><circle cx="50" cy="40" r="3.5" fill="#fff"/></g></svg></span>
+      <span class="stk stk4" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 6 L61 36 L94 38 L68 58 L77 90 L50 72 L23 90 L32 58 L6 38 L39 36 Z" fill="#FFD84D" stroke="#101012" stroke-width="3.5" stroke-linejoin="round"/></svg></span>
+      <span class="stk stk5" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 88 C12 62 6 36 22 22 C35 11 47 20 50 30 C53 20 65 11 78 22 C94 36 88 62 50 88 Z" fill="#FF9BD2" stroke="#101012" stroke-width="3.5" stroke-linejoin="round"/><path d="M26 34 C28 29 33 27 37 29" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg></span>
+      <span class="stk stk6" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#FFD84D" stroke="#101012" stroke-width="3.5"/><ellipse cx="36" cy="42" rx="5" ry="8" fill="#101012"/><ellipse cx="64" cy="42" rx="5" ry="8" fill="#101012"/><path d="M28 60 Q50 82 72 60" fill="none" stroke="#101012" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="58" r="6" fill="#FF9BD2" opacity=".85"/><circle cx="76" cy="58" r="6" fill="#FF9BD2" opacity=".85"/></svg></span>
+      <span class="stk stk7" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><g transform="rotate(40 50 50)" stroke="#101012" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="43" y="40" width="14" height="52" rx="4" fill="#FF7A45"/><rect x="41" y="26" width="18" height="16" fill="#C9C9CF"/><path d="M41 26 C41 12 46 6 50 3 C54 6 59 12 59 26 Z" fill="#6FD3FF"/></g></svg></span>
+      <span class="stk stk8" data-drag aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M26 8 L26 76 L44 60 L56 90 L69 84 L57 56 L82 56 Z" fill="#2F5BFF" stroke="#101012" stroke-width="3.5" stroke-linejoin="round"/></svg></span>
       <div class="h-dev" role="group" aria-label="Screen viewer">
         <div class="scr"><img id="devImg" alt="" width="640" height="400"><span class="cap" id="devCap" aria-live="polite"></span></div>
         <div class="ctl"><button type="button" id="devPrev" aria-label="Previous screen">◀</button><span class="brand" aria-hidden="true">PLAYGROUND</span><button type="button" id="devNext" aria-label="Next screen">▶</button></div>
@@ -855,16 +883,14 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
       <div>
         <p class="h-eyebrow">03 / About</p>
         <h2 id="abouth">A designer who also builds.</h2>
-        <p>I studied Computer Science and tried hard to like coding, but design is where my passion and my professional work finally met.</p>
-        <p>Today I design complex B2B workflows at Zuper. Outside work I mentor school students with Ullas Trust, host events, play Gandhi ji in role plays, and sketch and sculpt whenever I can.</p>
+        <p>I’m Rajesh, a product designer from Chennai. I design complex B2B workflows, and I can build what I design. I’ve loved making art since my first years at school.</p>
         <p class="h-about-cta"><a class="btn btn-solid" href="#me">More about me →</a><a class="btn btn-line" href="#story">Life in photos</a></p>
-        <div class="h-notes">
-          <div class="h-note"><b>Now</b><span>Product Design Intern, Zuper, Jul to Oct 2026</span></div>
-          <div class="h-note"><b>Works with</b><span>PMs, iOS engineers, developers, QA</span></div>
-          <div class="h-note"><b>Tools</b><span>Figma, Claude, React, Tailwind, Framer</span></div>
-          <div class="h-note"><b>Languages</b><span>English, Hindi, Tamil, Odia</span></div>
-          <div class="h-note"><b>Off screen</b><span>Sketching, portraits and sculpture</span></div>
+        <div class="h-profile">
+          <article class="h-pc" style="--c:var(--yellow)"><h3>Studied</h3><ul><li>B.E. Computer Science and Engineering</li><li>St. Joseph’s College of Engineering, 2022 to 2026</li><li>Design courses from IBM, Accenture, Skillshare and Microsoft</li></ul></article>
+          <article class="h-pc" style="--c:var(--pink)"><h3>Done</h3><ul><li>Product Design Intern, Zuper</li><li>Design Associate, Infotact Solutions</li><li>UI/UX Designer Intern, FOOZ Food Global</li><li>Two hackathon finals, 2024</li><li>Chapter President, PeerHub</li></ul></article>
+          <article class="h-pc" style="--c:var(--green)"><h3>For fun</h3><ul><li>Sketching, drawing and portraits</li><li>Sculpture and reading</li><li>Role play, often as Gandhi ji</li><li>Hosting events and mentoring students</li></ul></article>
         </div>
+        <p class="h-tools"><b>Tools</b> Figma, Claude, React, Tailwind, Framer <b style="margin-left:14px">Languages</b> English, Hindi, Tamil, Odia</p>
         <div class="mascot" data-body="#6FD3FF"><span class="bubble">He sketches, sculpts and designs. I just hold the scissors.</span><span class="mbody" aria-hidden="true"></span></div>
       </div>
     </div>
@@ -1489,15 +1515,15 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
     <p class="kicker">Prelude Workspace, Zuper, 2026</p>
     <h1>Projects as trees in a 3D grove</h1>
     <dl class="facts">
-      <div><dt>Role</dt><dd>Redesigned the Prototype Dashboard</dd></div>
-      <div><dt>Original</dt><dd>Designed by my teammate Raghavendra</dd></div>
-      <div><dt>Platform</dt><dd>Web, in 3D, built with React Three Fiber</dd></div>
-      <div><dt>Status</dt><dd>Deployed, and used by six designers</dd></div>
+      <div><dt>Role</dt><dd>Product direction and end-to-end build</dd></div>
+      <div><dt>Original</dt><dd>A redesign of the Prototype Dashboard, first designed by my teammate Raghavendra</dd></div>
+      <div><dt>Stack</dt><dd>React, React Three Fiber, Vercel and Postgres</dd></div>
+      <div><dt>Status</dt><dd>Live, and used by six designers</dd></div>
     </dl>
     <div class="minute">
       <div><h2>What I started with</h2><p>The Prototype Dashboard, designed by Raghavendra.</p></div>
       <div><h2>What I changed</h2><p>I redesigned it as Prelude Workspace, a grove where each project is a tree, to be more interesting, more interactive and more usable.</p></div>
-      <div class="form-cell"><h2>Where it is now</h2><p>Deployed, and used by six designers at Zuper.</p></div>
+      <div class="form-cell"><h2>Where it is now</h2><p>Live, used by six designers, and still changing with their feedback.</p></div>
     </div>
   </section>
   <div class="wrap cs-body" data-cs>
@@ -1514,9 +1540,32 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
         <p>Open a tree and a panel slides in. It shows the team, the comments for the current version, with replies, and a list of versions, each with a status such as Draft. A New version button adds the next one.</p>
         <figure class="pshot"><img data-img="pr-2" loading="lazy" alt="A project tree opened in Prelude Workspace, with a side panel showing the team, comments for version 2 and a versions list"><figcaption>A project: team, comments and versions</figcaption></figure>
       </section>
+      <section class="stage" id="p-idea" data-stage="The idea">
+        <div class="stage-head"><span class="pot">The idea</span><h2>One metaphor, all the way down</h2></div>
+        <p>Review tools look like queues: every project is the same row in the same table, so you can’t tell which one has gone quiet. In Prelude, a project’s condition is something you can see from across the room.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>What you see</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td>A tree</td><td>A project</td></tr>
+            <tr><td>A bloom on the tree</td><td>A shipped version</td></tr>
+            <tr><td>Coloured beads around a bloom</td><td>Open feedback on that version, by type: bug, UI, UX or question</td></tr>
+            <tr><td>A withering tree</td><td>A project gone quiet, or feedback left unanswered</td></tr>
+            <tr><td>Dry, cracked soil</td><td>The overall health of the workspace is slipping</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+      <section class="stage" id="p-does" data-stage="What it does">
+        <div class="stage-head"><span class="pot">What it does</span><h2>A review flow that feels alive</h2></div>
+        <ul>
+          <li>Projects, versions and threaded comments, with feedback tagged as bug, UI polish, UX flow or question.</li>
+          <li>A grove whose health is worked out fresh from real activity, so it can’t drift from the truth.</li>
+          <li>A daily activity streak built for a Monday to Friday team, with weather and a welcome tour for new people.</li>
+          <li>Replay: scrub any project back through its real history.</li>
+        </ul>
+      </section>
       <section class="stage" id="p-why" data-stage="The goal">
         <div class="stage-head"><span class="pot">The goal</span><h2>More interesting, interactive and usable</h2></div>
-        <p>The problem I set out to solve was to make the dashboard more interesting, more interactive and more usable. Prelude is built with React Three Fiber, and six designers at Zuper use it.</p>
+        <p>The aim was a review workspace that is more interesting, more interactive and more usable than the dashboard it replaced.</p>
         <div class="next-up"><div><h2>Next: undoing a call transfer</h2><p>Zuper Connect.</p></div><a class="btn btn-line" href="#connect">Read Connect</a></div>
       </section>
     </div>
@@ -1526,9 +1575,9 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 <!-- ================= ABOUT ME ================= -->
 <main class="view" id="v-me" hidden data-pc style="--pc:#FF9BD2">
   <section class="wrap cs-hero">
-    <a class="back" href="#about">← Back</a><div class="mascot" data-body="#6FD3FF"><span class="bubble">Plot twist: he tried code, and found design.</span><span class="mbody" aria-hidden="true"></span></div>
+    <a class="back" href="#about">← Back</a><div class="mascot" data-body="#6FD3FF"><span class="bubble">He has been drawing since school. I only hold the scissors.</span><span class="mbody" aria-hidden="true"></span></div>
     <p class="kicker">About me</p>
-    <h1>I tried code. I found design.</h1>
+    <h1>Hi, I’m Rajesh.</h1>
     <dl class="facts">
       <div><dt>Based in</dt><dd>Chennai, India</dd></div>
       <div><dt>Studied</dt><dd>B.E. Computer Science, St. Joseph’s College of Engineering, 2022 to 2026</dd></div>
@@ -1536,39 +1585,32 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
       <div><dt>Languages</dt><dd>English, Hindi, Tamil, Odia</dd></div>
     </dl>
     <div class="minute">
-      <div><h2>Where I started</h2><p>Computer Science. I tried my best to like coding. Python was great, and C and Java interested me too.</p></div>
-      <div><h2>What changed</h2><p>In my second year I felt this wasn’t my path, so I looked for work where my passion and my professionalism could live together.</p></div>
-      <div class="form-cell"><h2>Where I am now</h2><p>Design. Like data analysis, it’s hectic. But it’s the one I find interesting.</p></div>
+      <div><h2>Since school</h2><p>I’ve been making artwork since the start of school.</p></div>
+      <div><h2>Engineering</h2><p>I studied B.E. Computer Science and Engineering at St. Joseph’s College of Engineering.</p></div>
+      <div class="form-cell"><h2>Today</h2><p>I’m a Product Design Intern at Zuper, and I design.</p></div>
     </div>
   </section>
   <div class="wrap cs-body" data-cs>
     <nav aria-label="Sections"><ol class="rail" data-rail></ol></nav>
     <div>
-      <section class="stage" id="me-story" data-stage="My story">
-        <div class="stage-head"><span class="pot">My story</span><h2>How I found design</h2></div>
-        <p>I wasn’t interested in coding, but I tried my best to learn it. Python was great. I was interested in C, and then in Java. In my second year I felt this was not my way to reach my goal, so I looked for something where I could show my passion and my professionalism together.</p>
-        <p>That’s where I found my passion as an artist. Sketches, drawings, portraits and sculpture are all things I love, and I wanted to bring that colour and creativity into my professional life.</p>
-        <p>I saw two ways to do it: an analyst job or a designer job. I tried both. Even the data analyst job is hectic, and so is design, but I found design interesting. I tried my luck, and I got it. I became a designer.</p>
-      </section>
-      <section class="stage" id="me-do" data-stage="What I do">
-        <div class="stage-head"><span class="pot">What I do</span><h2>What I design now</h2></div>
-        <p>I design complex B2B workflows. At Zuper that has meant a call-transfer screen, @mentions in a chat, an audit of the whole web app, and Prelude Workspace, a 3D grove that six designers use. Before that: a telemedicine booking product, a fashion app and an e-commerce website.</p>
-        <p>I can build too. At hackathons I made a Telegram moderation bot and programmed the hardware for a face-recognition attendance system, and I use React to prototype.</p>
-        <p><a class="btn btn-solid" href="#work">See the work</a></p>
-      </section>
-      <section class="stage" id="me-out" data-stage="Outside work">
-        <div class="stage-head"><span class="pot">Outside work</span><h2>When I’m not designing</h2></div>
-        <div class="h-notes">
-          <div class="h-note"><b>Mentoring</b><span>Government and government-aided school students, with Ullas Trust</span></div>
-          <div class="h-note"><b>Hosting</b><span>I host many events, and like looking after the whole thing</span></div>
-          <div class="h-note"><b>Role play</b><span>I often play Mahatma Gandhi ji</span></div>
-          <div class="h-note"><b>Art</b><span>Sketches, portraits and sculpture</span></div>
-          <div class="h-note"><b>NGOs</b><span>Time with the people and children there</span></div>
-          <div class="h-note"><b>Reading</b><span>Whenever I can</span></div>
-          <div class="h-note"><b>Hackathons</b><span>Finalist in 2024 at the AIVF No-Code AI Hackathon and PEC HACKS</span></div>
-          <div class="h-note"><b>PeerHub</b><span>Chapter President, with 40+ members</span></div>
+      <section class="stage" id="me-glance" data-stage="At a glance">
+        <div class="stage-head"><span class="pot">At a glance</span><h2>Studied, done, and for fun</h2></div>
+        <div class="h-profile">
+          <article class="h-pc" style="--c:var(--yellow)"><h3>Studied</h3><ul><li>B.E. Computer Science and Engineering, St. Joseph’s College of Engineering, 2022 to 2026</li><li>Basic Principles of Design (IBM)</li><li>User Experience (Accenture)</li><li>Figma UI/UX Advanced (Skillshare)</li><li>Career Essentials in Generative AI (Microsoft and LinkedIn)</li></ul></article>
+          <article class="h-pc" style="--c:var(--pink)"><h3>Done</h3><ul><li>Product Design Intern, Zuper</li><li>Design Associate, Infotact Solutions</li><li>UI/UX Designer Intern, FOOZ Food Global</li><li>Finalist at the AIVF No-Code AI Hackathon and PEC HACKS, 2024</li><li>Chapter President, PeerHub, with 40+ members</li><li>Mentor with Ullas Trust</li></ul></article>
+          <article class="h-pc" style="--c:var(--green)"><h3>For fun</h3><ul><li>Sketching, drawing and portraits</li><li>Sculpture</li><li>Reading</li><li>Role play, often as Gandhi ji</li><li>Hosting events</li><li>Time with people and children at NGOs</li></ul></article>
         </div>
-        <p style="margin-top:26px"><a class="btn btn-line" href="#story">See it in photos</a></p>
+        <p style="margin-top:28px"><a class="btn btn-line" href="#story">See it in photos</a></p>
+      </section>
+      <section class="stage" id="me-do" data-stage="What I design">
+        <div class="stage-head"><span class="pot">What I design</span><h2>What I design, show and hand over</h2></div>
+        <div class="h-notes">
+          <div class="h-note"><b>What I design</b><span>Complex B2B workflows, and mobile and web products in telemedicine, e-commerce and health-tech</span></div>
+          <div class="h-note"><b>What I showcase</b><span>Case studies, from the first look at a problem to the final screens</span></div>
+          <div class="h-note"><b>What I hand to a team</b><span>Flows, screens and components that developers can build from</span></div>
+          <div class="h-note"><b>What I can build</b><span>Prototypes in React, and a few hackathon projects</span></div>
+        </div>
+        <p style="margin-top:26px"><a class="btn btn-solid" href="#work">See the work</a></p>
       </section>
       <section class="stage" id="me-hello" data-stage="Say hello">
         <div class="stage-head"><span class="pot">Say hello</span><h2>What I’m looking for</h2></div>
@@ -1883,7 +1925,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     if (reduce) return;
 
     /* reveal on scroll */
-    const RV = '.h-head, .h-card, .h-step, .h-note, .h-job, .h-thread, .h-sp, .h-stat, .pola, .stage-head, .minute > div, .facts > div, .insights li, .table-wrap, .next-up, .pc, .sn, .h-dev, .h-lede, .phones figure, .wide-fig, .spot, .col, .h-ab-photo, .h-about > div:last-child, .pshot';
+    const RV = '.h-head, .h-card, .h-step, .h-note, .h-pc, .h-job, .h-thread, .h-sp, .h-stat, .pola, .stage-head, .minute > div, .facts > div, .insights li, .table-wrap, .next-up, .pc, .stk, .h-dev, .h-lede, .phones figure, .wide-fig, .spot, .col, .h-ab-photo, .h-about > div:last-child, .pshot';
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -7% 0px', threshold: 0.06 });
     const seen = new Map();
     $$(RV).forEach(el => {

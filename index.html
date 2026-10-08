@@ -664,6 +664,23 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   .h-hero .hand.a1,.h-hero .doodle.d1,.h-head .hand,.h-head .doodle{display:none}
   .mascot .bubble{font-size:15px;max-width:180px}
 }
+
+/* ===================== v8: personal photos, story page, Prelude ===================== */
+.polas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px;margin:28px 0 8px;align-items:start}
+.pola{position:relative;background:#fff;padding:10px 10px 14px;box-shadow:6px 6px 0 var(--ink);margin:0;transform:rotate(-1.2deg)}
+.pola:nth-child(even){transform:rotate(1.4deg)}.pola:nth-child(3n){transform:rotate(-.6deg)}
+.pola::after{content:"";position:absolute;inset:-2px;border:2px solid var(--ink);pointer-events:none;filter:url(#rough)}
+.pola img{width:100%;height:auto;display:block;border:2px solid var(--ink);background:#fff}
+.pola figcaption{font:600 23px/1.05 var(--hand);text-transform:none;letter-spacing:0;text-align:center;margin-top:10px;color:var(--ink)}
+.pola.tall img{max-height:560px;object-fit:cover;object-position:center 20%}
+@media (min-width:760px){.pola.wide{grid-column:span 2}}
+.pshot{border:2px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);background:#fff;margin:24px 0 0}
+.pshot img{width:100%;height:auto;display:block}
+.pshot figcaption{padding:12px 16px;border-top:2px solid var(--ink);background:#fff;font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.04em}
+@media (min-width:901px){
+  .h-card.rev{flex-direction:row-reverse}
+  .h-card.rev .h-shot{border-right:0;border-left:2px solid var(--ink)}
+}
 </style>
 </head>
 <body>
@@ -709,7 +726,7 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   <div class="h-marq" aria-label="What I work with"><div class="h-track"><span>Interaction design</span><span>Prototyping</span><span>UX research</span><span>Design systems</span><span>B2B workflows</span><span>Accessibility</span><span>Information architecture</span><span>Usability audits</span><span>Figma</span><span>React and Tailwind</span><span aria-hidden="true" hidden></span><span aria-hidden="true">Interaction design</span><span aria-hidden="true">Prototyping</span><span aria-hidden="true">UX research</span><span aria-hidden="true">Design systems</span><span aria-hidden="true">B2B workflows</span><span aria-hidden="true">Accessibility</span><span aria-hidden="true">Information architecture</span><span aria-hidden="true">Usability audits</span><span aria-hidden="true">Figma</span><span aria-hidden="true">React and Tailwind</span></div></div>
 
   <section class="wrap h-section" id="work" aria-labelledby="workh">
-    <div class="h-head"><div><p class="h-eyebrow">01 / Selected work</p><h2 id="workh">Work<span class="h-cnt" aria-label="7 projects">07</span></h2></div><p>Seven projects, each one about what I took away. Hover a card to flip through its screens.</p><span class="hand" aria-hidden="true">hover a card</span><svg class="doodle  rough" viewBox="0 0 120 84" aria-hidden="true"><path d="M6 10 C 42 2, 92 18, 104 62" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round"/><path d="M88 52 L105 66 L113 45" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="h-head"><div><p class="h-eyebrow">01 / Selected work</p><h2 id="workh">Work<span class="h-cnt" aria-label="8 projects">08</span></h2></div><p>Eight projects, each one about what I took away. Hover a card to flip through its screens.</p><span class="hand" aria-hidden="true">hover a card</span><svg class="doodle  rough" viewBox="0 0 120 84" aria-hidden="true"><path d="M6 10 C 42 2, 92 18, 104 62" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round"/><path d="M88 52 L105 66 L113 45" fill="none" stroke="#101012" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div class="h-deck" id="shelf"></div>
   </section>
 
@@ -729,17 +746,17 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   </section>
 
     <section class="wrap h-section" id="play" aria-labelledby="playh">
-    <div class="h-head"><div><p class="h-eyebrow">02 / Playground</p><h2 id="playh">Playground</h2></div><p>The work, as a pile of stickers. Drag things around, or flip through the screens on the little viewer.</p></div>
+    <div class="h-head"><div><p class="h-eyebrow">02 / Playground</p><h2 id="playh">Playground</h2></div><p>A pile of my life: sketches, events and mentoring. Drag things around, or flip through the project screens on the little viewer.</p></div>
     <div class="h-play" id="playCanvas">
       <span class="hand" aria-hidden="true">go on, throw things around</span>
-      <figure class="pc pc1 p" data-drag aria-hidden="true"><img data-img="after-active" alt="" loading="lazy"><figcaption>Connect</figcaption></figure>
-      <figure class="pc pc2 w" data-drag aria-hidden="true"><img data-img="jc-final" alt="" loading="lazy"><figcaption>Job Chat</figcaption></figure>
-      <figure class="pc pc3 p" data-drag aria-hidden="true"><img data-img="k-s1" alt="" loading="lazy"><figcaption>Kern</figcaption></figure>
-      <figure class="pc pc4 w" data-drag aria-hidden="true"><img data-img="t-search" alt="" loading="lazy"><figcaption>Telemed</figcaption></figure>
-      <figure class="pc pc5 p" data-drag aria-hidden="true"><img data-img="f-onb" alt="" loading="lazy"><figcaption>Omni Fashion</figcaption></figure>
-      <figure class="pc pc6 w" data-drag aria-hidden="true"><img data-img="z-home" alt="" loading="lazy"><figcaption>FOOZ</figcaption></figure>
-      <figure class="pc pc7 p" data-drag aria-hidden="true"><img data-img="tm-3" alt="" loading="lazy"><figcaption>Telemed, mobile</figcaption></figure>
-      <figure class="pc pc8 p" data-drag aria-hidden="true"><img data-img="k-s3" alt="" loading="lazy"><figcaption>Safe-Zone</figcaption></figure>
+      <figure class="pc pc1 p" data-drag aria-hidden="true"><img data-img="ev-hack" alt="" loading="lazy"><figcaption>Hackomania 2024</figcaption></figure>
+      <figure class="pc pc2 w" data-drag aria-hidden="true"><img data-img="mn-teach1" alt="" loading="lazy"><figcaption>Mentoring</figcaption></figure>
+      <figure class="pc pc3 p" data-drag aria-hidden="true"><img data-img="sk-portrait" alt="" loading="lazy"><figcaption>Portrait, in progress</figcaption></figure>
+      <figure class="pc pc4 w" data-drag aria-hidden="true"><img data-img="ev-gandhi" alt="" loading="lazy"><figcaption>Playing Gandhi ji</figcaption></figure>
+      <figure class="pc pc5 p" data-drag aria-hidden="true"><img data-img="ev-onam" alt="" loading="lazy"><figcaption>First Zuper event: Onam</figcaption></figure>
+      <figure class="pc pc6 w" data-drag aria-hidden="true"><img data-img="sk-wire" alt="" loading="lazy"><figcaption>Paper wireframes</figcaption></figure>
+      <figure class="pc pc7 p" data-drag aria-hidden="true"><img data-img="ev-lib" alt="" loading="lazy"><figcaption>Reading time</figcaption></figure>
+      <figure class="pc pc8 p" data-drag aria-hidden="true"><img data-img="sk-warm" alt="" loading="lazy"><figcaption>Warm Beats</figcaption></figure>
       <p class="sn sn1" data-drag aria-hidden="true">less, but better</p>
       <p class="sn sn2" data-drag aria-hidden="true">aim: under 5 clicks</p>
       <p class="sn sn3" data-drag aria-hidden="true">a popup is a last resort</p>
@@ -754,13 +771,14 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 
   <section class="wrap h-section" id="about" aria-labelledby="abouth">
     <div class="h-about">
-      <div class="h-ab-photo"><figure class="h-pol2"><img src="assets/portrait.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a dark blazer" loading="lazy"><figcaption>Rajesh, Chennai</figcaption></figure><span class="h-tape" aria-hidden="true"></span></div>
+      <div class="h-ab-photo"><figure class="h-pol2"><img src="assets/me-2.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a pink shirt, outdoors" loading="lazy"><figcaption>Rajesh, Chennai</figcaption></figure><span class="h-tape" aria-hidden="true"></span></div>
       <div>
         <p class="h-eyebrow">03 / About</p>
         <h2 id="abouth">A designer who also builds.</h2>
         <p>I studied Computer Science and tried hard to like coding. Python was great, and C and Java interested me too, but in my second year I knew it wasn’t my path.</p>
         <p>I wanted work where my passion and my professionalism could live together. I’ve always loved sketching, drawing, portraits and sculpture, and I wanted that colour and creativity in my career. Data analysis and design were my two routes. I tried both, and design was the one I found interesting, so I tried my luck, and I became a designer.</p>
         <p>Design work across SaaS, telemedicine, e-commerce, food import and export, and health-tech taught me to start from the user’s real problem, and to keep the developer in mind from the first sketch.</p>
+        <p><a class="btn btn-line" href="#story">More about me</a></p>
         <div class="h-notes">
           <div class="h-note"><b>Now</b><span>Product Design Intern, Zuper, Jul to Oct 2026</span></div>
           <div class="h-note"><b>Works with</b><span>PMs, iOS engineers, developers, QA</span></div>
@@ -797,10 +815,10 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   <section class="wrap h-section" id="side" aria-labelledby="sideh">
     <div class="h-head"><div><p class="h-eyebrow">06 / Also</p><h2 id="sideh">Beyond the case studies</h2></div><p>Things I built, entered and led.</p></div>
     <div class="h-side">
-      <div class="h-sp"><span class="t">Deployed and in use</span><h3>Prelude Workspace</h3><p>My redesign of the Prototype Dashboard, which my teammate Raghavendra designed. It is deployed and used by other designers.</p></div>
+      <div class="h-sp"><span class="t">Deployed and in use</span><h3>Prelude Workspace</h3><p>My redesign of the Prototype Dashboard, which my teammate Raghavendra designed: a 3D grove where each project is a tree. Deployed and used by other designers.</p></div>
       <div class="h-sp"><span class="t">In development</span><h3>Zuper Labs OS</h3><p>I’m redesigning the Zuper Labs website as an OS-style interface inspired by paper clips, after first exploring a 3D concept. Zuper managers liked the concept, and one suggested a pixel-art, Game Boy-style direction.</p></div>
       <div class="h-sp"><span class="t">AIVF No-Code AI Hackathon, 2024 · Finalist</span><h3>Telegram moderation bot</h3><p>A bot that detects and blocks nudity and abusive content in groups. I designed and built it.</p></div>
-      <div class="h-sp"><span class="t">Hackathon, 2024 · Finalist</span><h3>Face-recognition attendance</h3><p>An offline, Wi-Fi based attendance system. I was the designer, the hardware programmer and the presenter.</p></div>
+      <div class="h-sp"><span class="t">PEC HACKS, 2024 · Finalist</span><h3>Face-recognition attendance</h3><p>An offline, Wi-Fi based attendance system. I was the designer, the hardware programmer and the presenter.</p></div>
       <div class="h-sp"><span class="t">Smart India Hackathon, 2024</span><h3>Dropout prediction</h3><p>A student dropout prediction and analysis concept for a Gujarat Government problem statement, built with a team as designer and developer. It grew into my final-year research on AI and ML.</p></div>
       <div class="h-sp"><span class="t">Chapter President, 2026</span><h3>PeerHub at St. Joseph’s</h3><p>Led a chapter of 40+ members with a five-person core team, reaching about 200 to 300 people.</p></div>
     </div>
@@ -1323,9 +1341,97 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   </div>
 </main>
 
+<!-- ================= STORY ================= -->
+<main class="view" id="v-story" hidden data-pc style="--pc:#FFD84D">
+  <section class="wrap cs-hero">
+    <a class="back" href="#about">← About</a><div class="mascot" data-body="#FF9BD2"><span class="bubble">He teaches, sketches, hosts and plays Gandhi. I’m tired just watching.</span><span class="mbody" aria-hidden="true"></span></div>
+    <p class="kicker">Ullas Trust, mentoring, art and events</p>
+    <h1>Beyond the screen</h1>
+    <dl class="facts">
+      <div><dt>With</dt><dd>Ullas Trust, as a higher-education scholar</dd></div>
+      <div><dt>Mentoring</dt><dd>Government and government-aided school students</dd></div>
+      <div><dt>Focus</dt><dd>Personal development and confidence</dd></div>
+      <div><dt>Also</dt><dd>Hosting events, role play, NGOs and sketching</dd></div>
+    </dl>
+  </section>
+  <div class="wrap cs-body" data-cs>
+    <nav aria-label="Sections"><ol class="rail" data-rail></ol></nav>
+    <div>
+      <section class="stage" id="s-ullas" data-stage="Ullas Trust">
+        <div class="stage-head"><span class="pot">Ullas Trust</span><h2>Learning, and passing it on</h2></div>
+        <p>I’m an Ullas Higher Education Scholar. Alongside my degree, I’ve been mentoring students from government and government-aided schools, who have little knowledge of personal development. The goal is simple: help them build their confidence.</p>
+        <div class="polas"><figure class="pola wide"><img data-img="mn-teach1" loading="lazy" alt="Rajesh standing in front of a group of seated school students, outdoors under a tree"><figcaption>Mentoring school students</figcaption></figure><figure class="pola wide"><img data-img="mn-teach2" loading="lazy" alt="A mentoring session with school students seated on the ground in a courtyard"><figcaption>Another session</figcaption></figure></div>
+      </section>
+      <section class="stage" id="s-stage" data-stage="On stage">
+        <div class="stage-head"><span class="pot">On stage</span><h2>Hosting and speaking</h2></div>
+        <p>I host many events, and I like looking after the whole thing, from the stage to what happens behind it.</p>
+        <div class="polas"><figure class="pola tall"><img data-img="ev-stage" loading="lazy" alt="Rajesh speaking at a podium in front of a presentation screen"><figcaption>At the podium</figcaption></figure></div>
+      </section>
+      <section class="stage" id="s-events" data-stage="Events">
+        <div class="stage-head"><span class="pot">Hackathons and events</span><h2>Badges from the road</h2></div>
+        <p>Every ID card in this pile is a hackathon, a technical event or a non-technical one I took part in. Some, like CRYPTRIX, I helped organise.</p>
+        <div class="polas"><figure class="pola tall"><img data-img="ev-badges" loading="lazy" alt="A pile of ID cards and lanyards from hackathons and college events"><figcaption>ID cards from hackathons and events</figcaption></figure><figure class="pola tall"><img data-img="ev-hack" loading="lazy" alt="Rajesh posing inside a Hackomania 2024 photo frame"><figcaption>Hackomania 2024</figcaption></figure></div>
+      </section>
+      <section class="stage" id="s-roles" data-stage="Roles">
+        <div class="stage-head"><span class="pot">Roles and NGOs</span><h2>Role play, books and NGOs</h2></div>
+        <p>I often play Mahatma Gandhi in role plays and dramas. I also spend time at NGOs with the people and children there, and I read whenever I can.</p>
+        <div class="polas"><figure class="pola wide"><img data-img="ev-gandhi" loading="lazy" alt="Rajesh dressed as Mahatma Gandhi beside a group of performers in white face paint and black costumes"><figcaption>Playing Gandhi ji in a role play</figcaption></figure><figure class="pola tall"><img data-img="ev-lib" loading="lazy" alt="Rajesh reading a book in front of green library shelves"><figcaption>Reading in a library</figcaption></figure></div>
+      </section>
+      <section class="stage" id="s-sketch" data-stage="Sketches">
+        <div class="stage-head"><span class="pot">Sketches</span><h2>Sketches, drawings and portraits</h2></div>
+        <p>Sketching, drawing, portraits and sculpture are my passions, and I want that colour and creativity in my professional work too.</p>
+        <div class="polas"><figure class="pola"><img data-img="sk-krishna" loading="lazy" alt="A detailed pencil-style drawing of baby Krishna with a butter pot"><figcaption>Baby Krishna</figcaption></figure><figure class="pola"><img data-img="sk-warm" loading="lazy" alt="Colourful hand-drawn lettering reading Warm Beats, surrounded by crayon clouds and hearts"><figcaption>Warm Beats</figcaption></figure><figure class="pola"><img data-img="sk-portrait" loading="lazy" alt="A pencil portrait in progress, with a hand holding the pencil"><figcaption>A portrait in progress</figcaption></figure><figure class="pola tall"><img data-img="sk-saraswati" loading="lazy" alt="A blue marker drawing of Saraswati on a whiteboard"><figcaption>Saraswati, on a whiteboard</figcaption></figure><figure class="pola wide"><img data-img="sk-wire" loading="lazy" alt="Hand-drawn mobile wireframes on lined paper for a face-recognition attendance app"><figcaption>Paper wireframes for the attendance app</figcaption></figure></div>
+      </section>
+      <section class="stage" id="s-zuper" data-stage="Zuper">
+        <div class="stage-head"><span class="pot">Zuper</span><h2>My first event at Zuper</h2></div>
+        <p>Onam was the first event I joined at Zuper.</p>
+        <div class="polas"><figure class="pola tall"><img data-img="ev-onam" loading="lazy" alt="Rajesh smiling behind a colourful Happy Onam photo frame at the Zuper office"><figcaption>Onam at Zuper</figcaption></figure></div>
+        <div class="next-up"><div><h2>Back to the work</h2><p>Seven projects, and one that is live.</p></div><a class="btn btn-line" href="#work">See the work</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- ================= PRELUDE ================= -->
+<main class="view" id="v-prelude" hidden data-pc style="--pc:#8EF0D8">
+  <section class="wrap cs-hero">
+    <a class="back" href="#work">← All work</a><div class="mascot" data-body="#FFD84D"><span class="bubble">Every project is a tree. No spreadsheets were harmed.</span><span class="mbody" aria-hidden="true"></span></div>
+    <p class="kicker">Prelude Workspace, Zuper, 2026</p>
+    <h1>Projects as trees in a 3D grove</h1>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Redesigned the Prototype Dashboard</dd></div>
+      <div><dt>Original</dt><dd>Designed by my teammate Raghavendra</dd></div>
+      <div><dt>Platform</dt><dd>Web, in 3D</dd></div>
+      <div><dt>Status</dt><dd>Deployed, and used by other designers</dd></div>
+    </dl>
+    <div class="minute">
+      <div><h2>What I started with</h2><p>The Prototype Dashboard, designed by Raghavendra.</p></div>
+      <div><h2>What I changed</h2><p>I redesigned it as Prelude Workspace, a grove where each project is a tree.</p></div>
+      <div class="form-cell"><h2>Where it is now</h2><p>Deployed, and in use by other designers at Zuper.</p></div>
+    </div>
+  </section>
+  <div class="wrap cs-body" data-cs>
+    <nav aria-label="Stages"><ol class="rail" data-rail></ol></nav>
+    <div>
+      <section class="stage" id="p-workspace" data-stage="The grove">
+        <div class="stage-head"><span class="pot">The grove</span><h2>Open it and you walk into a forest</h2></div>
+        <p>Prelude opens on a grove. Each project is a tree with its name beneath it: here, zuper labs and Rejuvenation. You move with the keyboard: arrow keys to select a tree, Enter to open it, and WASD to look around.</p>
+        <p>A bar along the top holds the project switcher, a Grove and Focus toggle and a New project button. A dock at the bottom holds home, search, notifications, settings and sound.</p>
+        <figure class="pshot"><img data-img="pr-1" loading="lazy" alt="Prelude Workspace showing two low-poly trees in a misty 3D grove, labelled zuper labs and Rejuvenation"><figcaption>The grove: one tree per project</figcaption></figure>
+      </section>
+      <section class="stage" id="p-inside" data-stage="Inside a project">
+        <div class="stage-head"><span class="pot">Inside a project</span><h2>Team, comments and versions</h2></div>
+        <p>Open a tree and a panel slides in. It shows the team, the comments for the current version, with replies, and a list of versions, each with a status such as Draft. A New version button adds the next one.</p>
+        <figure class="pshot"><img data-img="pr-2" loading="lazy" alt="A project tree opened in Prelude Workspace, with a side panel showing the team, comments for version 2 and a versions list"><figcaption>A project: team, comments and versions (comments blurred)</figcaption></figure>
+        <div class="next-up"><div><h2>Next: undoing a call transfer</h2><p>Zuper Connect.</p></div><a class="btn btn-line" href="#connect">Read Connect</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+
 
 <script>
-const IMG = {"before-active": "assets/before-active.webp", "before-consult": "assets/before-consult.webp", "before-sheet": "assets/before-sheet.webp", "after-active": "assets/after-active.webp", "after-transferring": "assets/after-transferring.webp", "after-consult": "assets/after-consult.webp", "after-conference": "assets/after-conference.webp", "opt-a": "assets/opt-a.webp", "opt-hold": "assets/opt-hold.webp", "opt-confirm": "assets/opt-confirm.webp", "result": "assets/result.webp", "ipad": "assets/ipad.webp", "jc-problem": "assets/jc-problem.webp", "jc-popup": "assets/jc-popup.webp", "jc-final": "assets/jc-final.webp", "jc-banner": "assets/jc-banner.webp", "jc-result": "assets/jc-result.webp", "jc-msheet": "assets/jc-msheet.webp", "jc-madded": "assets/jc-madded.webp", "k-s1": "assets/k-s1.webp", "k-s2": "assets/k-s2.webp", "k-s3": "assets/k-s3.webp", "k-s4": "assets/k-s4.webp", "k-flow": "assets/k-flow.webp", "t-comp": "assets/t-comp.webp", "t-p1": "assets/t-p1.webp", "t-p2": "assets/t-p2.webp", "t-j1": "assets/t-j1.webp", "t-j2": "assets/t-j2.webp", "t-ia": "assets/t-ia.webp", "t-flow": "assets/t-flow.webp", "t-prob": "assets/t-prob.webp", "t-home": "assets/t-home.webp", "t-search": "assets/t-search.webp", "t-book": "assets/t-book.webp", "t-video": "assets/t-video.webp", "t-kit": "assets/t-kit.webp", "t-lib": "assets/t-lib.webp", "f-onb": "assets/f-onb.webp", "f-login": "assets/f-login.webp", "f-home": "assets/f-home.webp", "f-search": "assets/f-search.webp", "f-prod": "assets/f-prod.webp", "f-prod2": "assets/f-prod2.webp", "f-cart": "assets/f-cart.webp", "f-check": "assets/f-check.webp", "f-conf": "assets/f-conf.webp", "f-prof": "assets/f-prof.webp", "f-comp": "assets/f-comp.webp", "f-home-s": "assets/f-home-s.webp", "f-search-s": "assets/f-search-s.webp", "f-prod-s": "assets/f-prod-s.webp", "f-cart-s": "assets/f-cart-s.webp", "f-prof-s": "assets/f-prof-s.webp", "w-1": "assets/w-1.webp", "w-2": "assets/w-2.webp", "w-3": "assets/w-3.webp", "w-4": "assets/w-4.webp", "w-5": "assets/w-5.webp", "w-6": "assets/w-6.webp", "w-el": "assets/w-el.webp", "z-home": "assets/z-home.webp", "z-cats": "assets/z-cats.webp", "z-list": "assets/z-list.webp", "z-prod": "assets/z-prod.webp", "z-check": "assets/z-check.webp", "z-track": "assets/z-track.webp", "z-conf": "assets/z-conf.webp", "z-acct": "assets/z-acct.webp", "z-mob": "assets/z-mob.webp", "tm-1": "assets/tm-1.webp", "tm-2": "assets/tm-2.webp", "tm-3": "assets/tm-3.webp", "tm-4": "assets/tm-4.webp", "tm-5": "assets/tm-5.webp", "tm-6": "assets/tm-6.webp", "tm-7": "assets/tm-7.webp", "tm-8": "assets/tm-8.webp", "tm-9": "assets/tm-9.webp", "tm-10": "assets/tm-10.webp", "tm-11": "assets/tm-11.webp"};
+const IMG = {"before-active": "assets/before-active.webp", "before-consult": "assets/before-consult.webp", "before-sheet": "assets/before-sheet.webp", "after-active": "assets/after-active.webp", "after-transferring": "assets/after-transferring.webp", "after-consult": "assets/after-consult.webp", "after-conference": "assets/after-conference.webp", "opt-a": "assets/opt-a.webp", "opt-hold": "assets/opt-hold.webp", "opt-confirm": "assets/opt-confirm.webp", "result": "assets/result.webp", "ipad": "assets/ipad.webp", "jc-problem": "assets/jc-problem.webp", "jc-popup": "assets/jc-popup.webp", "jc-final": "assets/jc-final.webp", "jc-banner": "assets/jc-banner.webp", "jc-result": "assets/jc-result.webp", "jc-msheet": "assets/jc-msheet.webp", "jc-madded": "assets/jc-madded.webp", "k-s1": "assets/k-s1.webp", "k-s2": "assets/k-s2.webp", "k-s3": "assets/k-s3.webp", "k-s4": "assets/k-s4.webp", "k-flow": "assets/k-flow.webp", "t-comp": "assets/t-comp.webp", "t-p1": "assets/t-p1.webp", "t-p2": "assets/t-p2.webp", "t-j1": "assets/t-j1.webp", "t-j2": "assets/t-j2.webp", "t-ia": "assets/t-ia.webp", "t-flow": "assets/t-flow.webp", "t-prob": "assets/t-prob.webp", "t-home": "assets/t-home.webp", "t-search": "assets/t-search.webp", "t-book": "assets/t-book.webp", "t-video": "assets/t-video.webp", "t-kit": "assets/t-kit.webp", "t-lib": "assets/t-lib.webp", "f-onb": "assets/f-onb.webp", "f-login": "assets/f-login.webp", "f-home": "assets/f-home.webp", "f-search": "assets/f-search.webp", "f-prod": "assets/f-prod.webp", "f-prod2": "assets/f-prod2.webp", "f-cart": "assets/f-cart.webp", "f-check": "assets/f-check.webp", "f-conf": "assets/f-conf.webp", "f-prof": "assets/f-prof.webp", "f-comp": "assets/f-comp.webp", "f-home-s": "assets/f-home-s.webp", "f-search-s": "assets/f-search-s.webp", "f-prod-s": "assets/f-prod-s.webp", "f-cart-s": "assets/f-cart-s.webp", "f-prof-s": "assets/f-prof-s.webp", "w-1": "assets/w-1.webp", "w-2": "assets/w-2.webp", "w-3": "assets/w-3.webp", "w-4": "assets/w-4.webp", "w-5": "assets/w-5.webp", "w-6": "assets/w-6.webp", "w-el": "assets/w-el.webp", "z-home": "assets/z-home.webp", "z-cats": "assets/z-cats.webp", "z-list": "assets/z-list.webp", "z-prod": "assets/z-prod.webp", "z-check": "assets/z-check.webp", "z-track": "assets/z-track.webp", "z-conf": "assets/z-conf.webp", "z-acct": "assets/z-acct.webp", "z-mob": "assets/z-mob.webp", "tm-1": "assets/tm-1.webp", "tm-2": "assets/tm-2.webp", "tm-3": "assets/tm-3.webp", "tm-4": "assets/tm-4.webp", "tm-5": "assets/tm-5.webp", "tm-6": "assets/tm-6.webp", "tm-7": "assets/tm-7.webp", "tm-8": "assets/tm-8.webp", "tm-9": "assets/tm-9.webp", "tm-10": "assets/tm-10.webp", "tm-11": "assets/tm-11.webp", "me-2": "assets/me-2.webp", "sk-krishna": "assets/sk-krishna.webp", "sk-warm": "assets/sk-warm.webp", "sk-portrait": "assets/sk-portrait.webp", "sk-saraswati": "assets/sk-saraswati.webp", "sk-wire": "assets/sk-wire.webp", "ev-badges": "assets/ev-badges.webp", "ev-hack": "assets/ev-hack.webp", "ev-lib": "assets/ev-lib.webp", "ev-gandhi": "assets/ev-gandhi.webp", "ev-stage": "assets/ev-stage.webp", "mn-teach1": "assets/mn-teach1.webp", "mn-teach2": "assets/mn-teach2.webp", "ev-onam": "assets/ev-onam.webp", "pr-1": "assets/pr-1.webp", "pr-2": "assets/pr-2.webp"};
 (function(){
   'use strict';
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1334,8 +1440,8 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   $$('img[data-img]').forEach(img => { if (IMG[img.dataset.img]) img.src = IMG[img.dataset.img]; });
 
   /* ---------- router ---------- */
-  const views = { home: $('#v-home'), connect: $('#v-connect'), audit: $('#v-audit'), jobchat: $('#v-jobchat'), kern: $('#v-kern'), telemed: $('#v-telemed'), fashion: $('#v-fashion'), fooz: $('#v-fooz') };
-  const titles = { home: 'Rajesh Malick, Product Designer', connect: 'Zuper Connect case study', audit: 'Experience audit case study', jobchat: 'Job Chat case study', kern: 'Kern case study', telemed: 'Telemed Connect case study', fashion: 'Omni Fashion case study', fooz: 'FOOZ case study' };
+  const views = { home: $('#v-home'), connect: $('#v-connect'), audit: $('#v-audit'), jobchat: $('#v-jobchat'), kern: $('#v-kern'), telemed: $('#v-telemed'), fashion: $('#v-fashion'), fooz: $('#v-fooz'), story: $('#v-story'), prelude: $('#v-prelude') };
+  const titles = { home: 'Rajesh Malick, Product Designer', connect: 'Zuper Connect case study', audit: 'Experience audit case study', jobchat: 'Job Chat case study', kern: 'Kern case study', telemed: 'Telemed Connect case study', fashion: 'Omni Fashion case study', fooz: 'FOOZ case study', story: 'Beyond the screen', prelude: 'Prelude Workspace case study' };
   let current = null;
   function route(){
     const h = (location.hash || '#home').slice(1);
@@ -1347,7 +1453,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   window.addEventListener('hashchange', route);
 
   /* ---------- work cards ---------- */
-  const WORK = [{"go": "connect", "color": "#6FD3FF", "badge": "iOS and iPad", "title": "Undoing a call transfer", "meta": "Zuper Connect, 2026", "tags": ["Mobile", "Telephony", "Interaction design"], "start": "A transfer with no way back", "trim": "Waveform bar, duplicate Record, dead buttons", "form": "Cancel where Transfer was", "imgs": ["before-active", "opt-a", "after-active"]}, {"go": "audit", "color": "#FFD84D", "badge": "Web", "title": "64 flaws, one ranked map", "meta": "Zuper experience audit, 2026", "tags": ["Audit", "Research", "Prioritisation"], "start": "Too complex, nobody knew where", "trim": "Found 64 flaws, 12 repeating patterns", "form": "One ranked map, top five first", "pixels": true}, {"go": "jobchat", "color": "#5BE3A5", "badge": "Web, mobile, tablet", "title": "Mentioned, but never invited", "meta": "Zuper Job Chat, 2026", "tags": ["Web", "Mobile", "Tablet", "Chat"], "start": "@mentions that reached nobody", "trim": "A popup that stopped the conversation", "form": "A quiet note for the sender", "imgs": ["jc-problem", "jc-popup", "jc-final"], "wide": true}, {"go": "kern", "color": "#FF9BD2", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "tags": ["Mobile", "Research", "1 day"], "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "A calendar, success charts, a resume builder", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]}, {"go": "telemed", "color": "#BFAEFF", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "tags": ["Web", "Mobile", "Design system"], "start": "A forced detour through the doctor profile", "trim": "The profile detour and the extra steps", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true}, {"go": "fashion", "color": "#FF7A45", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "tags": ["Mobile", "E-commerce", "Wireframes"], "start": "Wireframes with a style quiz and nearby stock", "trim": "The quiz and the stock check, at the deadline", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]}, {"go": "fooz", "color": "#FF6B6B", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOZ Food Global, 2025", "tags": ["Web", "Mobile", "E-commerce"], "start": "Organic tea, spices, rice and oils, sold direct", "trim": "A five-stage delivery tracer", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Built"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true}];
+  const WORK = [{"go": "connect", "color": "#6FD3FF", "badge": "iOS and iPad", "title": "Undoing a call transfer", "meta": "Zuper Connect, 2026", "tags": ["Mobile", "Telephony", "Interaction design"], "start": "A transfer with no way back", "trim": "Waveform bar, duplicate Record, dead buttons", "form": "Cancel where Transfer was", "imgs": ["before-active", "opt-a", "after-active"], "feat": true}, {"go": "prelude", "color": "#8EF0D8", "badge": "Web, 3D", "title": "Projects as trees in a 3D grove", "meta": "Prelude Workspace, Zuper, 2026", "tags": ["Web", "3D", "Redesign"], "start": "The Prototype Dashboard", "trim": "A 3D grove, one tree per project", "form": "Deployed, used by other designers", "labels": ["Started with", "Redesigned as", "Now"], "imgs": ["pr-1", "pr-2"], "wide": true, "feat": true, "rev": true}, {"go": "audit", "color": "#FFD84D", "badge": "Web", "title": "64 flaws, one ranked map", "meta": "Zuper experience audit, 2026", "tags": ["Audit", "Research", "Prioritisation"], "start": "Too complex, nobody knew where", "trim": "Found 64 flaws, 12 repeating patterns", "form": "One ranked map, top five first", "pixels": true}, {"go": "jobchat", "color": "#5BE3A5", "badge": "Web, mobile, tablet", "title": "Mentioned, but never invited", "meta": "Zuper Job Chat, 2026", "tags": ["Web", "Mobile", "Tablet", "Chat"], "start": "@mentions that reached nobody", "trim": "A popup that stopped the conversation", "form": "A quiet note for the sender", "imgs": ["jc-problem", "jc-popup", "jc-final"], "wide": true}, {"go": "kern", "color": "#FF9BD2", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "tags": ["Mobile", "Research", "1 day"], "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "A calendar, success charts, a resume builder", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]}, {"go": "telemed", "color": "#BFAEFF", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "tags": ["Web", "Mobile", "Design system"], "start": "A forced detour through the doctor profile", "trim": "The profile detour and the extra steps", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true}, {"go": "fashion", "color": "#FF7A45", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "tags": ["Mobile", "E-commerce", "Wireframes"], "start": "Wireframes with a style quiz and nearby stock", "trim": "The quiz and the stock check, at the deadline", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]}, {"go": "fooz", "color": "#FF6B6B", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOZ Food Global, 2025", "tags": ["Web", "Mobile", "E-commerce"], "start": "Organic tea, spices, rice and oils, sold direct", "trim": "A five-stage delivery tracer", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Built"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true}];
   function pixelGrid(){
     const order = ['C', 'H', 'M', 'L'], cells = [];
     M.forEach(m => m[1].forEach(f => cells.push(f[1])));
@@ -1357,7 +1463,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   function buildShelf(){
     const deck = $('#shelf');
     WORK.forEach((w, i) => {
-      const el = document.createElement('a'); el.className = 'h-card' + (i === 0 ? ' feat' : ''); el.href = '#' + w.go; el.style.setProperty('--c', w.color);
+      const el = document.createElement('a'); el.className = 'h-card' + (w.feat ? ' feat' : '') + (w.rev ? ' rev' : ''); el.href = '#' + w.go; el.style.setProperty('--c', w.color);
       const shot = document.createElement('div'); shot.className = 'h-shot';
       let im = null;
       if (w.pixels) shot.innerHTML = pixelGrid();
@@ -1523,7 +1629,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     /* active folder tab */
     const links = $$('.bar nav a[data-nav]');
     const setNav = id => links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + id));
-    window.navSync = () => { if (current && current !== 'home') setNav('work'); };
+    window.navSync = () => { if (current === 'story') setNav('about'); else if (current && current !== 'home') setNav('work'); };
     const secs = ['work', 'play', 'about', 'exp', 'faq', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
     const spy = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && current === 'home') setNav(e.target.id); }), { rootMargin: '-40% 0px -55% 0px' });
     secs.forEach(s => spy.observe(s));

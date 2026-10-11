@@ -153,7 +153,7 @@ h1,h2,h3{font-family:var(--display);font-variation-settings:'SOFT' 100;font-weig
 
 /* scroll story */
 .story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
-.story.wide{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.story.wide{grid-template-columns:minmax(0,2.5fr) minmax(0,1fr);gap:clamp(20px,2.4vw,32px)}
 .device{position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px);align-self:start;display:flex;flex-direction:column;gap:14px;align-items:center}
 .frame{background:var(--dark);border-radius:28px;padding:14px;width:100%;max-width:280px;position:relative}
 .story.wide .frame{max-width:none;border-radius:18px;padding:12px}
@@ -731,10 +731,10 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   .js .rv{opacity:0}
   .js .rv.in{animation:rvIn .85s cubic-bezier(.2,.8,.2,1) var(--d,0ms) both}
   @keyframes rvIn{from{opacity:0;translate:0 38px}to{opacity:1;translate:0 0}}
-  .js .sp .sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
-  .js .sp .sw>span{display:inline-block;translate:0 115%}
+  .js .sp .sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.16em .22em .28em;margin:-.16em -.22em -.28em}
+  .js .sp .sw>span{display:inline-block;translate:0 160%}
   .js .sp.in .sw>span{animation:wUp .85s cubic-bezier(.2,.9,.2,1) calc(var(--i) * 55ms) both}
-  @keyframes wUp{from{translate:0 115%}to{translate:0 0}}
+  @keyframes wUp{from{translate:0 160%}to{translate:0 0}}
   .js .h-sel h1 .ch{display:inline-block;opacity:0}
   .js .hero-in .h-sel h1 .ch{animation:drop .85s cubic-bezier(.2,1.3,.4,1) calc(var(--i) * 60ms + 150ms) both}
   @keyframes drop{from{opacity:0;translate:0 -75%;rotate:-10deg}to{opacity:1;translate:0 0;rotate:0deg}}
@@ -813,6 +813,42 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 .orb-btn[aria-pressed="true"]{background:var(--ink);color:#fff}
 @media (max-width:700px){.orb-t .otile{width:46px;height:46px}.orb-t .otile svg{width:24px;height:24px}.orb-t .otile.lang{min-width:74px;height:42px;font-size:15px}.h-notes-2{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.av .a-eyes,.orb.landed .orb-t{animation:none}.mark:hover i.av{transform:none}}
+
+/* ---- v17 ---- */
+.h-ab-photo.orb-open .orb-ctl{margin-top:118px}
+.orb-ctl{transition:margin-top .5s cubic-bezier(.3,1.3,.5,1)}
+.xcard{perspective:1400px;height:var(--xh,430px);outline:none;cursor:pointer;border-radius:18px}
+.xcard:focus-visible{outline:3px solid var(--blue);outline-offset:6px}
+.xin{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.3,1.25,.4,1)}
+.xface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:22px 24px 24px;display:flex;flex-direction:column;overflow:hidden;color:var(--ink)}
+.xfront{background:var(--c);justify-content:space-between}
+.xback{background:#fff;transform:rotateY(180deg);gap:14px}
+.xtop{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.xlogo{width:76px;height:76px;border-radius:20px;background:#fff;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);display:grid;place-items:center;flex:none}
+.xlogo b{font:800 42px/1 var(--display);letter-spacing:-.03em}
+.xwhen{font:600 13px var(--mono);text-transform:uppercase;letter-spacing:.05em;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:5px 12px}
+.xmain h3{font:800 clamp(28px,2.6vw,36px)/1.02 var(--display);letter-spacing:-.03em;margin:0 0 8px}
+.xrole{font:600 18px/1.3 var(--body);margin:0}
+.xhint{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.xhint::before{content:"Hover to flip \2192"}
+@media (hover:none){.xhint::before{content:"Tap to flip \2192"}}
+.xbh{font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;margin:0;background:var(--c);border:2px solid var(--ink);border-radius:999px;padding:5px 12px;align-self:flex-start}
+.xback ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.xback li{font:500 16px/1.35 var(--body);padding-left:18px;position:relative;color:var(--ink)}
+.xback li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--ink)}
+@media (hover:hover){.xcard:hover .xin{transform:rotateY(180deg)}}
+.xcard.flipped .xin{transform:rotateY(180deg)}
+@media (prefers-reduced-motion:reduce){.xin{transition:none}}
+/* click or tap a case-study picture to see it bigger */
+.frame,.wide-fig,.phones figure{cursor:zoom-in}
+.story.wide .beat h3{font-size:clamp(22px,2vw,28px)}
+.frame::after{content:"Click to enlarge";position:absolute;right:22px;bottom:22px;font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.05em;background:#fff;color:#101012;border:2px solid #101012;border-radius:999px;padding:4px 10px;pointer-events:none;z-index:3}
+@media (hover:none){.frame::after{content:"Tap to enlarge"}}
+.lb{position:fixed;inset:0;z-index:2000;background:rgba(16,16,18,.93);display:grid;place-items:center;padding:3vmin;cursor:zoom-out}
+.lb[hidden]{display:none}
+.lb img{max-width:96vw;max-height:92vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 0 0 3px #fff}
+.lb-x{position:absolute;top:18px;right:18px;width:50px;height:50px;border-radius:50%;border:2px solid #101012;background:#fff;color:#101012;font:700 30px/1 var(--display);cursor:pointer;display:grid;place-items:center;padding:0}
+.lb-on{overflow:hidden}
 </style>
 <script>document.documentElement.className+=" js"</script>
 </head>
@@ -861,7 +897,7 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 
   <section class="wrap h-stats" aria-label="A few numbers">
     <div class="h-stat" style="--c:var(--sky)"><b data-count="64">64</b><span>UX findings in one audit</span></div>
-    <div class="h-stat" style="--c:var(--yellow)"><b data-count="6">6</b><span>designers use Prelude</span></div>
+    <div class="h-stat" style="--c:var(--yellow)"><b data-count="6">6</b><span>designers use Prelude, me included</span></div>
     <div class="h-stat" style="--c:var(--pink)"><b data-count="40" data-suffix="+">40+</b><span>members in the chapter I led</span></div>
     <div class="h-stat" style="--c:var(--green)"><b data-count="2">2</b><span>hackathon finals in 2024</span></div>
   </section>
@@ -915,7 +951,7 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
 
   <section class="wrap h-section" id="about" aria-labelledby="abouth">
     <div class="h-about">
-      <div class="h-ab-photo"><figure class="h-pol2"><img src="assets/me-3.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a brown blazer over a pink shirt, looking to the side" loading="lazy"><figcaption>Rajesh, Chennai</figcaption></figure><span class="h-tape" aria-hidden="true"></span><div class="orb" id="orbit" aria-hidden="true"></div><div class="orb-ctl" role="group" aria-label="More about me"><button type="button" class="btn btn-line orb-btn" data-orbit="tools" aria-pressed="false">Tools</button><button type="button" class="btn btn-line orb-btn" data-orbit="langs" aria-pressed="false">Languages</button></div><ul class="sr"><li>Tools: Figma, FigJam, Figma Make, Claude, ChatGPT, Linear, Notion, Miro, UI Wizard</li><li>Languages: English, Hindi, Tamil, Odia</li></ul></div>
+      <div class="h-ab-photo"><figure class="h-pol2"><img src="assets/portrait.webp" width="800" height="1000" alt="Portrait of Rajesh Malick in a black blazer and shirt" loading="lazy"><figcaption>Rajesh, Chennai</figcaption></figure><span class="h-tape" aria-hidden="true"></span><div class="orb" id="orbit" aria-hidden="true"></div><div class="orb-ctl" role="group" aria-label="More about me"><button type="button" class="btn btn-line orb-btn" data-orbit="tools" aria-pressed="false">Tools</button><button type="button" class="btn btn-line orb-btn" data-orbit="langs" aria-pressed="false">Languages</button></div><ul class="sr"><li>Tools: Figma, FigJam, Figma Make, Claude, ChatGPT, Linear, Notion, Miro, UI Wizard</li><li>Languages: English, Hindi, Tamil, Odia</li></ul></div>
       <div>
         <p class="h-eyebrow">03 / About</p>
         <h2 id="abouth">A designer who also builds.</h2>
@@ -932,13 +968,13 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   </section>
 
     <section class="wrap h-section" id="exp" aria-labelledby="exph">
-    <div class="h-head"><div><p class="h-eyebrow">04 / Experience</p><h2 id="exph">Where I’ve worked</h2></div><p>Most recent first.</p></div>
+    <div class="h-head"><div><p class="h-eyebrow">04 / Experience</p><h2 id="exph">Where I’ve worked</h2></div><p>Most recent first. Hover or tap a card to see what I did.</p></div>
     <div class="h-jobs">
-      <article class="h-job" style="--c:var(--sky)"><div class="when">Jul 2026 – Oct 2026</div><div class="in"><h3>Zuper</h3><p class="role">Product Design Intern</p><p>Zuper Connect on iOS and iPad and Job Chat (both now in QA testing), and a web-app experience audit. I’m also redesigning the Zuper Labs website as Labs OS, which is in development.</p><p class="out">Prelude Workspace, my redesign of the team’s Prototype Dashboard: deployed, and used by six designers.</p></div></article>
-      <article class="h-job" style="--c:var(--yellow)"><div class="when">Feb 2026 – May 2026</div><div class="in"><h3>Infotact Solutions</h3><p class="role">Design Associate and UI/UX Designer Intern</p><p>Telemed Connect, a healthcare booking product, and an omnichannel fashion e-commerce app, with Prasanthi, Sujeevana and Diganta.</p><p class="out">Telemed booking in under five clicks, from the doctor list.</p></div></article>
-      <article class="h-job" style="--c:var(--pink)"><div class="when">Mar 2025 – Jun 2025</div><div class="in"><h3>FOOZ Food Global LLP</h3><p class="role">UI/UX Designer Intern</p><p>Designed every screen of the first version of the main website for a business-to-customer import and export platform: home, hero, product details, About, Contact and more.</p><p class="out">Learned to design experiences for users, not just websites.</p></div></article>
-      <article class="h-job" style="--c:var(--green)"><div class="when">Oct 2024 · about a month</div><div class="in"><h3>Brainwave Solutions</h3><p>Designed a healthcare app, reimagining a Practo-style experience.</p><p class="out">Built my Auto Layout and prototyping skills.</p></div></article>
-      <article class="h-job" style="--c:var(--lilac)"><div class="when">2023 · about a month</div><div class="in"><h3>YBI Foundation</h3><p>Data analytics with Python and Google Colab, including a Naive Bayes classifier for women’s clothing reviews.</p><p class="out">Learned how Python applies to everyday problems.</p></div></article>
+      <article class="xcard" style="--c:var(--sky)"><div class="xin"><div class="xface xfront"><div class="xtop"><span class="xlogo" aria-hidden="true"><b>Z</b></span><span class="xwhen">Jul 2026 – Oct 2026</span></div><div class="xmain"><h3>Zuper</h3><p class="xrole">Product Design Intern</p></div><span class="xhint" aria-hidden="true"></span></div><div class="xface xback"><p class="xbh">Zuper, what I did</p><ul><li>Redesigned the Zuper Connect call experience for iOS and iPad (now in QA testing)</li><li>Designed Job Chat @mentions across web, mobile and tablet (now in QA testing)</li><li>Audited the web app: 64 findings across 14 modules. The four most prominent became tickets</li><li>Redesigned the team’s Prototype Dashboard as Prelude Workspace: deployed, used by six designers, me included</li><li>Redesigning the Zuper Labs website as Labs OS (in development)</li></ul></div></div></article>
+      <article class="xcard" style="--c:var(--yellow)"><div class="xin"><div class="xface xfront"><div class="xtop"><span class="xlogo" aria-hidden="true"><b>I</b></span><span class="xwhen">Feb 2026 – May 2026</span></div><div class="xmain"><h3>Infotact Solutions</h3><p class="xrole">Design Associate and UI/UX Designer Intern</p></div><span class="xhint" aria-hidden="true"></span></div><div class="xface xback"><p class="xbh">Infotact Solutions, what I did</p><ul><li>Telemed Connect: desktop screens, UI kit and components for a healthcare booking product</li><li>Booking in four clicks from the doctor list (team target: under five)</li><li>An omnichannel fashion e-commerce app: wireframes and eight high-fidelity screens</li><li>Worked with Prasanthi, Sujeevana and Diganta</li></ul></div></div></article>
+      <article class="xcard" style="--c:var(--pink)"><div class="xin"><div class="xface xfront"><div class="xtop"><span class="xlogo" aria-hidden="true"><b>F</b></span><span class="xwhen">Mar 2025 – Jun 2025</span></div><div class="xmain"><h3>FOOZ Food Global LLP</h3><p class="xrole">UI/UX Designer Intern</p></div><span class="xhint" aria-hidden="true"></span></div><div class="xface xback"><p class="xbh">FOOZ Food Global LLP, what I did</p><ul><li>Designed every screen of the first version of the main website for a business-to-customer import and export platform</li><li>Home, hero, product details, About, Contact and more</li><li>Learned to design experiences for users, not just websites</li></ul></div></div></article>
+      <article class="xcard" style="--c:var(--green)"><div class="xin"><div class="xface xfront"><div class="xtop"><span class="xlogo" aria-hidden="true"><b>B</b></span><span class="xwhen">Oct 2024 · about a month</span></div><div class="xmain"><h3>Brainwave Solutions</h3><p class="xrole">Healthcare app design</p></div><span class="xhint" aria-hidden="true"></span></div><div class="xface xback"><p class="xbh">Brainwave Solutions, what I did</p><ul><li>Designed a healthcare app, reimagining a Practo-style experience</li><li>Built my Auto Layout and prototyping skills</li></ul></div></div></article>
+      <article class="xcard" style="--c:var(--lilac)"><div class="xin"><div class="xface xfront"><div class="xtop"><span class="xlogo" aria-hidden="true"><b>Y</b></span><span class="xwhen">2023 · about a month</span></div><div class="xmain"><h3>YBI Foundation</h3><p class="xrole">Data analytics</p></div><span class="xhint" aria-hidden="true"></span></div><div class="xface xback"><p class="xbh">YBI Foundation, what I did</p><ul><li>Data analytics with Python and Google Colab</li><li>Built a Naive Bayes classifier for women’s clothing reviews</li><li>Learned how Python applies to everyday problems</li></ul></div></div></article>
     </div>
   </section>
 
@@ -955,7 +991,7 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
   <section class="wrap h-section" id="side" aria-labelledby="sideh">
     <div class="h-head"><div><p class="h-eyebrow">06 / Also</p><h2 id="sideh">Beyond the case studies</h2></div><p>Things I built, entered and led.</p></div>
     <div class="h-side">
-      <div class="h-sp"><span class="t">Deployed and in use</span><h3>Prelude Workspace</h3><p>My redesign of the Prototype Dashboard, which my teammate Raghavendra designed: a 3D grove where each project is a tree, built with React Three Fiber. Deployed and used by six designers.</p></div>
+      <div class="h-sp"><span class="t">Deployed and in use</span><h3>Prelude Workspace</h3><p>My redesign of the Prototype Dashboard, which my teammate Raghavendra designed: a 3D grove where each project is a tree, built with React Three Fiber. Deployed and used by six designers, me included.</p></div>
       <div class="h-sp"><span class="t">In development</span><h3>Zuper Labs OS</h3><p>I’m redesigning the Zuper Labs website as an OS-style interface inspired by paper clips, after first exploring a 3D concept. Zuper managers liked the concept, and one suggested a pixel-art, Game Boy-style direction.</p></div>
       <div class="h-sp"><span class="t">AIVF No-Code AI Hackathon, 2024 · Finalist</span><h3>Telegram moderation bot</h3><p>A bot that detects and blocks nudity and abusive content in groups. I designed and built it.</p></div>
       <div class="h-sp"><span class="t">PEC HACKS, 2024 · Finalist</span><h3>Face-recognition attendance</h3><p>An offline, Wi-Fi based attendance system. I was the designer, the hardware programmer and the presenter.</p></div>
@@ -1504,8 +1540,8 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
         <div class="polas"><figure class="pola wide"><img data-img="mn-teach1" loading="lazy" alt="Rajesh standing in front of a group of seated school students, outdoors under a tree"><figcaption>Mentoring school students</figcaption></figure><figure class="pola wide"><img data-img="mn-teach2" loading="lazy" alt="A mentoring session with school students seated on the ground in a courtyard"><figcaption>Another session</figcaption></figure><figure class="pola wide"><img data-img="mn-teach3" loading="lazy" alt="Rajesh speaking to school students seated in rows in a school courtyard"><figcaption>A session under the trees</figcaption></figure><figure class="pola wide"><img data-img="mn-full" loading="lazy" alt="School students seated on the ground in a covered courtyard while Rajesh presents at the front"><figcaption>A full house of students</figcaption></figure><figure class="pola wide"><img data-img="ev-ullas-team" loading="lazy" alt="Rajesh taking a selfie with three members of the Ullas team, all wearing lanyards, making peace signs"><figcaption>With the Ullas team</figcaption></figure><figure class="pola wide"><img data-img="ev-felicit" loading="lazy" alt="Rajesh holding a framed gift with students and teachers in a classroom"><figcaption>Being felicitated by my students</figcaption></figure><figure class="pola wide"><video controls playsinline preload="metadata" poster="assets/vid-poster.webp" aria-label="A short video of Rajesh signing autographs in notebooks held out by students"><source src="assets/vid-autograph.mp4" type="video/mp4"></video><figcaption>Signing autographs for the students</figcaption></figure></div>
       </section>
       <section class="stage" id="s-stage" data-stage="On stage">
-        <div class="stage-head"><span class="pot">On stage</span><h2>Hosting and speaking</h2></div>
-        <p>I host many events, and I like looking after the whole thing, from the stage to what happens behind it.</p>
+        <div class="stage-head"><span class="pot">On stage</span><h2>Hosting and public speaking</h2></div>
+        <p>I host many events and do a lot of public speaking. I handle what happens on the stage and what happens behind the scenes, and I keep an eye on everything.</p>
         <div class="polas"><figure class="pola tall"><img data-img="ev-stage" loading="lazy" alt="Rajesh speaking at a podium in front of a presentation screen"><figcaption>At the podium</figcaption></figure><figure class="pola tall"><img data-img="ev-stage2" loading="lazy" alt="Rajesh in a dark blazer speaking at a podium with a microphone"><figcaption>At the podium, again</figcaption></figure><figure class="pola wide"><img data-img="ev-lab1" loading="lazy" alt="A session in a long computer lab with participants seated at the desks"><figcaption>An event in a computer lab</figcaption></figure><figure class="pola wide"><img data-img="ev-lab2" loading="lazy" alt="The same computer lab seen from the other end, with rows of monitors"><figcaption>The same lab, from the other end</figcaption></figure></div>
       </section>
       <section class="stage" id="s-events" data-stage="Events">
@@ -1554,12 +1590,12 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
       <div><dt>Role</dt><dd>Product direction and end-to-end build</dd></div>
       <div><dt>Original</dt><dd>A redesign of the Prototype Dashboard, first designed by my teammate Raghavendra</dd></div>
       <div><dt>Stack</dt><dd>React, React Three Fiber, Vercel and Postgres</dd></div>
-      <div><dt>Status</dt><dd>Live, and used by six designers</dd></div>
+      <div><dt>Status</dt><dd>Live, and used by six designers, me included</dd></div>
     </dl>
     <div class="minute">
       <div><h2>What I started with</h2><p>The Prototype Dashboard, designed by Raghavendra.</p></div>
       <div><h2>What I changed</h2><p>I redesigned it as Prelude Workspace, a grove where each project is a tree, to be more interesting, more interactive and more usable.</p></div>
-      <div class="form-cell"><h2>Where it is now</h2><p>Live, used by six designers, and still changing with their feedback.</p></div>
+      <div class="form-cell"><h2>Where it is now</h2><p>Live, used by six designers on the team, me included, and still changing with their feedback.</p></div>
     </div>
   </section>
   <div class="wrap cs-body" data-cs>
@@ -1597,6 +1633,7 @@ svg.defs{position:absolute;width:0;height:0;overflow:hidden}
           <li>A grove whose health is worked out fresh from real activity, so it can’t drift from the truth.</li>
           <li>A daily activity streak built for a Monday to Friday team, with weather and a welcome tour for new people.</li>
           <li>Replay: scrub any project back through its real history.</li>
+          <li>The Village: see every teammate’s grove, and click a tree to visit that project’s owner.</li>
         </ul>
       </section>
       <section class="stage" id="p-why" data-stage="The goal">
@@ -1689,7 +1726,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
   window.addEventListener('hashchange', route);
 
   /* ---------- work cards ---------- */
-  const WORK = [{"go": "connect", "color": "#6FD3FF", "badge": "iOS and iPad", "title": "Undoing a call transfer", "meta": "Zuper Connect, 2026", "tags": ["Mobile", "Telephony", "Interaction design"], "start": "A transfer with no way back", "trim": "Cancel transfer, in the same spot as Transfer", "form": "Six call states designed, now in QA testing", "imgs": ["before-active", "opt-a", "after-active"], "feat": true}, {"go": "prelude", "color": "#8EF0D8", "badge": "Web, 3D", "title": "Projects as trees in a 3D grove", "meta": "Prelude Workspace, Zuper, 2026", "tags": ["Web", "3D", "Redesign"], "start": "The Prototype Dashboard", "trim": "A 3D grove, one tree per project", "form": "Deployed, used by six designers", "labels": ["Started with", "Redesigned as", "Now"], "imgs": ["pr-1", "pr-2"], "wide": true, "feat": true, "rev": true}, {"go": "audit", "color": "#FFD84D", "badge": "Web", "title": "64 flaws, one ranked map", "meta": "Zuper experience audit, 2026", "tags": ["Audit", "Research", "Prioritisation"], "start": "Too complex, nobody knew where", "trim": "Every module walked, 64 flaws logged", "form": "One ranked map; four findings became tickets", "pixels": true}, {"go": "jobchat", "color": "#5BE3A5", "badge": "Web, mobile, tablet", "title": "Mentioned, but never invited", "meta": "Zuper Job Chat, 2026", "tags": ["Web", "Mobile", "Tablet", "Chat"], "start": "@mentions that reached nobody", "trim": "A quiet note for the sender, not a blocking popup", "form": "Chosen after PM feedback, now in QA testing", "imgs": ["jc-problem", "jc-popup", "jc-final"], "wide": true}, {"go": "kern", "color": "#FF9BD2", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "tags": ["Mobile", "Research", "1 day"], "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "Everything on one chronological list", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]}, {"go": "telemed", "color": "#BFAEFF", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "tags": ["Web", "Mobile", "Design system"], "start": "A forced detour through the doctor profile", "trim": "Booking straight from the doctor list", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true}, {"go": "fashion", "color": "#FF7A45", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "tags": ["Mobile", "E-commerce", "Wireframes"], "start": "Wireframes with a style quiz and nearby stock", "trim": "Eight high-fidelity screens", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]}, {"go": "fooz", "color": "#FF6B6B", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOZ Food Global, 2025", "tags": ["Web", "Mobile", "E-commerce"], "start": "Organic tea, spices, rice and oils, sold direct", "trim": "A five-stage delivery tracer", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Designed"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true}];
+  const WORK = [{"go": "connect", "color": "#6FD3FF", "badge": "iOS and iPad", "title": "Undoing a call transfer", "meta": "Zuper Connect, 2026", "tags": ["Mobile", "Telephony", "Interaction design"], "start": "A transfer with no way back", "trim": "Cancel transfer, in the same spot as Transfer", "form": "Six call states designed, now in QA testing", "imgs": ["before-active", "opt-a", "after-active"], "feat": true}, {"go": "prelude", "color": "#8EF0D8", "badge": "Web, 3D", "title": "Projects as trees in a 3D grove", "meta": "Prelude Workspace, Zuper, 2026", "tags": ["Web", "3D", "Redesign"], "start": "The Prototype Dashboard", "trim": "A 3D grove, one tree per project", "form": "Deployed, used by six designers, me included", "labels": ["Started with", "Redesigned as", "Now"], "imgs": ["pr-1", "pr-2"], "wide": true, "feat": true, "rev": true}, {"go": "audit", "color": "#FFD84D", "badge": "Web", "title": "64 flaws, one ranked map", "meta": "Zuper experience audit, 2026", "tags": ["Audit", "Research", "Prioritisation"], "start": "Too complex, nobody knew where", "trim": "Every module walked, 64 flaws logged", "form": "One ranked map; four findings became tickets", "pixels": true}, {"go": "jobchat", "color": "#5BE3A5", "badge": "Web, mobile, tablet", "title": "Mentioned, but never invited", "meta": "Zuper Job Chat, 2026", "tags": ["Web", "Mobile", "Tablet", "Chat"], "start": "@mentions that reached nobody", "trim": "A quiet note for the sender, not a blocking popup", "form": "Chosen after PM feedback, now in QA testing", "imgs": ["jc-problem", "jc-popup", "jc-final"], "wide": true}, {"go": "kern", "color": "#FF9BD2", "badge": "Mobile app", "title": "Less to remember, more to act on", "meta": "Kern, Zuper hiring assessment, 2026", "tags": ["Mobile", "Research", "1 day"], "start": "Placement news in WhatsApp, Excel and Gmail", "trim": "Everything on one chronological list", "form": "One list of what is due in 24 hours", "imgs": ["k-s1", "k-s2", "k-s3", "k-s4"]}, {"go": "telemed", "color": "#BFAEFF", "badge": "Web and mobile", "title": "Five clicks to the doctor", "meta": "Telemed Connect, Infotact Solutions, 2026", "tags": ["Web", "Mobile", "Design system"], "start": "A forced detour through the doctor profile", "trim": "Booking straight from the doctor list", "form": "Four clicks from the doctor list", "imgs": ["t-home", "t-search", "t-book"], "wide": true}, {"go": "fashion", "color": "#FF7A45", "badge": "Mobile app", "title": "A shorter way to the checkout", "meta": "Omni Fashion, Infotact Solutions, 2026", "tags": ["Mobile", "E-commerce", "Wireframes"], "start": "Wireframes with a style quiz and nearby stock", "trim": "Eight high-fidelity screens", "form": "A clear path from home to order", "imgs": ["f-onb", "f-home-s", "f-prod-s"]}, {"go": "fooz", "color": "#FF6B6B", "badge": "Web and mobile", "title": "A storefront for organic flavours", "meta": "FOOZ Food Global, 2025", "tags": ["Web", "Mobile", "E-commerce"], "start": "Organic tea, spices, rice and oils, sold direct", "trim": "A five-stage delivery tracer", "form": "14 pages, a mobile home, the components", "labels": ["Brief", "One detail", "Designed"], "imgs": ["z-home", "z-list", "z-prod"], "wide": true}];
   function pixelGrid(){
     const order = ['C', 'H', 'M', 'L'], cells = [];
     M.forEach(m => m[1].forEach(f => cells.push(f[1])));
@@ -1926,6 +1963,52 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
       setTimeout(() => { pimg.src = p.src; pimg.alt = p.alt; pimg.style.objectPosition = p.pos; pcap.textContent = p.cap; pimg.style.opacity = 1; }, 190);
     });
 
+    /* experience flip cards: size them to the longest face, flip by hover, tap or keyboard */
+    (function () {
+      const cards = $$('.xcard'); if (!cards.length) return;
+      const hoverable = matchMedia('(hover:hover)').matches, root = document.documentElement;
+      const size = () => {
+        root.style.setProperty('--xh', '10px'); let m = 0;
+        cards.forEach(c => $$('.xface', c).forEach(f => { m = Math.max(m, f.scrollHeight); }));
+        if (m > 120) root.style.setProperty('--xh', (m + 6) + 'px'); else root.style.removeProperty('--xh');
+      };
+      cards.forEach(c => {
+        c.tabIndex = 0;
+        c.addEventListener('click', () => { if (!hoverable) c.classList.toggle('flipped'); });
+        c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.classList.toggle('flipped'); } });
+      });
+      let t = 0; const later = () => { clearTimeout(t); t = setTimeout(size, 150); };
+      window.addEventListener('resize', later); window.addEventListener('hashchange', later);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
+      new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) size(); }).observe($('.h-jobs'));
+      size();
+    })();
+
+    /* click or tap a case-study picture to see it bigger */
+    (function () {
+      const lb = document.createElement('div'); lb.className = 'lb'; lb.hidden = true;
+      lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Enlarged picture');
+      lb.innerHTML = '<button type="button" class="lb-x" aria-label="Close enlarged picture">&times;</button><img alt="">';
+      document.body.appendChild(lb);
+      const im = $('img', lb), x = $('.lb-x', lb); let from = null;
+      const SEL = '.frame, .wide-fig, .phones figure';
+      const open = (src, alt, host) => { im.src = src; im.alt = alt || ''; lb.hidden = false; from = host; document.documentElement.classList.add('lb-on'); x.focus(); };
+      const close = () => { lb.hidden = true; im.removeAttribute('src'); document.documentElement.classList.remove('lb-on'); if (from) from.focus(); };
+      const pick = host => {
+        let best = null, o = -1;
+        $$('img', host).forEach(i => { const v = parseFloat(getComputedStyle(i).opacity); if ((i.currentSrc || i.src) && v > o) { o = v; best = i; } });
+        return best;
+      };
+      const go = host => { const i = pick(host); if (i) open(i.currentSrc || i.src, i.alt, host); };
+      lb.addEventListener('click', close);
+      document.addEventListener('keydown', e => { if (!lb.hidden && e.key === 'Escape') close(); });
+      document.addEventListener('click', e => { const h = e.target.closest(SEL); if (h && lb.hidden) go(h); });
+      $$(SEL).forEach(h => {
+        h.tabIndex = 0; h.setAttribute('role', 'button'); const a = $('img', h); h.setAttribute('aria-label', 'Enlarge picture' + (a && a.alt ? ': ' + a.alt : ''));
+        h.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && lb.hidden) { e.preventDefault(); go(h); } });
+      });
+    })();
+
     /* scrollable tables and lists reachable by keyboard */
     $$('.table-wrap, #flist').forEach(el => { if (!el.hasAttribute('tabindex')) { el.tabIndex = 0; if (el.tagName === 'DIV') { el.setAttribute('role', 'region'); if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'Scrollable table'); } } });
     /* header avatar: eyes follow the pointer */
@@ -1969,7 +2052,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
       function layout() {
         const w = fig.offsetWidth, h = fig.offsetHeight;
         orb.style.left = fig.offsetLeft + 'px'; orb.style.top = fig.offsetTop + 'px'; orb.style.width = w + 'px'; orb.style.height = h + 'px';
-        const pad = window.innerWidth < 700 ? -6 : 24, a = w / 2 + pad, bt = h / 2 + pad, bb = h / 2 - 12, side = bt + bb, P = 4 * a + 2 * side, n = items.length;
+        const pad = window.innerWidth < 700 ? -6 : 24, a = w / 2 + pad, bt = h / 2 + pad, bb = h / 2 + 32, side = bt + bb, P = 4 * a + 2 * side, n = items.length;
         items.forEach((it, i) => {
           const s = ((i + 0.5) / n) * P; let x, y;
           if (s < 2 * a) { x = -a + s; y = -bt; } else if (s < 2 * a + side) { x = a; y = -bt + (s - 2 * a); }
@@ -1999,14 +2082,14 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
       }
       function sync() { btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.orbit === cur))); }
       function open(key) {
-        cur = key; T = 0; build(key); paint(); sync(); run(1);
+        cur = key; T = 0; wrap.classList.add('orb-open'); build(key); paint(); sync(); run(1);
         $('#live').textContent = (key === 'tools' ? 'Tools: ' : 'Languages: ') + SETS[key].map(d => d.n).join(', ');
       }
       function show(key) {
         if (cur === key) return;
         if (cur) { const next = key; cur = null; sync(); run(0, () => open(next)); } else open(key);
       }
-      function hide() { if (!cur) return; cur = null; pinned = false; sync(); run(0, () => { orb.innerHTML = ''; items = []; }); }
+      function hide() { if (!cur) return; cur = null; pinned = false; wrap.classList.remove('orb-open'); sync(); run(0, () => { orb.innerHTML = ''; items = []; }); }
       btns.forEach(btn => {
         const key = btn.dataset.orbit;
         if (fine) btn.addEventListener('pointerenter', () => { clearTimeout(timer); show(key); });
@@ -2021,7 +2104,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     if (wm) { const t = wm.textContent; wm.textContent = ''; Array.from(t).forEach(ch => { const s = document.createElement('span'); s.className = 'l'; s.textContent = ch; wm.appendChild(s); }); }
 
     /* mascot: click for a quip */
-    const QUIPS = ['Ask him about the time he played Gandhi ji.', 'He sculpted a clay Ganesha. I was not consulted.', 'Six designers use Prelude. I’m its biggest fan.', 'Psst. Try dragging the stickers.', 'I’m a great listener. I have no ears, but still.', 'Try the swap button on his photo.', 'He has been drawing since school.', 'Press the Tools button under his photo. Go on.'];
+    const QUIPS = ['Ask him about the time he played Gandhi ji.', 'He sculpted a clay Ganesha. I was not consulted.', 'Six designers use Prelude, Rajesh included.', 'Psst. Try dragging the stickers.', 'I’m a great listener. I have no ears, but still.', 'Try the swap button on his photo.', 'He has been drawing since school.', 'Press the Tools button under his photo. Go on.'];
     let qi = 0;
     document.addEventListener('click', e => {
       const m = e.target.closest && e.target.closest('.mascot'); if (!m) return;
@@ -2051,7 +2134,7 @@ const IMG = {"before-active": "assets/before-active.webp", "before-consult": "as
     if (reduce) return;
 
     /* reveal on scroll */
-    const RV = '.h-head, .h-card, .h-step, .h-note, .h-pc, .h-job, .h-thread, .h-sp, .h-stat, .pola, .stage-head, .minute > div, .facts > div, .insights li, .table-wrap, .next-up, .pc, .stk, .h-dev, .h-lede, .phones figure, .wide-fig, .spot, .col, .h-ab-photo, .h-about > div:last-child, .pshot';
+    const RV = '.h-head, .h-card, .h-step, .h-note, .h-pc, .h-job, .xcard, .h-thread, .h-sp, .h-stat, .pola, .stage-head, .minute > div, .facts > div, .insights li, .table-wrap, .next-up, .pc, .stk, .h-dev, .h-lede, .phones figure, .wide-fig, .spot, .col, .h-ab-photo, .h-about > div:last-child, .pshot';
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -7% 0px', threshold: 0.06 });
     const seen = new Map();
     $$(RV).forEach(el => {
